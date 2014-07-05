@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人中心_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<!-- IF memberAction == "avatar" -->
+<link rel="stylesheet" type="text/css" href="./css/imgareaselect.css" />
+<!-- ENDIF memberAction -->
+<script type="text/javascript" src="./js/jquery.js"></script>
+<!-- IF memberAction == "avatar" -->
+<script type="text/javascript" src="./js/imgareaselect.js"></script>
+<script type="text/javascript" src="./js/avatar.js"></script>
+<!-- ENDIF memberAction -->
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html --> 
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a> &gt; <a href="./profile.php?action={memberAction}"><!-- IF memberAction == "info" -->修改资料<!-- ELSEIF memberAction == "avatar" -->修改头像<!-- ELSE -->个人中心<!-- ENDIF memberAction --></a></div>
+<div id="B">
+	<div id="L">
+		<div class="nameleft">控制面板</div>
+		<div class="nameleftcont">
+			<li<!-- IF memberAction == "info" --> class="on"<!-- ENDIF memberAction -->>
+				<!-- IF memberAction == "info" -->修改资料<!-- ELSE --><a href="./profile.php?action=info">修改资料</a><!-- ENDIF memberAction -->
+			</li>
+			<li<!-- IF memberAction == "avatar" --> class="on"<!-- ENDIF memberAction -->>
+				<!-- IF memberAction == "avatar" -->修改头像<!-- ELSE --><a href="./profile.php?action=avatar">修改头像</a><!-- ENDIF memberAction -->
+			</li>
+		</div>
+		<div class="nameleft2">我的信息</div>
+		<div class="nameleft2cont">
+			用&nbsp;&nbsp;户&nbsp;&nbsp;名：{memberArr.name}<br>
+			用&nbsp;&nbsp;户&nbsp;&nbsp;组：{groupArr.name}<br>
+			我的积分：{memberArr.integral}<br>
+			注册时间：{memberArr.regdate}
+		</div>
+		<!-- IF userManage -->
+		<div class="nameleft2">我管理的吧</div>
+		<div class="nameleft2cont">
+		<ul>
+		<!-- BEGIN userManage -->
+		<li><a href="{rewrite_forum:fid}" target="_top">{fname}</a></li>
+		<!-- END userManage -->
+		</ul>
+		</div>
+		<!-- ENDIF userManage -->
+		<div class="k"></div>
+	</div>
+	<div id="R">
+		<div class="nameset">
+			<!-- IF memberAction == "info" -->
+				修改资料
+			<!-- ELSEIF memberAction == "avatar" -->
+				修改头像
+			<!-- ELSE -->
+				个人中心
+			<!-- ENDIF memberAction -->
+		</div>
+		<div class="namecont">
+		<!-- IF memberAction == "info" -->
+		<form name="profile-form" id="profile-form">
+		<table cellpadding="4" cellspacing="4" style="padding:65px;">
+		<tr>
+		<td align="right" width="200">当前密码：</td>
+		<td width="300">
+		<input type="password" name="oldpasswd" id="oldpasswd" maxlength="18" class="btn_input" value="" onkeydown="if(event.keyCode==13)event.keyCode=9" />
+		</td>
+		</tr>
+		<tr>
+		<td align="right">新 密 码：</td>
+		<td>
+		<input type="password" name="newpasswd" id="newpasswd" maxlength="18" class="btn_input" value="" onkeydown="if(event.keyCode==13)event.keyCode=9" />
+		</td>
+		</tr>
+		<tr>
+		<td align="right">确认密码：</td>
+		<td>
+		<input type="password" name="reppasswd" id="reppasswd" maxlength="18" class="btn_input" value="" onkeydown="if(event.keyCode==13)event.keyCode=9" />
+		</td>
+		</tr>
+		<tr>
+		<td align="right">电子邮箱：</td>
+		<td>
+		<input type="text" name="useremail" id="useremail" maxlength="45" class="btn_input" value="{memberArr.email}" onkeydown="if(event.keyCode==13)profile()" />
+		</td>
+		</tr>
+		<tr>
+		<td></td>
+		<td>
+		<input type="button" value="修 改" class="btn_sub" onclick="profile()">
+		</td>
+		</tr>
+		</table>
+		</form>
+		<!-- ELSEIF memberAction == "avatar" -->
+		<div id="step1">
+		<table cellpadding="4" cellspacing="4" style="padding:65px 10px 160px 60px;">
+		<tr><td width="135" align="center"><b>当前头像</b></td><td><b>上传新头像</b></td></tr>
+		<tr>
+		<td valign="top" align="center"><img src="{avatar:memberArr.uid}?{nowTime}" id="avatar"></td>
+		<td valign="top">
+			<form id="imgUploadForm" target="imgUploadForm" method="post" enctype="multipart/form-data" action="./upload.php">
+			<input type="file" id="fileToUpload" name="upAvatar" class="bar_sel_inp2" onchange="uploadAvatar();" /><br/>
+			</form>
+			<span class="p_6">请选择新的照片文件，文件需小于2MB。</span><br />
+			<span id="upload_status"></span>
+		</td>
+		</tr>
+		</table>
+		</div>
+		<div id="step2" style="display:none">
+			<div id="tempAvatar"></div>
+			<div style="float:right;width:40px;margin-top:40px;">
+				<form action="./upload.php" method="post">
+				  <input type="hidden" name="x" value="0" />
+				  <input type="hidden" name="y" value="0" />
+				  <input type="hidden" name="w" value="40" />
+				  <input type="hidden" name="h" value="40" />
+				  <input type="button" value="保 存" class="btn_sub" onclick="saveAvatar();"><br />
+				  <input type="button" value="取 消" class="btn_sub" onclick="delAvatar();">
+				</form>
+			</div>
+		</div>
+		<!-- ENDIF memberAction -->
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

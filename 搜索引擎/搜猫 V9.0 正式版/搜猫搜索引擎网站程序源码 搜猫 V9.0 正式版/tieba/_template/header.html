@@ -1,0 +1,21 @@
+<div id="header">
+<div class="k"></div>
+<form name="searchForm" method="get" action="./search.php" onsubmit="return SearchSubmit(this)">
+<ul class="search">
+<li><a href="./"><img src="./images/slogo.gif" alt="" title="到首页" border="0" class="logo ft_l" /></a></li>
+<li style="margin-top:9px;">
+<input type="text" id="kw" name="wd" maxlength="100" value="{searchWord}" class="s disableAutoComplete" />
+<br />
+<label for="proto1"><input type="radio"<!-- IF searchType=="1" --> checked="checked"<!-- ENDIF searchType --> value="1" name="tb" id="proto1" />进入吧</label>
+<label for="proto2"><input type="radio"<!-- IF searchType=="2" --> checked="checked"<!-- ENDIF searchType --> value="2" name="tb" id="proto2" />帖子</label>
+<label for="proto3"><input type="radio"<!-- IF searchType=="3" --> checked="checked"<!-- ENDIF searchType --> value="3" name="tb" id="proto3" />作者</label>
+</li>
+<li style="margin-top:9px;"><input type="submit" value="搜 索" class="bt" /></li>
+<li style="margin-top:9px;">
+<!-- INCLUDE header_links.html -->
+</li>
+</ul>
+<div id="mask" class="mask"></div>
+</form>
+</div>
+<div class="k"></div>

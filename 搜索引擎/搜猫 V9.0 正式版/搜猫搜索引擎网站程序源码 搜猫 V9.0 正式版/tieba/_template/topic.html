@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{topicArr.subject}_{ForumArr.name}_{siteName}</title>
+<meta name="keywords" content="{topicArr.subject}, {ForumArr.name}, {siteName}, 贴吧, 小组" />
+<meta name="description" content="{intercept:postArr.Post.0.message}" />
+<link rel="alternate" type="application/rss+xml" href="./rss.php?fid={ForumArr.fid}" title="{ForumArr.name}_{siteName}" />
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<!-- IF topicArr.lockout=="0" -->
+<script type="text/javascript" src="./js/form.js"></script>
+<!-- ENDIF topicArr.lockout -->
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js?v2"></script>
+</head>
+<body>
+<!-- INCLUDE header.html -->
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a><!-- IF ForumArr.classid>"0" -->
+ &gt; <a href="{rewrite_category:ForumArr.catalogid}">{ForumArr.catalogname}</a> &gt; <a href="{rewrite_category:ForumArr.classid}">{ForumArr.classname}</a><!-- ENDIF ForumArr.classid --> &gt; <a href="{rewrite_forum:ForumArr.fid,backPage}">{ForumArr.name}</a></div>
+<div id="leftmain">
+<div class="barInfo">
+<!-- IF topicArr.stick>"0" --><span class="icon_ding" title="置顶帖">&nbsp;</span><!-- ENDIF topicArr.stick -->
+<strong class="fs_14 p_b">{topicArr.subject}</strong>
+<!-- IF topicArr.digest=="1" --> <span class="icon_jing" title="精华帖">&nbsp;</span><!-- ENDIF topicArr.digest -->
+<!-- IF topicArr.replies>"50" --> <span class="icon_hot" title="热帖">&nbsp;</span><!-- ENDIF topicArr.replies -->
+<p>点击数：{topicArr.views}&nbsp;&nbsp;|&nbsp;&nbsp; 回复数：{topicArr.replies} &nbsp;&nbsp;|&nbsp;&nbsp; 最后回复发表于{topicArr.lasttime}</p>
+</div>
+
+<div class="barFun">
+<div class="ft_l">
+<a href="{rewrite_forum:ForumArr.fid}" class="btn_index">本吧首页</a>
+<!-- IF topicArr.lockout=="0" -->
+	<a href="#say" class="btn_reply">快捷回复</a>
+<!-- ENDIF topicArr.lockout -->
+<a href="javascript:AddFavorite();" class="btn_collect">收藏该帖</a>
+<!-- IF loginArr.group>="4" -->
+	<!-- IF topicArr.digest=="1" -->	
+	<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},0,'digest');" class="btn_good">取消精华</a>
+	<!-- ELSE -->
+	<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},1,'digest');" class="btn_good">加为精华</a>
+	<!-- ENDIF topicArr.digest -->
+	<!-- IF topicArr.stick>"0" -->
+	<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},0,'stick');" class="btn_top">取消置顶</a>
+	<!-- ELSE -->
+	<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},1,'stick');" class="btn_top">设为置顶</a>
+	<!-- ENDIF topicArr.stick -->
+<!-- ENDIF loginArr.group -->
+</div>
+<!-- IF loginArr.group>="4" -->
+<div class="ft_r">
+<!-- IF topicArr.lockout=="1" -->
+<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},0,'lockout');" class="btn_unlock">解锁</a>
+<!-- ELSE -->
+<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},1,'lockout');" class="btn_lock">锁定</a>
+<!-- ENDIF topicArr.lockout -->
+<a href="javascript:;" onclick="topicManage({topicArr.fid},{topicArr.tid},0,'delete');" class="btn_del">删除该帖</a>
+</div>
+<div class="k"></div>
+</div>
+<div class="barFun" style="margin-top:0;">
+<!-- ENDIF loginArr.group -->
+<div class="pagecontent ft_r">
+<!-- IF postArr.Page.pagePre -->
+<span class="pgpre">{postArr.Page.pagePre}</span>
+<!-- ENDIF postArr.Page.pagePre -->
+<span class="pg">
+<!-- IF postArr.Page.pageFirst -->
+{postArr.Page.pageFirst}
+<span class="pge">...</span>
+<!-- ENDIF postArr.Page.pageFirst -->
+<!-- IF postArr.Page.pageList -->
+{postArr.Page.pageList}
+<!-- ELSE -->
+<b>1</b>
+<!-- ENDIF postArr.Page.pageList -->
+<!-- IF postArr.Page.pageLast -->
+<span class="pge">...</span>
+{postArr.Page.pageLast}
+<!-- ENDIF postArr.Page.pageLast -->
+</span>
+<!-- IF postArr.Page.pageNext -->
+<span class="pgnext">{postArr.Page.pageNext}</span>
+<!-- ENDIF postArr.Page.pageNext -->
+</div> 
+<div class="k"></div>
+</div>
+ 
+<div class="barList" style="border-top:0;">
+<!-- BEGIN postArr.Post -->
+<!-- IF floor=="1" -->
+<div class="barFloor1" id="f{floor}">
+<!-- IF top.loginArr.group>="4" -->
+<div class="barFloor_sel"><input type="checkbox" class="operchk" value="{pid}" /></div>
+<!-- ENDIF top.loginArr.group -->
+<div class="barFloor_title1">
+<span class="barFloor_id"><b>{floor}</b>楼</span>
+<dl>
+<!-- IF authorid>"0" -->
+	<dt><a href="{rewrite_member:authorid}" target="_blank"><img src="{avatar:authorid}" /></a></dt>
+	<dd>
+	<a href="{rewrite_member:authorid}" target="_blank" class="blue">{author}</a>
+	<!-- IF top.loginArr.group>="4" -->
+		<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},{authorid},'{author}');">封</a>]</span>
+		<span class="ip">{postip}</span>
+		<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},0,'{postip}');">封</a>]</span>
+	<!-- ENDIF top.loginArr.group -->
+	</dd>
+<!-- ELSE -->
+	<dt><img src="./images/group_face_0.gif" alt="游客" title="游客" /></dt>
+	<dd>
+	<!-- IF guestname=="0" -->
+		<!-- IF top.loginArr.group>="4" -->
+			<span class="ip2">{postip}</span>
+			<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},0,'{postip}');">封</a>]</span>
+		<!-- ELSE -->
+			<span class="ip2">{author}</span>
+		<!-- ENDIF top.loginArr.group -->
+	<!-- ELSE -->
+		<span class="anonymity2">{author}</span><span class="icon_guest" title="游客">&nbsp;</span>
+		<!-- IF top.loginArr.group>="4" -->
+			<span class="ip">{postip}</span>
+			<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},0,'{postip}');">封</a>]</span>
+		<!-- ENDIF top.loginArr.group -->
+	<!-- ENDIF guestname -->
+	</dd>
+<!-- ENDIF authorid -->
+<dd>
+<span class="bar_info">发表于 {dateline}</span>
+</dd>
+</dl>
+</div>
+<!-- ELSE -->
+<div class="barFloor" id="f{floor}">
+<!-- IF top.loginArr.group>="4" -->
+<div class="barFloor_sel"><input type="checkbox" class="operchk" value="{pid}" /></div>
+<!-- ENDIF top.loginArr.group -->
+<div class="barFloor_title">
+<span class="barFloor_id">{floor}楼</span>
+<!-- IF authorid>"0" -->
+	<div class="avatar"><a href="{rewrite_member:authorid}" target="_blank" onfocus="this.blur()"><img src="{avatar:authorid}" /></a></div>
+	<a href="{rewrite_member:authorid}" target="_blank" class="blue">{author}</a>
+	<!-- IF top.loginArr.group>="4" -->
+		<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},{authorid},'{author}');">封</a>]</span>
+	<!-- ENDIF top.loginArr.group -->
+<!-- ELSE -->
+	<!-- IF guestname=="1" -->
+		<span class="anonymity">{author}</span><span class="icon_guest" title="游客">&nbsp;</span>
+	<!-- ELSE -->
+		<!-- IF top.loginArr.group<"4" -->
+			<span class="ip">{author}</span>
+		<!-- ENDIF top.loginArr.group -->
+	<!-- ENDIF guestname -->
+<!-- ENDIF authorid -->
+<!-- IF top.loginArr.group>="4" -->
+	<span class="ip">{postip}</span>
+	<span class="feng">[<a href="javascript:;" onclick="setBlack({fid},0,'{postip}');">封</a>]</span>
+<!-- ENDIF top.loginArr.group -->
+<span class="bar_info">
+	发表于 {dateline} 
+	<!-- IF replyfloor>"1" -->
+		回复<a href="{rewrite_topic:tid,floorpage}#f{replyfloor}">{replyfloor}楼</a>
+	<!-- ENDIF replyfloor -->
+</span>
+</div>
+<!-- ENDIF floor -->
+<div class="barFloor_con">
+{message}
+</div>
+<div class="barFloor_bot">
+<div class="ft_l">
+<!-- IF top.topicArr.lockout=="0" -->
+	<a href="#say" class="btn_reply2" onclick="setReplyTitle({floor});">回复</a>
+<!-- ENDIF top.topicArr.lockout -->
+<!-- IF top.loginArr.group>="4" -->
+	<!-- IF floor=="1" -->
+		<a href="javascript:;" onclick="topicManage({fid},{tid},0,'delete');" class="btn_del2">删除</a>
+	<!-- ELSE -->
+		<a href="javascript:;" onclick="topicManage({fid},{pid},1,'delete');" class="btn_del2">删除</a>
+	<!-- ENDIF floor -->
+<!-- ENDIF top.loginArr.group -->
+</div>
+<div class="barFloor_oper">
+<!-- IF top.loginArr.group<"4" -->
+<a href="./report.php?pid={pid}&height=159&width=303" class="thickbox" title="" rel="nofollow"><span>举报</span></a>
+<!-- ENDIF top.loginArr.group -->
+<a onclick="opinion({pid}, 3, this);" class="quiet"><span>飘过 {wave}</span></a>
+<a onclick="opinion({pid}, 2, this);" class="against"><span>砸 {down}</span></a>
+<a onclick="opinion({pid}, 1, this);" class="support"><span>顶 {up}</span></a>
+</div>
+</div>
+</div>
+<!-- END postArr.Post -->
+</div>
+ 
+<div class="barPage">
+<!-- IF loginArr.group>="4" -->
+<div class="ft_l" style="padding-left:3px;">
+<a href="javascript:selectAll();">全选</a>&nbsp;&nbsp;
+<a href="javascript:toggleSelect();">反选</a>&nbsp;&nbsp;
+<a href="javascript:delSelItems({topicArr.fid},{topicArr.tid});">删除</a>
+</div>
+<!-- ENDIF loginArr.group -->
+<div class="pagecontent ft_r">
+<!-- IF postArr.Page.pagePre -->
+<span class="pgpre">{postArr.Page.pagePre}</span>
+<!-- ENDIF postArr.Page.pagePre -->
+<span class="pg">
+<!-- IF postArr.Page.pageFirst -->
+{postArr.Page.pageFirst}
+<span class="pge">...</span>
+<!-- ENDIF postArr.Page.pageFirst -->
+<!-- IF postArr.Page.pageList -->
+{postArr.Page.pageList}
+<!-- ELSE -->
+<b>1</b>
+<!-- ENDIF postArr.Page.pageList -->
+<!-- IF postArr.Page.pageLast -->
+<span class="pge">...</span>
+{postArr.Page.pageLast}
+<!-- ENDIF postArr.Page.pageLast -->
+</span>
+<!-- IF postArr.Page.pageNext -->
+<span class="pgnext">{postArr.Page.pageNext}</span>
+<!-- ENDIF postArr.Page.pageNext -->  
+</div>
+<div class="k"></div>
+</div>
+<!-- IF topicArr.lockout=="0" -->
+<div class="bar_new" onkeyup="quick_send(event);">
+<h3>发表回复<a name="say" style="visibility:hide">&nbsp;</a></h3>
+<div class="bar_new_con fs_14">
+<form id="submit_form" name="submit_form">
+<input type="hidden" name="do" id="do" value="Reply" />
+<input type="hidden" name="tid" id="tid" value="{topicArr.tid}" />
+<input type="hidden" name="fid" id="fid" value="{ForumArr.fid}" />
+<ul>
+<!-- IF loginArr.state=="1" -->
+<li><label>&nbsp;</label>{loginArr.name}，<!-- IF loginArr.group>"2" -->您是{groupArr.name}<!-- ELSE -->您已登录<!-- ENDIF loginArr.group -->。<!-- IF postAnonymous=="1" -->&nbsp;&nbsp;<input name="anony" type="checkbox" value="" tabindex="999" />匿名回复</li><!-- ENDIF postAnonymous -->
+<!-- ELSE -->
+<li><label>&nbsp;</label><span id="loginStateInfo"><!-- IF loginArr.name -->{loginArr.name}，您未登录。<!-- ELSE -->您未登录，帖子将以匿名回复。<!-- ENDIF loginArr.name --></span><a href="./anonymity.php?height=139&width=303" class="thickbox" title="游客昵称设置">设置昵称</a> | <a href="./login.php?height=142&width=308" class="thickbox" title="登录到{siteName}">登录</a> | <a href="./register.php?height=216&width=296&modal=true" class="thickbox">注册</a></li>
+<!-- ENDIF loginArr.state -->
+<li style="display:none;"><input type="hidden" id="title" name="title" maxlength="32" value="回复：{topicArr.subject}" /></li>
+<li><label>回复内容：</label><div class="ft_l"><div class="bar_text"><div class="bar_new_opera"><div id="ed_ins_face" class="face img"></div><div id="ed_ins_pic" class="pic img"></div><div id="ed_ins_vid" class="video img"></div></div><textarea name="content" id="ed_text_area" rows="11"<!-- IF groupArr.verify=="1" --> onfocus="show_verify_image('reply');"<!-- ENDIF groupArr.verify -->></textarea></div><div class="bar_text_opera"><span class="ft_r"><span id="ed_more_rows" class="add">加大</span><span id="ed_less_rows" class="plus">减小</span></span></div></div></li>
+<!-- IF groupArr.verify=="1" -->
+<li id="verify_div" style="clear:both;display:none"><label>验 证 码：</label>
+<table width="230" cellpadding="0" cellspacing="0" class="bar_codet">
+<tr>
+<td colspan="2" valign="middle"><input type="text" name="verifyNum" class="disableAutoComplete bar_code" style="color:#666;" value="输入图中字符，不区分大小写" onfocus="if (this.value.length > 4) this.value='';this.style.color='';" /></td>
+</tr>
+<tr>
+<td width="138" valign="middle" id="verify_cell"></td>
+<td valign="middle" id="retry_cell"></td>
+</tr>
+</table>
+</li>
+<!-- ENDIF groupArr.verify -->
+<li class="bd_t1" style="clear:left">
+<label>&nbsp;</label>
+<input type="submit" id="btn" name="btn" class="btn_sub" value="确认回复" />
+<span class="bar_new_txt">快捷键：Ctrl+Enter</span>
+</li>
+</ul>
+</form>
+<div class="k"></div>
+</div>
+</div>
+<!-- ENDIF topicArr.lockout -->
+</div>
+<div id="rightmain">
+<div class="bd_l2">
+<input name="dingyue" type="button" value="" class="dingyue" onclick="barRss({ForumArr.fid});" />
+<!-- IF otherTopic -->
+<h1>其它帖子</h1>
+<ul class="relate">
+<!-- BEGIN otherTopic -->
+<li><a href="{rewrite_topic:tid}" title="{title}" target="_blank">{subject}</a><p>点击:{views} / 回复:{replies}</p></li>
+<!-- END otherTopic -->
+</ul>
+<!-- ENDIF otherTopic -->
+</div>
+</div>
+</div>
+<!-- IF topicArr.lockout=="0" -->
+	<!-- INCLUDE edit_insert.html -->
+<!-- ENDIF topicArr.lockout -->
+<script type="text/javascript"> 
+$(function(){
+	$("img.userimg").load(function(){if (this.width>680) this.width=680; this.style.visibility='visible';}).trigger('load');
+	<!-- IF topicArr.lockout=="0" -->postBind();<!-- ENDIF topicArr.lockout -->
+	topicstat({topicArr.tid});
+});
+</script>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

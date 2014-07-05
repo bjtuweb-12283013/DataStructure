@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>用户组_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>用户组</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">用户组</div>
+		<div class="namecont">
+			<form name="groupForm" id="groupForm" method="post" target="sypost" action="./user_group.php?action=update">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" align="center"><strong>&nbsp;</strong></td>
+			<td width="30%" align="center"><strong>用户组名称</strong></td>
+			<td width="15%" align="center"><strong>允许主题帖</strong></td>
+			<td width="15%" align="center"><strong>允许回帖</strong></td>
+			<td width="15%" align="center"><strong>发帖验证码</strong></td>
+			<td width="15%" align="center"><strong>上传图片</strong></td>
+			</tr>
+			<!-- BEGIN userGroup -->
+			<tr>
+			<td class="td2" align="center">
+			<input type="text" name="ID[]" value="{ROWCNT}" class="ipt" readonly style="width:25px;background:#f0f0f0;">
+			</td>
+			<td align="center">
+			<input type="text" name="NAME[]" value="{name}" maxlength="6" class="ipt"<!-- IF ROWCNT>="4" --> readonly<!-- ENDIF ROWCNT --> style="width:95px;<!-- IF ROWCNT>="4" -->background:#f0f0f0;<!-- ENDIF ROWCNT -->">
+			</td>
+			<td align="center">
+			<select name="TOPIC[]">
+			<option value="1"<!-- IF topic=="1" --> selected<!-- ENDIF topic -->>允许</option>
+			<option value="0"<!-- IF topic=="0" --> selected<!-- ENDIF topic -->>禁止</option>
+			</select>
+			</td>
+			<td align="center">
+			<select name="REPLY[]">
+			<option value="1"<!-- IF reply=="1" --> selected<!-- ENDIF reply -->>允许</option>
+			<option value="0"<!-- IF reply=="0" --> selected<!-- ENDIF reply -->>禁止</option>
+			</select>
+			</td>
+			<td align="center">
+			<select name="VERIFY[]">
+			<option value="1"<!-- IF verify=="1" --> selected<!-- ENDIF verify -->>开启</option>
+			<option value="0"<!-- IF verify=="0" --> selected<!-- ENDIF verify -->>关闭</option>
+			</select>
+			</td>
+			<td align="center">
+			<select name="UPLOAD[]">
+			<option value="1"<!-- IF upload=="1" --> selected<!-- ENDIF upload -->>允许</option>
+			<option value="0"<!-- IF upload=="0" --> selected<!-- ENDIF upload -->>禁止</option>
+			</select>
+			</td>
+			</tr>
+			<tr class="td3"><td colspan="5"></td></tr>
+			<!-- END userGroup -->
+			<tr><td colspan="5" align="center"><input type="submit" value="修 改" class="sub"></td></tr>
+			<tr><td colspan="5" class="td2">&nbsp;</td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

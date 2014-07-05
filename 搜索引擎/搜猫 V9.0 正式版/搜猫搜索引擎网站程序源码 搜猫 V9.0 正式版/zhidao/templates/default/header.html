@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<title>{$title}</title>
+<meta name="description" content="{$meta_description}" />
+<meta name="keywords" content="{$meta_keywords}" />
+<link href="{$web_path}{$styledir}/default.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$web_path}js/base.js"></script>
+<script type="text/javascript" src="{$web_path}include/functions.js"></script>
+<script type="text/javascript" src="{$web_path}include/xmlhttp.js"></script>
+<script type="text/javascript">
+function limit_words(varfield,obj_str,limit_len)
+{
+    var leftchars = get_left_chars(varfield,limit_len);
+    if (leftchars >= 0)
+    {   
+    	return true;
+    }
+    else
+    {
+       ls_str = {lang warning_info_lang};
+       window.alert(ls_str);
+       return false;     
+    } 
+    return true;
+}
+function search_submit(f)
+{
+	if(f.word.value.length<2)
+	{
+		alert("{lang warning_ques_short}");
+		return false;
+	}
+}
+function ask_submit()
+{
+	var word=document.wordform.word.value;
+	location.href="{$web_path}ask.php?word="+word;
+}
+function parse_message(data)
+{
+	var did=document.getElementById("newmessagetip");
+	if(data)
+	{
+		if(data >=1)
+		{
+			did.innerHTML='&nbsp;&nbsp;<a href="my.php?command=mymessage"><font size="2" color="red">{lang menu_have_newmsg}</font></a>&nbsp;&nbsp;';
+			
+		}
+		else
+		{
+			did.innerHTML='';
+		}
+	}
+	else
+	{
+		did.innerHTML='<font size="2" color="red">{lang warning_msg_cheching}</font>';
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="main">
+<div id="usrbar">
+<nobr>
+<script type="text/javascript">
+var cyask_user='{$cyask_user}';
+if(cyask_user)
+{
+	document.write('<a href="../">返回首页</a>&nbsp;|欢迎回来&nbsp;<strong>'+cyask_user+'</strong>&nbsp;<span id="newmessagetip"></span>&nbsp;<a href="{$web_path}my.php">{lang menu_usercenter}</a>&nbsp;|&nbsp;<a href="{$web_path}login.php?command=logout&url='+StrCode(location.href)+'">{lang button_logout}</a>');
+	XMLHttp.getR('{$web_path}process/msgcheck.php',parse_message,'text');
+	var adminid='{$cyask_adminid}';
+	if(adminid==1)
+	{
+		document.write('&nbsp;|&nbsp;<a href="{$web_path}admin.php">{lang menu_admincenter}</a>');
+	}
+}
+else
+{
+	document.write('<a href="../">返回首页</a>&nbsp;|&nbsp;<a href="{$web_path}login.php?url='+StrCode(location.href)+'">{lang button_login}</a>&nbsp;|&nbsp;<a href="{$web_path}register.php?url='+StrCode(location.href)+'">{lang button_regist}</a>');
+}
+</script>
+</nobr>
+</div>
+<div id="head">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td valign="top" width="32"><a href="{$web_path}"><img src="{$web_path}{$styledir}/1000ask.gif" width="147" height="58" border="0" /></a></td>
+    <TD width="1132">
+      <DIV class=Tit><SPAN class=B>问题互助</SPAN></DIV>
+      <FORM name=wordform onSubmit="return search_submit(this)" 
+      action=search.php method=get>
+      <DIV class=s_search_form><INPUT type=hidden name=sp> <INPUT type=hidden 
+      name=ch> <INPUT class=search_input id=sb 
+      onkeydown=userControl(this.value,this.id,event); 
+      onkeyup=userInput(this.value,this.id,event); maxLength=100 name=word 
+      autocomplete="off"></INPUT> <INPUT class=search_bt type=submit value=搜索答案 name=search> <INPUT class=ask_bt onclick=ask_submit(); type=button value="提 问" name=ask></INPUT> 
+      </DIV></FORM></TD></TR></TBODY></TABLE></DIV><BR>

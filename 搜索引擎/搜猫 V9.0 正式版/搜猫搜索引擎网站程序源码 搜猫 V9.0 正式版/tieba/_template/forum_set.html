@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{ForumArr.name}, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="{ForumArr.name}, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<title>模块管理_{ForumArr.name}_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html -->
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a><!-- IF ForumArr.classid>"0" -->
+ &gt; <a href="{rewrite_category:ForumArr.catalogid}">{ForumArr.catalogname}</a> &gt; <a href="{rewrite_category:ForumArr.classid}">{ForumArr.classname}</a><!-- ENDIF ForumArr.classid --> &gt; <a href="{rewrite_forum:ForumArr.fid}">{ForumArr.name}</a></div>
+<div id="B">
+	<!-- INCLUDE forum_manage_left.html --> 
+	<div id="R">
+		<div class="nameset">吧简介 ◎ 吧公告</div>
+		<div class="namecont">
+			<form name="forum_set" method="post" target="sypost" action="./forum_set.php?fid={ForumArr.fid}&do=update">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr>
+			<td align="right" width="13%">吧 名 称：</td>
+			<td>{ForumArr.name}</td>
+			</tr>
+			<tr>
+			<td align="right" valign="top">吧 简 介：</td>
+			<td>
+			不超过90个字<br>
+			<textarea name="intro" class="bar_inp" rows="8" cols="">{ForumArr.intro}</textarea>
+			</td>
+			</tr>
+			<tr>
+			<td></td>
+			<td><input type="submit" value="提 交" class="btn_login"></td>
+			</tr>
+			</table>
+			</form>
+			<iframe src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

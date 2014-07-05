@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>友情链接_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>友情链接</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">友情链接</div>
+		<div class="namecont">
+			<form name="Form1" id="Form1" method="post" target="sypost" action="./set_links.php?action=update">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" align="center"><strong>&nbsp;</strong></td>
+			<td align="center"><strong>网站名称</strong></td>
+			<td align="center"><strong>链接地址</strong></td>
+			</tr>
+			<!-- BEGIN friendLink -->
+			<tr id="TR1_{ROWCNT}">
+			<td class="td2" align="center">
+				<a href="javascript:;" onclick="$('#TR1_{ROWCNT}').remove();$('#TR2_{ROWCNT}').remove();">移除</a>
+				<input type="hidden" name="ID[]" value="{ROWCNT}">
+			</td>
+			<td class="td2" align="center">
+				<input type="text" name="NAME[]" value="{name}" maxlength="15" class="ipt" style="width:220px;">
+			</td>
+			<td class="td2" align="center">
+				<input type="text" name="URL[]" value="{url}" maxlength="150" class="ipt" style="width:320px;">
+			</td>
+			</tr>
+			<tr id="TR2_{ROWCNT}" class="td3"><td colspan="3"></td></tr>
+			<!-- END friendLink -->
+			<tr>
+			<td class="td2" align="center">
+				添加
+				<input type="hidden" name="ID[]" value="">
+			</td>
+			<td class="td2" align="center">
+				<input type="text" name="NAME[]" value="" maxlength="15" class="ipt" style="width:220px;">
+			</td>
+			<td class="td2" align="center">
+				<input type="text" name="URL[]" value="" maxlength="150" class="ipt" style="width:320px;">
+			</td>
+			</tr>
+			<tr class="td3"><td colspan="3"></td></tr>
+			<tr><td colspan="3" align="center"><input type="submit" value="更 新" class="sub"></td></tr>
+			<tr><td colspan="3" class="td2">&nbsp;</td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

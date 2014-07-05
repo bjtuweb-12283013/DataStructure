@@ -1,0 +1,55 @@
+﻿/* reset */
+dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;font-weight:400;}
+h1,h2,h3,h4,h4,h5{margin:0;padding:0;}
+form{border:none}
+*{margin:0;padding:0}
+body{margin:0;padding:0;font:12px/160% Verdana,Arial,sans-serif,"Times New Roman","宋体";color:#333;background-color:#fff;}
+html,body{height:100%;overflow:hidden;zoom:1}/*高度自适应*/
+ul,ol{list-style:none;}
+select{font-size:12px;}
+@media all and (min-width:0px){select{height:20px;}}
+fieldset,img{border:0;}
+button{cursor:pointer;*cursor:hand;}
+div,p{display:block;}
+
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{/*text-align:left;*/}
+
+a img{border:none;}
+
+/* 搜索引擎 */
+.soWrap{background:url(images/sobg.gif) bottom center no-repeat;}
+#toolbar {margin:0px auto;width:700px;height:52px; text-align:center;}
+#toolbar a{display:block;width:48px;height:12px;line-height:12px;background:url(images/font1.gif) no-repeat;text-indent:-5000px;}
+#toolbar .active a{color:#000;text-decoration:none;background:url(images/font2.gif) no-repeat;}
+#toolbar #web-tab a{background-position:0 0;}
+#toolbar #video-tab a{background-position:0 -14px;}
+#toolbar #mp3-tab a{background-position:0 -28px;}
+#toolbar #pic-tab a{background-position:0 -43px;}
+#toolbar #buy-tab a{background-position:0 -57px;}
+#toolbar #book-tab a{background-position:0 -72px;}
+#toolbar #map-tab a{background-position:0 -86px;}
+#toolbar #news-tab a{background-position:0 -100px;}
+#toolbar #know-tab a{background-position:0 -115px;}
+#toolbar #widget-tab a{background-position:0 -129px;}
+
+#toolbar LI {FLOAT: left;margin:10px;}
+#toolbar LI#sites-tab {	WIDTH: 122px}
+#toolbar LI#editor-tab {WIDTH: 95px}
+#toolbar LI#preview-tab { WIDTH: 106px}
+#toolbar LI#css-tab {WIDTH: 102px}
+#frame {MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 700px; POSITION: relative}
+#frame DIV.button {	POSITION: absolute; TOP: 40%}
+#scroller {	BORDER-TOP: #fff 1px solid; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 720px}
+#content {WIDTH: 8000px;}
+.section {FLOAT: left; MARGIN: 10px 30px 30px; WIDTH: 700px;}
+
+	.hbi_search h3{font-size:13px;color:#C8182D;font-weight:600;}
+	.searchBox{margin-left:70px;}
+	.searchEngine{overflow:hidden;width:400px;padding-left:20px;}
+	.searchEngine li{float:left;}
+	.searchEngine li a{color:#C8182D;display:block;width:60px;height:30px;text-align:center;text-decoration:none;}
+	.searchEngine li a.currentEngine{color:#fff;background:url(images/search_engine.gif) top center no-repeat;}
+	.searchEngine li a.currentEngine:hover{color:#fff !important;}
+	.searchCont input{border:1px solid #C8182D;width:395px;font-size:13px;padding:5px;vertical-align:middle;}
+	.searchCont img{vertical-align:middle;margin-left:5px;cursor:pointer;}

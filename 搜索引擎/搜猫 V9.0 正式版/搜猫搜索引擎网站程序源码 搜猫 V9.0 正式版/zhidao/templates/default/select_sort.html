@@ -1,0 +1,132 @@
+<html>
+<head>
+<title>{lang ques_update_sort}</title>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<link href="{$styledir}/1000ask.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<table width="399" border="0" align="center" cellpadding="0" cellspacing="0">
+<form name="fask" onSubmit="return false;" method="post">
+<input type="hidden" name="cid" />
+<input type="hidden" name="cname" />
+<tr><td height="25" class="t3 bcb bgb" nowrap>{lang menu_sort}:</td></tr>
+<tr><td class="b3 bcb">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td height="30" class="f14">{lang ques_sort_prompt}</td></tr>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><SELECT id=ClassLevel1 style="WIDTH: 125px" size=13 name=ClassLevel1><OPTION selected></OPTION></SELECT></td>
+<td width="20"><div align="center"><B>¡ú</B></div></td>
+<td><SELECT id=ClassLevel2 style="WIDTH: 90px" size=13 name=ClassLevel2><OPTION selected></OPTION></SELECT></td>
+<td width="20"><div align="center" id=jiantou><B>¡ú</B></div></td>
+<td><SELECT id=ClassLevel3 style="WIDTH: 90px" size=13 onChange="getCidValue();" name=ClassLevel3><OPTION selected></OPTION></SELECT></td>
+</tr>
+</table>
+<script type="text/javascript">
+function putCid()
+{
+ 	window.opener.document.getElementById("classid").innerHTML = '<input type="radio" checked name="ra" value="'+document.fask.cid.value+'">'+document.fask.cname.value+'<br />';
+	self.close();
+}
+function getCidValue()
+{
+	var _cl1 = document.fask.ClassLevel1;
+	var _cl2 = document.fask.ClassLevel2;
+	var _cl3 = document.fask.ClassLevel3;
+	var _cid = document.fask.cid;
+	var _cname = document.fask.cname;
+	if(_cl1.value!=0) {_cid.value = _cl1.value; _cname.value = _cl1.options[_cl1.selectedIndex].text;}
+	if(_cl2.value!=0) {_cid.value = _cl2.value; _cname.value += "-&gt;"+_cl2.options[_cl2.selectedIndex].text;}
+	if(_cl3.value!=0) {_cid.value = _cl3.value; _cname.value += "-&gt;"+_cl3.options[_cl3.selectedIndex].text;}
+}
+var g_ClassLevel1;
+var g_ClassLevel2;
+var g_ClassLevel3;
+var class_level_1=new Array(
+{$class1}
+);
+var class_level_2=new Array(
+{$class2}
+);
+var class_level_3=new Array(
+{$class3}
+);
+function FillClassLevel1(ClassLevel1)
+{
+    for(i=0; i<class_level_1.length; i++){
+        ClassLevel1.options[i] = new Option(class_level_1[i][1], class_level_1[i][0]);
+    }
+    ClassLevel1.options[0].selected = true;
+    ClassLevel1.length = i;
+}
+function FillClassLevel2(ClassLevel2, class_level_1_id)
+{
+    ClassLevel2.options[0] = new Option("{lang button_noselect}", "");
+    count = 1;
+    for(i=0; i<class_level_2.length; i++){
+        if(class_level_2[i][0].toString() == class_level_1_id){
+            ClassLevel2.options[count] = new Option(class_level_2[i][2], class_level_2[i][1]);
+            count = count+1;
+        }
+    }
+    ClassLevel2.options[0].selected = true;
+    ClassLevel2.length = count;
+}
+function FillClassLevel3(ClassLevel3, class_level_2_id)
+{
+    ClassLevel3.options[0] = new Option("{lang button_noselect}", "");
+    count = 1;
+    for(i=0; i<class_level_3.length; i++){
+        if(class_level_3[i][0].toString() == class_level_2_id){
+            ClassLevel3.options[count] = new Option(class_level_3[i][2], class_level_3[i][1]);
+            count = count+1;
+        }
+    }
+    ClassLevel3.options[0].selected = true;
+    ClassLevel3.length = count;       
+}
+function ClassLevel2_onchange()
+{
+    FillClassLevel3(g_ClassLevel3, g_ClassLevel2.value); 
+    if (g_ClassLevel3.length <= 1)
+    {  
+     g_ClassLevel3.style.display = "none";
+	 document.getElementById("jiantou").style.display = "none";
+    }
+    else
+    {
+     g_ClassLevel3.style.display = "";     
+	 document.getElementById("jiantou").style.display = "";	 
+    }       
+	getCidValue();
+}
+function ClassLevel1_onchange()
+{
+	FillClassLevel2(g_ClassLevel2, g_ClassLevel1.value);
+    ClassLevel2_onchange();
+    getCidValue();	
+}
+function InitClassLevelList(ClassLevel1, ClassLevel2, ClassLevel3)
+{
+	g_ClassLevel1=ClassLevel1;
+    g_ClassLevel2=ClassLevel2;
+    g_ClassLevel3=ClassLevel3;
+    g_ClassLevel1.onchange = Function("ClassLevel1_onchange();");
+    g_ClassLevel2.onchange = Function("ClassLevel2_onchange();");
+    FillClassLevel1(g_ClassLevel1);
+    ClassLevel1_onchange();
+}
+InitClassLevelList(document.fask.ClassLevel1, document.fask.ClassLevel2, document.fask.ClassLevel3);
+getCidValue();
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td height="40">
+<input type="button" name="Submit" value="{lang button_submit}" onClick="putCid();" class="bnsrh" />
+<input type=hidden name=word value="" />
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

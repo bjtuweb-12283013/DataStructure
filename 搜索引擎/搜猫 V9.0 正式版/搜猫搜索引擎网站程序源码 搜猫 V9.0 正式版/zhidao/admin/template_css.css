@@ -1,0 +1,276 @@
+#wrapper {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px auto; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+#header {
+	BACKGROUND-POSITION: right top; BORDER-BOTTOM: #80b5d7 4px solid; BACKGROUND-COLOR: #fff
+}
+#mambo {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../images/header_blue.jpg) #30569d no-repeat right top; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; POSITION: relative
+}
+#wrapper1 DIV {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 5px; BORDER-TOP: 0px; DISPLAY: inline; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; MARGIN: 0px auto; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; COLOR: #333; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #006699
+}
+A {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #30569d; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}
+A.toolbar {
+	COLOR: #808080; TEXT-DECORATION: none
+}
+A.toolbar:hover {
+	COLOR: #ff6600
+}
+A.toolbar:active {
+	COLOR: #ff9900
+}
+.pagenav {
+	FONT-SIZE: 10px
+}
+A.pagenav {
+	FONT-SIZE: 10px; COLOR: #808080; TEXT-DECORATION: underline
+}
+A.pagenav:hover {
+	FONT-SIZE: 10px; COLOR: #fff
+}
+A.pagenav:active {
+	FONT-SIZE: 10px; COLOR: #333
+}
+.sectionname {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #ff9900; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.button {
+	BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #d5d5d5 1px solid; FONT-WEIGHT: bold; BORDER-LEFT: #d5d5d5 1px solid; COLOR: #333; BORDER-BOTTOM: #808080 1px solid;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+}
+.inputbox {
+	FONT-SIZE: 11px; Z-INDEX: -3; BACKGROUND: #e9eff5; COLOR: blue; FONT-FAMILY: Courier, Helvetica, sans-serif
+}
+.text_area {
+	BORDER-RIGHT: #999 1px solid; BORDER-TOP: #999 1px solid; FONT-SIZE: 11px; Z-INDEX: -3; BACKGROUND: #e9eff5; BORDER-LEFT: #999 1px solid; COLOR: blue; BORDER-BOTTOM: #999 1px solid; FONT-FAMILY: Courier, Helvetica, sans-serif
+}
+INPUT {
+	BORDER-RIGHT: #cccccc 2px solid; BORDER-TOP: #f5f5f5 2px solid; FONT-SIZE: 11px; BORDER-LEFT: #f5f5f5 2px solid; BORDER-BOTTOM: #cccccc 2px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #EEF8FD
+}
+TEXTAREA {
+	FONT-SIZE: 11px; Z-INDEX: -3; COLOR: blue
+}
+SELECT {
+	FONT-SIZE: 11px; Z-INDEX: -3; COLOR: blue;FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+}
+.small {
+	FONT-SIZE: 10px; COLOR: #ff9900; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.smallgrey {
+	FONT-SIZE: 10px; COLOR: #999
+}
+.error {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #c40000
+}
+.contentheading {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.componentheading {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.moduleheading {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+TABLE.menubar {
+	WIDTH: 100%
+}
+TD {
+	FONT-SIZE: 11px; HEIGHT:20;
+}
+TABLE.adminheading {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 18px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; WIDTH: 100%; COLOR: #ff9e31; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #fff; TEXT-ALIGN: left
+}
+TABLE.adminheading TH {
+	PADDING-LEFT: 50px; BACKGROUND: url(../../../images/asterisk.png) no-repeat left 50%; WIDTH: 99%; HEIGHT: 50px
+}
+TABLE.adminheading TH.checkin {
+	BACKGROUND: url(../../../images/checkin.png) no-repeat left 50%
+}
+TABLE.adminheading TH.cpanel {
+	BACKGROUND: url(../../../images/cpanel.png) no-repeat left 50%
+}
+TABLE.adminheading TH.config {
+	BACKGROUND: url(../../../images/config.png) no-repeat left 50%
+}
+TABLE.adminheading TH.modules {
+	BACKGROUND: url(../../../images/module.png) no-repeat left 50%
+}
+TABLE.adminheading TH.menus {
+	BACKGROUND: url(../../../images/menu.png) no-repeat left 50%
+}
+TABLE.adminheading TH.trash {
+	BACKGROUND: url(../../../images/trash.png) no-repeat left 50%
+}
+TABLE.adminheading TH.user {
+	BACKGROUND: url(../../../images/user.png) no-repeat left 50%
+}
+TABLE.adminheading TH.inbox {
+	BACKGROUND: url(../../../images/inbox.png) no-repeat left 50%
+}
+TABLE.adminheading TH.msgconfig {
+	BACKGROUND: url(../../../images/message_config.png) no-repeat left 50%
+}
+TABLE.adminheading TH.langmanager {
+	BACKGROUND: url(../../../images/langmanager.png) no-repeat left 50%
+}
+TABLE.adminheading TH.mediamanager {
+	BACKGROUND: url(../../../images/mediamanager.png) no-repeat left 50%
+}
+TABLE.adminheading TH.impressions {
+	BACKGROUND: url(../../../images/impressions.png) no-repeat left 50%
+}
+TABLE.adminheading TH.browser {
+	BACKGROUND: url(../../../images/browser.png) no-repeat left 50%
+}
+TABLE.adminheading TH.searchtext {
+	BACKGROUND: url(../../../images/searchtext.png) no-repeat left 50%
+}
+TABLE.adminheading TH.templates {
+	BACKGROUND: url(../../../images/templatemanager.png) no-repeat left 50%
+}
+TABLE.adminheading TH.massemail {
+	BACKGROUND: url(../../../images/massemail.png) no-repeat left 50%
+}
+TABLE.adminheading TH.frontpage {
+	BACKGROUND: url(../../../images/frontpage.png) no-repeat left 50%
+}
+TABLE.adminheading TH.sections {
+	BACKGROUND: url(../../../images/sections.png) no-repeat left 50%
+}
+TABLE.adminheading TH.edit {
+	BACKGROUND: url(../../../images/addedit.png) no-repeat left 50%
+}
+TABLE.adminheading TH.categories {
+	BACKGROUND: url(../../../images/categories.png) no-repeat left 50%
+}
+TABLE.adminheading TH.install {
+	BACKGROUND: url(../../../images/install.png) no-repeat left 50%
+}
+TABLE.adminheading TH.dbbackup {
+	BACKGROUND: url(../../../images/backup.png) no-repeat left 50%
+}
+TABLE.adminheading TH.dbrestore {
+	BACKGROUND: url(../../../images/dbrestore.png) no-repeat left 50%
+}
+TABLE.adminheading TH.dbquery {
+	BACKGROUND: url(../../../images/query.png) no-repeat left 50%
+}
+TABLE.adminheading TH.info {
+	BACKGROUND: url(../../../images/systeminfo.png) no-repeat left 50%
+}
+TABLE.adminheading TD {
+	COLOR: #000
+}
+TABLE.adminlist {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: #cccccc 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #ffffff; border-spacing: 0px
+}
+TABLE.adminlist TH {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 11px; BACKGROUND: url(../images/background.gif); PADDING-BOTTOM: 2px; MARGIN: 0px; COLOR: #ffffff; PADDING-TOP: 6px; HEIGHT: 20px
+}
+TABLE.adminlist TH.title {
+	TEXT-ALIGN: left
+}
+TABLE.adminlist TH A {
+	COLOR: #ff9900
+}
+TABLE.adminlist TR.row0 {
+	BACKGROUND-COLOR: #f5f5f5
+}
+TABLE.adminlist TR.row1 {
+	BACKGROUND-COLOR: #fff
+}
+TABLE.adminlist TD {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; BORDER-BOTTOM: #e5e5e5 1px solid
+}
+TABLE.adminlist TR.row0:hover {
+	BACKGROUND-COLOR: #f1f1f1
+}
+TABLE.adminlist TR.row1:hover {
+	BACKGROUND-COLOR: #f1f1f1
+}
+TABLE.adminlist TD.options {
+	FONT-SIZE: 8px; BACKGROUND-COLOR: #ffffff
+}
+SELECT.options {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 20px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid
+}
+INPUT.options {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 10px; BORDER-LEFT: #999999 1px solid; BORDER-BOTTOM: #999999 1px solid
+}
+TABLE.adminform {
+	BORDER-RIGHT: #d5d5d5 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #d5d5d5 1px solid; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #d5d5d5 1px solid; WIDTH: 100%; PADDING-TOP: 10px; BORDER-BOTTOM: #d5d5d5 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #f5f5f5
+}
+TABLE.adminform TR.row0 {
+	BACKGROUND-COLOR: #f5f5f5
+}
+TABLE.adminform TR.row1 {
+	BACKGROUND-COLOR: #eeeeee
+}
+TABLE.adminform TH {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; FONT-SIZE: 12px; BACKGROUND: url(../images/background.gif); PADDING-BOTTOM: 2px; COLOR: #ffffff; PADDING-TOP: 6px; HEIGHT: 25px; TEXT-ALIGN: left
+}
+TABLE.adminform TD {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; PADDING-TOP: 3px; TEXT-ALIGN: left
+}
+TABLE.adminform TD.editor {
+	FONT-SIZE: 9px
+}
+TABLE.cpanel TD {
+	TEXT-ALIGN: center
+}
+FORM {
+	MARGIN: 0px
+}
+.ontab {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 14%; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffae00; TEXT-ALIGN: center
+}
+.offtab {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 14%; CURSOR: hand; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #e5e5e5; TEXT-ALIGN: center
+}
+.tabpadding {
+	
+}
+.tabheading {
+	FONT-SIZE: 10px; COLOR: #fff; BACKGROUND-COLOR: #ffae00; TEXT-ALIGN: left
+}
+.pagetext {
+	DISPLAY: none; VISIBILITY: hidden; POSITION: relative; TOP: 0px
+}
+.menubackgr {
+	BACKGROUND: #f1f3f5; BORDER-BOTTOM: #cccccc 1px solid
+}
+.menudottedline {
+	BORDER-TOP: #ffffff 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f1f3f5
+}
+.pathway {
+	BORDER-RIGHT: 1px inset; PADDING-RIGHT: 2px; BORDER-TOP: 1px inset; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 3px; BORDER-LEFT: 1px inset; WIDTH: 95%; PADDING-TOP: 2px; BORDER-BOTTOM: 1px inset; BACKGROUND-COLOR: #fff
+}
+.adminheader {
+	FONT-SIZE: 24px; COLOR: #ff9900
+}
+.message {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff9900; FONT-FAMILY: "Trebuchet MS", Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+.main {
+	BORDER-RIGHT: #d5d5d5 1px solid; BORDER-TOP: #d5d5d5 1px solid; BORDER-LEFT: #d5d5d5 1px solid; WIDTH: 98%; BORDER-BOTTOM: #d5d5d5 1px solid
+}
+.quote {
+	BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; MARGIN: 4px; BORDER-LEFT: #cccccc 1px solid; COLOR: #254d78; PADDING-TOP: 10px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #e9ecef
+}
+#msviLocalToolbar {
+	PADDING-RIGHT: 0px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 100%; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #999 1px solid
+}
+.nav_cell_title {
+FONT-SIZE: 18pt;
+}

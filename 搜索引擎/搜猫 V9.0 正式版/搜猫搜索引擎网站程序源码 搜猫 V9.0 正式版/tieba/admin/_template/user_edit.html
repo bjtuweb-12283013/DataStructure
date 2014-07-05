@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>修改会员信息_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/form.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$("#usergroup").val({userArr.groupid});
+	$('#eForm').ajaxForm(function(m){alert(m)});
+});
+</script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <a href="./user_list.php">会员管理</a> &gt; <b>修改会员信息</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">修改会员信息</div>
+		<div class="namecont">
+			<form name="eForm" id="eForm" method="post" target="sypost">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr>
+			<td align="right">用 户 名：</td>
+			<td>
+				{userArr.name}
+			</td>
+			</tr>
+			<tr>
+			<td align="right">用户密码：</td>
+			<td>
+				<input type="text" id="userpwd" name="userpwd" class="ipt" value="" maxlength="18" />
+				<span style="margin-left:10px;color:#666;font-family:verdana;">不改请留空</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right" width="30%">用 户 组：</td>
+			<td>
+				<select id="usergroup" name="usergroup" />
+				<!-- BEGIN userGroup -->
+				<!-- IF ROWCNT>="1" -->
+				<option value="{ROWCNT}">{name}</option>
+				<!-- ENDIF ROWCNT -->
+				<!-- END userGroup -->
+				</select>			
+			</td>
+			</tr>
+			<tr>
+			<td align="right">用户积分：</td>
+			<td>
+				<input type="text" id="userintegral" name="userintegral" class="ipt" value="{userArr.integral}" maxlength="10" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right"></td>
+			<td>
+				<input type="submit" value="修 改" class="sub">
+				&nbsp;&nbsp;
+				<input type="button" onclick="history.go(-1);" value="返 回" class="sub">
+			</td>
+			</tr>
+			<tr><td height="30" colspan="2"></td></tr>
+			</table>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

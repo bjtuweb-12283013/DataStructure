@@ -1,0 +1,137 @@
+a,img{border:0 none}
+ul,li,p,h5,h4,input,form{margin:0;padding:0}
+h5,h4{text-indent:-4444444em;}
+h5{font-size:14px}
+ul,li{list-style:none;}
+body{font-family:arial,'ËÎÌו';font-size:12px;margin:0 auto; padding:0;background:#eaeaea;}
+#head{text-align:center; background:url(http://open.baidu.com/cms/image/newIndex/ala_head_bg.gif) repeat-x;}
+#logo{width:962px;margin:0 auto;position:relative;}
+#logo .user_help{position:absolute;top:0px;right:0px;}
+#logo .user_help span{margin:0 3px;}
+#logo .user_help span a{text-decoration:none;}
+#logoContent{width:100%;background:#fff;height:50px;padding:10px 0;}
+#content{width:962px;margin:10px auto 0}
+#wraper{background:#fff;width:942px;padding:10px;float:left;display:inline;}
+#conHead{float:left;}
+#instrAndJoin{width:706px;float:left;}
+#introduct{border:1px solid #c1d9ea;padding:2px 0 0 2px;width:704px;float:left}
+#tab {float:left; width:455px;height:286px;z-index:10;}
+#tab div{z-index:10;}
+#tab ul{position:absolute;z-index:10;}
+#tab ul li{float:left;width:151px;height:37px;margin:2px 2px 2px 0;cursor:pointer;z-index:100;display:inline; position:relative}
+#xq0{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg21.gif) no-repeat}
+#zy1{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg22.gif) no-repeat}
+#tab #zx2{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg23.gif) no-repeat;width:149px;margin-right:0;}
+#tab #xq0.now{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg11.gif) no-repeat;margin-top:-10px; height:49px}
+#tab #zy1.now{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg12.gif) no-repeat;margin-top:-10px; height:49px}
+#tab #zx2.now{background:url(http://open.baidu.com/cms/image/newIndex/ala_tab_bg13.gif) no-repeat;margin-top:-10px; height:49px}
+#intro{float:left; padding:12px 12px 0 17px;width:218px;}
+#intro h5{color:#225da1; padding-left:32px; background: url(http://open.baidu.com/cms/image/newIndex/data_intro_title.gif) no-repeat 0 0;margin-bottom:13px;}
+#intro  p{margin-bottom:10px;line-height:20px;color:#333;font-size:13px}
+#join{float:left;margin:32px 0 0 19px;width:684px; display:inline}
+#join div{width:430px; float:left}
+#join h5{width:408px;margin-bottom:9px;color:#004492; background:url(http://open.baidu.com/cms/image/newIndex/data_open_title.gif) no-repeat; height:22px; padding-left:22px}
+#join p{line-height:20px;margin-bottom:10px;color:#333;font-size:13px}
+#join p.join_us{text-indent:0}
+#join p a{background: url(http://open.baidu.com/cms/image/newIndex/ala_join_bg.gif) no-repeat 0 0; width:79px; height:20px;float:right; padding-left:6px; text-decoration:none; margin-top:-10px; color:#fff; font-size:12px}
+#join #app{margin:34px 0 0 10px;background:url(http://open.baidu.com/cms/image/newIndex/ala_open_appbg.jpg) no-repeat 0 0;height:109px;width:230px;}
+#join #app a{float:right; margin:80px 6px 0 0;}
+#loginAndQue{float:left; margin:0 0 0 15px;_margin-left:13px;}
+.login_container{width:217px;padding:1px;background-color:#fdfdfd;border:1px solid #c1d9ea;}
+.login_content{background-color:#f6f8fb;}
+.login_user_content{padding:8px 8px 8px 13px;border-bottom:1px solid #fdfdfd;}
+.bind_passport_tips{color:#353535;line-height:160%;}
+.bind_passport_tips a{color:#0801cd;}
+.login_user_content h2{color:#000;font-weight:bold;font-size:13px;margin:9px 0 2px 0;}
+#passport_login_container fieldset,#passport_login_container legend{border:0 none;margin:0;padding:0;}
+#passport_login_container fieldset legend{display:none;}
+.pass-server-error{color:#f00;}
+.pass-server-error,.pass-username,.pass-password,.pass-verifycode,.pass-mem_pass{margin:7px 0px 0px 0px;}
+.pass-mem_pass,.pass-submit{padding:0px 0px 0px 48px;}
+.pass-submit{margin:10px 0px 0px 0px;}
+.pass-username label,.pass-password label,.pass-verifycode label{width:48px;display:inline-block;}
+.pass-username input,.pass-password input{width:144px;height:18px;line-height:18px;border:1px solid #9cb6d3;}
+.pass-mem_pass label{margin:0px 0px 0px 3px;color:#777;vertical-align:top;}
+.pass-mem_pass input{*width:14px;*height:14px;}
+.pass-verifycode input{border:1px solid #9CB6D3;height:18px;line-height:18px;width:42px;}
+.pass-verifycode img{width:55px;margin:0 2px;height:25px;vertical-align:top;position:relative;top:-3px;}
+.pass-verifycode a{color:#0666c6;zoom:1;}
+.pass-submit button{cursor:pointer;width:67px;height:28px;display:inline-block;border:0 none;background:url(http://open.baidu.com/cms/image/newIndex/ala_login_op_buttons.gif) no-repeat 0px 0px;}
+.pass-submit button span{visibility:hidden;}
+.pass-submit a{margin:0px 0px 0px 7px;color:#0666c6;}
+.login_no_baidu_account{padding:5px;border-top:1px solid #c1d9ea;text-align:center;height:28px;line-height:28px;}
+.login_no_baidu_account a,.login_no_open_account a{width:79px;height:23px;line-height:23px;text-indent:-9999em;display:inline-block;background:url(http://open.baidu.com/cms/image/newIndex/ala_login_op_buttons.gif) no-repeat -67px -5px;}
+#hasCount{padding:5px 0 0 13px;}
+#hasCount p{color:#333;line-height:24px;}
+#hasCount .useName{font-weight:bold;}
+#hasCount p.ljsubmit{text-align:center;padding:9px 0 10px 0}
+#hasCount input.idx_go_btn{background:url(http://open.baidu.com/cms/image/newIndex/ala_login_atonce.gif) no-repeat 0 0; border:none;width:108px;height:27px;cursor:pointer;}
+#hasCount .login_logout{padding-left:48px;}
+#hasCount .login_logout a{color:#0666c6;}
+.bulAndQue h5{color:#1164a9;background:url(http://open.baidu.com/cms/image/newIndex/ala_right_tilte.gif) no-repeat 0 0; padding-left:20px; margin:10px 0 15px 0; width:198px; height:29px; line-height:29px}
+#question h5{background:url(http://open.baidu.com/cms/image/newIndex/ala_right_tilte1.gif) no-repeat 0 0;}
+.bulAndQue ul{padding-left:10px}
+.bulAndQue li{background:url(http://open.baidu.com/cms/image/newIndex/ala_right_bot.gif) no-repeat left center; padding-left:5px; }
+.bulAndQue li a{line-height:24px;color:#0666c6; background:url(http://open.baidu.com/cms/image/newIndex/ala_new_bg.gif) no-repeat right center; padding-right:28px}
+#question  li a{background:none}
+#question h5 {text-indent:0}
+#question h5 a{float:right;margin:7px 5px 0 0;}
+#source h4 {text-indent:0}
+#source h4 a{float:right;margin:5px 5px 0 0;}
+#source,#openSrc{float:left; width:940px}
+#source h4,#openSrc h4{ margin-top:21px;background:url(http://open.baidu.com/cms/image/newIndex/data_title_bg1.gif) no-repeat;font-size:14px;color:#fff; padding-left:20px;line-height:29px;
+height:29px}
+#openSrc h4{background:url(http://open.baidu.com/cms/image/newIndex/ala_title_bg.gif) no-repeat}
+#souceflash{margin-top:15px}
+#openSrc ul{margin:5px 0 0 7px;}
+#openSrc ul li{margin:6px 9px 0 0;display:inline;width:300px; height:171px; float:left;}
+#openSrc ul li.kf{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg1.png) no-repeat 0 0;}
+#openSrc ul li.rj{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg2.png) no-repeat 0 0;}
+#openSrc ul li.dm{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg3.png) no-repeat 0 0;}
+#openSrc ul li.zy{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg4.png) no-repeat 0 0;}
+#openSrc ul li.zp{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg5.png) no-repeat 0 0;}
+#openSrc ul li.sp{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg6.png) no-repeat 0 0;}
+#openSrc ul li.kd{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_bg7.png) no-repeat 0 0;}
+#openSrc ul li div h5{height:37px; line-height:37px; padding-left:13px;color:#f76300; font-size:18px}
+#openSrc ul li div div {float:right; width:196px; margin:19px 16px 0 0; display:inline}
+#openSrc ul li div div  p{line-height:20px;font-size:14px;color:#666;}
+#openSrc .detail{ margin:8px 4px 0 0;}
+#openSrc .detail a{background:url(http://open.baidu.com/cms/image/newIndex/ala_source_sub.gif) no-repeat; width:78px; height:26px;line-height:26px; text-align:center; text-decoration:none;color:#fff;float:right; text-indent:-44444em}
+#pro{float:left;}
+#pro h5{color:#fe6000;margin:20px 0 7px 0; line-height:25px; font-weight:normal; text-indent:0;}
+#pro p{line-height:20px; color:#333}
+#bz{background:url(http://open.baidu.com/cms/image/newIndex/ala_bz_bg.gif) no-repeat; width:924px;height:62px}
+#bz span{float:left; font-size:14px;margin-top:20px;color:#333;line-height:18px}
+#bz span a{color:#0666c6}
+#bz .bz1{margin-left:56px}
+#bz .bz2{margin-left:68px}
+#bz .bz3{margin-left:96px}
+#bz .bz4{margin:30px 0 0 100px}
+#bz .bz5{margin-left:98px}
+#join_site{float:left; margin-top:40px}
+#join_site h5{background: url(http://open.baidu.com/cms/image/newIndex/ala_site_title.gif) no-repeat; font-size:14px;color:#1164a9; width:908px;padding:0 0  10px 16px;border-bottom:1px solid #f0f0f9}
+#join_site  ul{margin-bottom:13px; float:left}
+#join_site  ul li{ float:left; margin:13px 18px 0 13px}
+#join_site p{background: url(http://open.baidu.com/cms/image/newIndex/ala_meg_bg.gif)  no-repeat left center;padding-left:32px;margin-bottom:4px;width:908px;float:left;height:27px;line-height:27px}
+#footer{width:940px;clear:both;border-top:1px solid #F0F0F9;color:#7777CC;margin:10px 0 0;padding:20px 0;}
+#footer .b {font-family:arial;height:30px;padding-top:4px;text-align:center; }
+#srcDetail{height:484px;}
+#srcList h5{width:186px;height:29px;line-height:29px;padding-left:21px;background:url(http://open.baidu.com/cms/image/newIndex/ala_sourc_title.gif) no-repeat; color:#fff;}
+#srcList ul{margin-top:10px; width:207px}
+#srcList ul li{background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bg.gif) repeat-x;border-top:1px solid #cfe1f2; border-bottom:1px solid #cfe1f2; width:207px; cursor:pointer}
+#srcList ul li a{text-decoration:none; height:28px;line-height:28px;padding-left:16px; display:block;color:#004492;font-size:14px;background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bg2.gif) 184px center no-repeat;font-weight:bold}
+#srcList ul li ul{margin-top:0;background:#f3f8fe;}
+#srcList ul li li{height:30px;line-height:30px;background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bgnal.gif) repeat-x; border:none}
+#srcList ul li li a{background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bg4.gif) no-repeat 184px center; color:#0666c6;font-weight:normal}
+#srcList ul li li a.now{ background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bg3.gif) no-repeat 184px center;color:#333}
+#srcList ul li li.now{background:#fff;}
+#srcList ul li a.now{background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_bg1.gif) no-repeat 184px center;}
+#srcList{width:207px; float:left}
+#srcCont{float:left;width:711px;margin-left:12px;}
+#path{color:#666; font-size:14px;border-bottom:1px solid #c6dff2; padding-bottom:9px}
+#imgsrc{text-align:center; margin-top:16px}
+#try{margin:12px 0 0 25px;}
+#try span{ float:left;font-family:Arial; background:url(http://open.baidu.com/cms/image/newIndex/ala_srclist_oth.gif) no-repeat right center; padding-right:17px;font-weight:bold;font-size:14px;color:#f86300;}
+#try ul{float:left;margin-left:14px}
+#try ul li{float:left;margin-right:13px}
+#try ul li a{color:#0666c6; line-height:16px}

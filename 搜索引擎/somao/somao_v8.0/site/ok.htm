@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0018)http://hao.360.cn/ -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>360网址导航－实用网址大全,安全上网从360开始</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META http-equiv=X-UA-Compatible content=IE=7>
+<META 
+content=360网址导航,360网址大全,上网导航,网址之家,网址大全,网址,搜索,音乐,娱乐,图片,小游戏,短信,社区,日记,相册,K歌,通讯簿,BLOG,天气预报,实用工具.最方便,最快捷,最多华人使用的安全上网导航 
+name=description>
+<META content=H0PyyWSDGZEx4GXPGvij5hg6JOKesKHVelO2+CyEdX4= name=verify-v1><LINK 
+href="css_opt.css" type=text/css 
+rel=stylesheet><LINK id=widthS type=text/css rel=stylesheet>
+<SCRIPT src="nav360_opt.js" 
+type=text/javascript></SCRIPT>
+
+<STYLE>.blank2 {
+	CLEAR: both; OVERFLOW: hidden; HEIGHT: 2px
+}
+.blank2x {
+	CLEAR: both; OVERFLOW: hidden; HEIGHT: 8px! important
+}
+</STYLE>
+<LINK href="http://hao.360.cn/favicon.ico" type=image/x-icon rel=icon><LINK 
+href="http://hao.360.cn/favicon.ico" type=image/x-icon rel="shortcut icon">
+<SCRIPT>
+function $(id){return document.getElementById(id)}
+function Menu(index){
+	var num= $("conBox").getElementsByTagName("div");
+	for(var i=1;i<=num.length;i++){
+		if($("con"+i)&&$("m"+i)){
+			$("con"+i).style.display = "none";
+			$("m"+i).className = "";
+		}
+	}
+	if($("con"+index)&&$("m"+index)){
+		if(index==2&&$("ifrm"+index)){
+			$("ifrm2").src='http://finance.sina.com.cn/promotion/20081119/001.shtml';
+		}
+		if(index==3&&$("ifrm"+index)){
+			$("ifrm3").src='/city/province_index.html';
+		}
+		if(index==4&&$("ifrm"+index)){
+			$("ifrm4").src='listMyBookMark.php';
+		}
+		$("con"+index).style.display ="block";
+		$("m"+index).className = "at";
+	}		
+}
+
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg)) return unescape(arr[2]);
+    else return null;
+}
+
+function setCookie(name,value)
+{
+    var expire = arguments[2] ? arguments[2] : 365*24*60*60*1000;
+    var exp = new Date(); 
+    exp.setTime(exp.getTime() + expire);
+    document.cookie = name + "="+ escape (value) + ";path=/;expires=" + exp.toGMTString();
+}
+
+function setDisplay(i, d) 
+{
+    $(i).style.display= d ? "block" : "none";
+}
+
+/** search tab start **/
+
+function getSearchTabCookieName()
+{
+    return 'schtab';
+}
+
+function setSearchTab(value)
+{
+    expire = 1000*3600*24*30;
+    setCookie(getSearchTabCookieName(), value, expire);
+}
+
+function getSearchTabByIndex()
+{
+    var index = arguments[0] ? arguments[0] : 0;
+    var schtab = getCookie(getSearchTabCookieName());
+    if( ( schtab==null || schtab=='' ) )
+    {
+          if(arguments[1]) return arguments[1];
+    	else return 0;
+    }
+    schtabs = schtab.split(',');
+    return schtabs[index];
+}
+
+/** search tab end **/
+var showStyle='';
+
+var indexUrl = getCookie("360WEBINDEXCK");
+if(indexUrl != null && indexUrl != "http://hao.360.cn/" && indexUrl != "http://hao.360.cn/index.html" && indexUrl != "http://hao.360.cn" && indexUrl != "http://hao.360.cn/114la")
+{
+    window.location.href = indexUrl;
+}
+else
+{
+if( indexUrl == null && showStyle != "")
+{
+    window.location.href = showStyle;
+}
+}
+
+function getPWCookieName() { return "360WEBPW";}
+if(getCookie(getPWCookieName()) == 1) 	$("widthS").href="css/set1150_y.css?v1246343053";
+function getRight(){
+	if(getCookie(getPWCookieName()) == 1){
+	$("setPageMenu").style.marginRight = screen.availWidth > 1020&&screen.availWidth < 1124? "136px" : "";
+	$("set").style.right = screen.availWidth > 1020&&screen.availWidth < 1124? "136px" : "";
+	}
+}
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.5848" name=GENERATOR></HEAD>
+<BODY onmousedown="setDisplay('suggests', 0)">
+<DIV 
+onmousedown="statClkHandle('clkstat.qihoo.com','_pdt=mph&amp;_pg=2609&amp;_bd=head',event);" 
+id=clk_head>
+<DIV class=head><!-- weather end --><!-- searchBox begin -->
+<DIV class=searchBox>
+<DIV class=tab id=tab><FONT id=searchTab><B class=bStyle>网页</B>|<B 
+onclick=displayTab(0,1)>图片</B>|<B onclick=displayTab(0,2)>音乐</B>|<B 
+onclick=displayTab(0,3)>视频</B>|<B onclick=displayTab(0,4)>贴吧</B>|<B 
+onclick=displayTab(0,5)>知道</B></FONT></DIV>
+<DIV class=search>
+<DIV id=searchId>
+<DIV id=se_tab>
+<FORM id=searchForm 
+onsubmit="javascript:$('suggests').style.display='none'; return true;" 
+action=http://www.baidu.com/s autocomplete="off"><SPAN class=seBox id=seBox><A 
+id=setUrl href="http://www.baidu.com/?tn=360se_1_dg"><IMG height=28 
+src="transparent_btn.gif" width=85></A><INPUT 
+class=i id=kw1 onkeyup=javascript:myhint(event) name=wd></SPAN><INPUT class=seBtn id=searchBtn type=submit value=百度搜索 name=""> 
+&nbsp;&nbsp; &nbsp;&nbsp; <SPAN id=suggests></SPAN><SPAN id=hidpar><INPUT 
+type=hidden value=360se_1_dg name=tn></SPAN>
+</FORM></DIV></DIV><!-- 搜索选择区 begin -->
+<DIV class=select id=selectId><LABEL for=se0><INPUT id=se0 type=radio CHECKED 
+value=单选 name=searchRadio><SPAN>百度</SPAN></LABEL> <LABEL for=se1><INPUT id=se1 
+type=radio value=单选 name=searchRadio><SPAN>谷歌</SPAN></LABEL> <LABEL 
+for=se2><INPUT id=se2 type=radio value=单选 
+name=searchRadio><SPAN>奇虎</SPAN></LABEL> <LABEL for=se3><INPUT id=se3 type=radio 
+value=单选 name=searchRadio><SPAN>购物</SPAN></LABEL> 
+</DIV><!-- 搜索选择区 end --></DIV></DIV>
+<SCRIPT language=javascript>
+highlightSearchTab();
+</SCRIPT>
+<!-- searchBox end --></DIV></DIV><!-- head end -->
+<DIV class=blank5></DIV><!-- wrap begin -->
+<DIV class=wrap id=list><!-- rightBox begin -->
+<DIV id=rightBox>
+<DIV class=imporBox>
+<DIV 
+</BODY></HTML>

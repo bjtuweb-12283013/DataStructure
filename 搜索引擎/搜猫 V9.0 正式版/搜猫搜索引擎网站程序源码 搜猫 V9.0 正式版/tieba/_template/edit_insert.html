@@ -1,0 +1,63 @@
+<div id="insert_face" class="bar_pop">
+	<h4><a class="ft_r bar_new_close" href="javascript:;" onclick="closeInsert('insert_face');"></a><div class="icon_face"></div><strong>插入表情</strong></h4>
+	<div class="bar_sel_con">
+		<ul class="barface">
+			<!-- BEGIN faceArr -->
+				<li>
+					<img src="{img}" alt="{name}" title="{name}" />
+				</li>
+			<!-- END faceArr -->
+		</ul>
+	</div>
+</div>
+<div id="insert_pic" class="bar_pop">
+<h4><a class="ft_r bar_new_close" href="javascript:;" onclick="closeInsert('insert_pic');"></a><div class="icon_pic"></div><strong>插入图片</strong></h4>
+<!-- IF groupArr.upload=="1" -->
+<div id="selPic1" style="display:none;">
+<ul class="bar_sel_nav">
+<li onclick="$('#selPic1').hide();$('#selPic2').show();">网络图片</li>
+<li class="on">本地上传</li>
+</ul>
+<div class="bar_sel_con">
+<div class="ft_l">
+选择图片：<br />
+<form id="imgUploadForm" target="imgUploadForm" method="post" enctype="multipart/form-data" action="./upload.php">
+<input type="file" id="fileToUpload" name="upImg" class="bar_sel_inp2" onchange="uploadImage();" /><br/>
+</form>
+<span class="p_6">图片大小不超过200K，格式为jpg、jpeg、gif、png。</span><br />
+<span id="upload_status"></span>
+<input type="button" class="bar_sel_btn confirmbtn" value="插入图片" onclick="insertImage();" />
+</div>
+</div>
+</div>
+<!-- ENDIF groupArr.upload -->
+<div id="selPic2">
+<ul class="bar_sel_nav">
+<li class="on">网络图片</li>
+<!-- IF groupArr.upload=="1" -->
+<li onclick="$('#selPic1').show();$('#selPic2').hide();">本地上传</li>
+<!-- ELSE -->
+<li style="color:#999;cursor:default;">本地上传(<!-- IF loginArr.state=="1" -->没有权限<!-- ELSE -->需登陆<!-- ENDIF loginArr.state -->)</li>
+<!-- ENDIF groupArr.upload -->
+</ul>
+<div class="bar_sel_con">
+<div class="ft_l">图片链接：</div>
+<div class="ft_l p_6">
+<input type="text" id="outer_imgurl" class="bar_sel_inp" value="" /><br />
+<span class="p_6">图片链接以 http:// 开头。</span><br />
+<span id="urlcheck_status_1"></span>
+<input type="button" class="bar_sel_btn confirmbtn" value="插入图片" onclick="insertImage();" /></div>
+</div>
+</div>
+</div>
+<div id="insert_video" class="bar_pop">
+<h4><a class="ft_r bar_new_close" href="javascript:;" onclick="closeInsert('insert_video');"></a><div class="icon_vid"></div><strong>插入视频</strong></h4>
+<div class="bar_sel_con">
+<div class="ft_l">视频链接：</div>
+<div class="ft_l p_6">
+<input id="vid_url" type="text" class="bar_sel_inp3" /><br />
+<span class="p_6">支持优酷、土豆、酷6、56、六间房、搜狐、新浪、YouTube等多家视频网站</span><br />
+<span id="video_status"></span>
+<input type="button" name="" class="bar_sel_btn" value="插入视频" onclick="insertVideo();" /></div>
+</div>
+</div>

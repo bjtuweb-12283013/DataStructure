@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>会员管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>会员管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">共找到 {MemberArr.Total} 位会员</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0" style="line-height:20px;">
+			<tr>
+			<td colspan="8" class="td4">
+				<form name="soForm" id="soForm" method="get">
+					<select id="te" name="te">
+					<option value="uid">UID</option>
+					<option value="name" selected>用户名</option>
+					<option value="email">邮箱</option>
+					</select>
+					&nbsp;
+					<input type="text" id="wd" name="wd" value="" maxlength="45" class="ipt">
+					&nbsp;
+					<input type="submit" value="搜索" class="btn">
+				</form>
+			</td>
+			</tr>
+			<tr class="tr1">
+			<td class="td1" width="28" align="center"><b>操作</b></td>
+			<td class="td1" width="40" align="center">头像</td>
+			<td class="td1" width="" align="center">用户名 / 邮箱</td>
+			<td class="td1" width="" align="center">安全码</td>
+			<td class="td1" width="" align="center">积分</td>
+			<td class="td1" width="98" align="center">注册</td>
+			<td class="td1" width="98" align="center">最后登录</td>
+			<td class="td1" width="50" align="center">用户组</td>
+			</tr>
+			<!-- BEGIN MemberArr.Member -->
+				<tr>
+				<td class="td2" align="center">
+				<!-- IF uid > "1" -->
+					<a class="edit" href="./user_edit.php?uid={uid}"></a>
+				<!-- ENDIF uid -->
+				</td>
+				<td class="td2" align="center"><img src="{avatar:uid}"></td>
+				<td class="td2" align="center"><a href="{rewrite_member:uid}" target="_blank">{name}</a><br><a href="mailto:{email}">{email}</a></td>
+				<td class="td2" align="center"><span style="font-size:11px">{securekey}</span></td>
+				<td class="td2" align="center">{integral}</td>
+				<td class="td2" align="center">{regdate}<br>{regip}</td>
+				<td class="td2" align="center">{lastdate}<br>{lastip}</td>
+				<td class="td2" align="center">{groupname}</td>
+				</tr>
+				<tr class="td3"><td colspan="8"></td></tr>
+			<!-- END MemberArr.Member -->
+			<!-- IF MemberArr.Page.pageTotal > "1" -->
+				<tr><td colspan="8" class="td4" align="center">{MemberArr.Page.pageList}</td></tr>
+			<!-- ENDIF MemberArr.Page.pageTotal -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

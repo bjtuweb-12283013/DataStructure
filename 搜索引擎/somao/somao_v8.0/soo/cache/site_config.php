@@ -1,0 +1,21 @@
+<?php
+$ve123['name']="·ÉÃ¨";
+$ve123['user_agent']="qiaso";
+$ve123['adtitle']="·ÉÃ¨ÕÒÕ¾,°ïÄãÕÒºÃÕ¾";
+$ve123['copyright']="&copy;2009 Feimao";
+$ve123['icp']="ÔÁICP±¸08010218ºÅ";
+$ve123['url']="http://127.0.0.1";
+$ve123['status_content']="Ê²Ã´ÊÇÇ¡ËÑ?»áËÑÍøÕ¾µÄ½ÐÇ¡ËÑ!!!^_^";
+$ve123['statcode']="";
+$ve123['Keywords']="·ÉÃ¨";
+$ve123['description']="·ÉÃ¨×¨ÕÒÍøÕ¾,ÎªÄãÕÒºÃÍøÕ¾!";
+$ve123['telephone']="137738233";
+$ve123['qq']="137738233";
+$ve123['is_tijiao_shoulu']="1";
+$ve123['spider_depth']=1;
+$ve123['author']="http://www.qiaso.com/";
+$ve123['copyright']="&copy;2009 Feimao";
+$ve123['filter_word']=array (
+  0 => '·¨ÂÖ¹¦',
+);
+?>

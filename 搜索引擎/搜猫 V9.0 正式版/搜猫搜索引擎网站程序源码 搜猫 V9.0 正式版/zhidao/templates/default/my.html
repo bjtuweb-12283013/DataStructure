@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<title>{lang menu_usercenter} - Powered By cyask</title>
+<meta content="{$meta_description}" name=description />
+<meta content="{$meta_keywords}" name=keywords />
+<link href="{$styledir}/default.css" type=text/css rel=stylesheet />
+<script type="text/javascript">
+function disQstate(s)
+{ 
+	switch (s)
+	{
+		case 1:var op='<img src="{$web_path}{$styledir}/icn_time.gif" alt="{lang menu_nosolve_ques}">';break;
+		case 2:var op='<img src="{$web_path}{$styledir}/icn_ok.gif"  alt ="{lang menu_solve_ques}">';break;
+		case 3:var op='<img src="{$web_path}{$styledir}/icn_vote.gif" alt="{lang menu_vote_ques}">';break;
+		case 4:var op='<img src="{$web_path}{$styledir}/icn_cancel.gif" alt="{lang menu_closed_ques}">';break;
+		default: var op='{lang menu_unknown_ques}';
+	}
+	document.write(op);
+}
+</script>
+</head>
+
+<body style="background:url(images/mainbg.gif)">
+<div id=main align="center">
+<table width="100%" align=center border=0>
+<tr height="60">
+<td valign="top" width="170" height="69">&nbsp;<a href="./"><img src="{$styledir}/1000ask.gif" border=0></a></td>
+<td><table cellspacing=0 cellpadding=0 width="99%" border=0>
+     <tr><td class=blueBG height=25 align="left">&nbsp;&nbsp;<b class=p14>{lang menu_usercenter}</b> &nbsp;<a href='./'>{lang button_back_index}</a></td>
+          <td class=blueBG width=300 height=25 align=right>
+          {lang menu_welcome} <b>{$cyask_user}</b> &nbsp;&nbsp;<a href="login.php?command=logout">{lang button_logout}</a>&nbsp;&nbsp;
+          </td>
+      </tr></table>
+</td></tr>
+</table>
+<br />
+<div id="leftw">
+<table class="pad10L" cellspacing="1" cellpadding="0" width="100%" border="0">
+<!--{if $command=='mymessage'}-->
+<tr><td class="blueBG f14" height="22">{lang menu_my_message}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=mymessage">{lang menu_my_message}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='myask'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_my_question}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=myask">{lang menu_my_question}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='myanswer'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_my_answer}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=myanswer">{lang menu_my_answer}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='myoverdue'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_my_overdue}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=myoverdue">{lang menu_my_overdue}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='myscore'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_my_score}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=myscore">{lang menu_my_score}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='myinfo'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_my_info}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=myinfo">{lang menu_my_info}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='upinfo'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_upinfo}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=upinfo">{lang menu_upinfo}</a></td></tr>
+<!--{/if}-->
+<!--{if $command=='uppassword'}-->
+<tr><td class="blueBG f14" height=22>{lang menu_uppw}</td></tr>
+<!--{else}-->
+<tr><td class="f14" height=22><a href="my.php?command=uppassword">{lang menu_uppw}</a></td></tr>
+<!--{/if}-->
+</table>
+</div>
+<div id="rightw">
+<!--{if $command=='myscore'}-->
+<div class="mt mgb">{lang menu_my_score}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=2 cellpadding=3 width="100%" height=160 border=0>
+<tr><td valign="top" width="33%">
+      <TABLE cellSpacing=1 cellPadding=3 width=100% bgColor="#dbdbdb" border="0">
+       <TR><td class="pad10L" bgColor="#ffffff"><div align=center>{lang menu_score_statistics}</div></td></tr>
+        <TR bgColor=#ffffff><td class="pad10L tbPad10" valign=center height=60>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+               <TR><td width=100><DIV align=right>{lang menu_totalscore}:</DIV></td>
+                   <td><SPAN class=f14>{$totalscore}</SPAN></td></tr>
+                   <TR><td width=100><DIV align=right>{lang menu_preweekscore}:</DIV></td>
+                   <td><SPAN class=f14>{$lastweekscore}</SPAN></td></tr>
+                   <TR><td width=100><DIV align=right>{lang menu_premonthscore}:</DIV></td>
+                   <td><SPAN class=f14>{$lastmonthscore}</SPAN></td></tr>
+             </TABLE></td></tr>
+       </TABLE>
+     </td>
+     <td valign=top width="33%">
+       <TABLE cellspacing=1 cellpadding=3 width=100% bgColor=#dbdbdb border=0>
+        <TR><td class=pad10L noWrap bgColor=#ffffff><DIV align=center>{lang menu_answer_statistics}</DIV></td></tr>
+        <TR bgColor=#ffffff><td class="pad10L tbPad10" valign=center height=60>
+            <TABLE cellspacing=0 cellpadding=3 width="100%" border=0>
+              <TR><td noWrap width=100><DIV align=right>{lang menu_answer_totalcount}:</DIV></td>
+                   <td>{$answercount}</td></tr>
+              <TR><td width=100><DIV align=right>{lang menu_answer_adoptcount}:</DIV></td>
+                  <td>{$adoptcount}</td></tr>
+              <TR><td width=100><DIV align=right>{lang menu_answer_adoptvalage}:</DIV></td>
+				<td>{$rightvalage}</td></tr>
+             </TABLE>
+            </td></tr>
+        </TABLE>
+	</td>
+    <td valign=top width="33%">
+      <TABLE cellSpacing=1 cellPadding=3 width=100% bgColor=#dbdbdb border=0>
+        <TR><td class=pad10L noWrap bgColor=#ffffff><DIV align=center>{lang menu_ques_statistics}</DIV></td></tr>
+        <TR bgColor=#ffffff><td class="pad10L tbPad10" vAlign=center height=60>
+             <TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+                <TR><td width=100><DIV align=right>{lang menu_ques_totalcount}:</DIV></td>
+                    <td>{$question_allcount}</td></tr>
+                <TR><td width=100><DIV align=right>{lang menu_solve_ques_count}:</DIV></td>
+                    <td>{$questionOK}</td></tr>
+                <TR><td width=100><DIV align=right>{lang menu_nosolve_ques_count}:</DIV></td>
+                    <td>{$questionASK}</td></tr>
+				<TR><td width=100><DIV align=right>{lang menu_vote_ques_count}:</DIV></td>
+                    <td>{$questionVOTE}</td></tr>
+				<TR><td width=100><DIV align=right>{lang menu_closed_ques_count}:</DIV></td>
+                    <td>{$questionCLOSE}</td></tr>
+             </TABLE></td></tr>
+       </TABLE>
+    </td>
+ </tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='myask'}-->
+<div class="mt mgb">{lang menu_my_question} &nbsp;&nbsp;( {$quescount} )</div>
+<div class="mb mcb">
+<table cellspacing=0 cellpadding=0 width="100%" border=0 valign="top">
+<!--{if $quescount}-->
+<tr><td width="60%" align=center height=30>{lang menu_ques_title}</td>
+    <td width="8%" align=center>{lang menu_ques_score}</td>
+	<td width="8%" align=center>{lang menu_answer_count}</td>
+    <td width="8%" align=center>{lang menu_ques_status}</td>
+    <td width="15%" align=center>{lang menu_ques_time}</td>
+	</tr>
+<!--{/if}-->
+<!--{loop $ques_list $question}-->
+<tr><td class="linetop f14" vAlign=center height=25>°§<a href="question.php?qid={$question['qid']}" target="_blank" title="{$question['title']}">{$question['stitle']}</a></td>
+    <td class=linetop vAlign=center align=middle><FONT color=red>{$question['score']}</FONT></td>
+	<td class=linetop vAlign=center align=middle><FONT color=#333333>{$question['answercount']}</FONT></td>
+    <td class=linetop vAlign=center align=middle><SCRIPT>disQstate({$question['status']});</SCRIPT></td>
+    <td class=linetop vAlign=center align=middle>{$question['asktime']}</td></tr>
+<!--{/loop}-->
+<tr><td colspan=5>&nbsp;</td></tr>
+<tr><td align="center" colspan=5>
+<!--{if $page>1}-->
+<a href="my.php?command={$command}&page=1">{lang page_first}</a>
+<a href="my.php?command={$command}&page={$page_front}">{lang page_front}</a>                                                                                                                                                
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="my.php?command={$command}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="my.php?command={$command}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->
+</td></tr>
+</table>
+</div>
+<!--{elseif $command=='myoverdue'}-->
+<div class="mt mgb">{lang menu_my_overdue} &nbsp;&nbsp;( {$quescount} )</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=0 cellpadding=0 width="100%" border="0" valign="top">
+<!--{if $quescount}-->
+<TR><td width="60%" align=center height=30>{lang menu_ques_title}</td>
+    <td width="8%" align=center>{lang menu_ques_score}</td>
+	<td width="8%" align=center>{lang menu_answer_count}</td>
+    <td width="8%" align=center>{lang menu_ques_status}</td>
+    <td width="15%" align=center>{lang menu_ques_time}</td>
+	</tr>
+<!--{/if}-->
+<!--{loop $ques_list $question}-->
+<tr><td class="linetop f14" vAlign=center height=25>°§<A href="question.php?qid={$question['qid']}" target="_blank" title="{$question['title']}">{$question['stitle']}</A></td>
+    <td class=linetop vAlign=center align=middle><FONT color=red>{$question['score']}</FONT></td>
+	<td class=linetop vAlign=center align=middle><FONT color=#333333>{$question['answercount']}</FONT></td>
+    <td class=linetop vAlign=center align=middle><SCRIPT>disQstate({$question['status']});</SCRIPT></td>
+    <td class=linetop vAlign=center align=middle>{$question['asktime']}</td></tr>
+<!--{/loop}-->
+<tr><td colspan=5>&nbsp;</td></tr>
+<tr><td align="center" colspan=5>
+<!--{if $page>1}-->
+<a href="my.php?command={$command}&page=1">{lang page_first}</a>
+<a href="my.php?command={$command}&page={$page_front}">{lang page_front}</a>                                                                                                                                                
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="my.php?command={$command}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="my.php?command={$command}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->
+</td></tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='myanswer'}-->
+<div class="mt mgb">{lang menu_my_answer} &nbsp;&nbsp;( {$answercount} )</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=0 cellpadding=0 width="100%" border="0">
+<!--{if $answercount}-->
+<TR><td width="54%" align=center height=30>{lang menu_ques_title}</td>
+	<td align=center width="9%">{lang menu_ques_score}</td>
+    <td align=center width="6%">{lang menu_answer_response}</td>
+    <td align=center width="7%">{lang menu_ques_status}</td>
+    <td align=center width="11%">{lang menu_my_answer}</td>
+    <td align=center width="13%">{lang menu_answer_time}</td></tr>
+<!--{/if}-->
+<!--{loop $ques_list $question}-->
+<TR><td class="linetop f14" height=25>°§<a href="response.php?aid={$question['aid']}" target=_blank title="{$question['title']}">{$question['stitle']}</A></td>
+     <td class=linetop align=center valign=middle><FONT color="red">{$question['score']}</FONT></td>
+	 <td class=linetop align=center valign=middle><FONT color="#333333">{$question['response']}</FONT></td>
+     <td class=linetop align=center valign=middle><SCRIPT>disQstate({$question['status']});</SCRIPT></td>
+     <td class=linetop align=center valign=middle><!--{if $question['adopttime']}--><font color="red">{lang ques_answer_adopt1}</font><!--{else}-->{lang ques_answer_adopt0}<!--{/if}--></td>
+     <td class=linetop align=center valign=middle><!--{$question['answertime']}--></td></tr> 
+<!--{/loop}-->
+<tr><td colspan=6>&nbsp;</td></tr>
+<tr><td align=center colspan=6>
+<!--{if $page>1}-->
+<a href="my.php?command={$command}&page=1">{lang page_first}</a>
+<a href="my.php?command={$command}&page={$page_front}">{lang page_front}</a>                                                                                                                                                
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="my.php?command={$command}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="my.php?command={$command}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->
+</td></tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='myoverdue'}-->
+<div class="mt mgb">{lang menu_my_overdue} &nbsp;&nbsp;( {$quescount} )</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=0 cellpadding=0 width="100%" border="0" valign="top">
+<!--{if $quescount}-->
+<TR><td width="60%" align=center height=30>{lang menu_ques_title}</td>
+    <td width="8%" align=center>{lang menu_ques_score}</td>
+	<td width="8%" align=center>{lang menu_answer_count}</td>
+    <td width="8%" align=center>{lang menu_ques_status}</td>
+    <td width="15%" align=center>{lang menu_ques_time}</td>
+	</tr>
+<!--{/if}-->
+<!--{loop $ques_list $question}-->
+<tr><td class="linetop f14" vAlign=center height=25>°§<A href="question.php?qid={$question['qid']}" target="_blank" title="{$question['title']}">{$question['stitle']}</A></td>
+    <td class=linetop vAlign=center align=middle><FONT color=red>{$question['score']}</FONT></td>
+	<td class=linetop vAlign=center align=middle><FONT color=#333333>{$question['answercount']}</FONT></td>
+    <td class=linetop vAlign=center align=middle><SCRIPT>disQstate({$question['status']});</SCRIPT></td>
+    <td class=linetop vAlign=center align=middle>{$question['asktime']}</td></tr>
+<!--{/loop}-->
+<tr><td colspan=5>&nbsp;</td></tr>
+<tr><td align="center" colspan=5>
+<!--{if $page>1}-->
+<a href="my.php?command={$command}&page=1">{lang page_first}</a>
+<a href="my.php?command={$command}&page={$page_front}">{lang page_front}</a>                                                                                                                                                
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="my.php?command={$command}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="my.php?command={$command}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->
+</td></tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='mymessage'}-->
+<div class="mt mgb">
+<table cellspacing=0 cellpadding=0 width="100%" height=26 border=0>
+<tr>
+<td width="40%">
+&nbsp;
+<!--{if $boxtype=='inbox'}-->
+<b>{lang menu_inbox}</b>
+<!--{else}-->
+<a href="my.php?command={$command}&boxtype=inbox">{lang menu_inbox}</a>
+<!--{/if}-->
+&nbsp;|&nbsp;
+<!--{if $boxtype=='outbox'}-->
+<b>{lang menu_outbox}</b>
+<!--{else}-->
+<a href="my.php?command={$command}&boxtype=outbox">{lang menu_outbox}</a>
+<!--{/if}-->
+</td>
+<td align="right" width="60%">
+<a href="my.php?command=sendmsg">{lang menu_send_message}</a> &nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=0 cellpadding=0 width="100%" border="0">
+<!--{if $msgcount}-->
+	<tr>
+	<td colspan=5 height=22>&nbsp;&nbsp;({$msgcount} ∑‚–≈)&nbsp;&nbsp;
+	</td>
+    </tr>
+	<tr>
+	<td align=center width="45%" height=25>&nbsp;&nbsp;{lang menu_ques_title}</td>
+	<td align=center width="15%">{lang menu_send_time}</td>
+	<td align=center width="10%">{if $boxtype=='inbox'}{lang menu_send_user}{else}{lang menu_receive_user}{/if}</td>
+    <td align=center width="10%">{lang menu_ques_status}</td>
+    <td align=center width="10%">{lang button_delete}</td>
+    </tr>
+<!--{/if}-->
+<!--{loop $msg_list $message}-->
+	<tr>
+	<td class="linetop f14" height=25>
+	°§<a href="my.php?command=readmsg&mid={$message['mid']}&mkey={$message['mkey']}&boxtype={$boxtype}&page={$page}">{$message['mbody']}</a></td>
+    <td class="linetop" align=center valign=middle>{$message['mdate']}</td>
+    <td class="linetop" align=center valign=middle>
+		<!--{if $boxtype=='inbox'}-->
+		<a href="member.php?uid={$message['fromuid']}" target="_blank">{$message['fromusername']}</a>
+		<!--{else}-->
+		<a href="member.php?uid={$message['touid']}" target="_blank">{$message['tousername']}</a>
+		<!--{/if}-->
+    </td>
+	<td class="linetop" align=center valign=middle><!--{if $message['mstate']==1}-->{lang menu_read_status1}<!--{else}--><font color=red>{lang menu_read_status0}</font><!--{/if}--></td>
+    <td class="linetop" align=center valign=middle><a href="my.php?command=delmessage&boxtype={$boxtype}&mid={$message['mid']}&page={$page}">{lang button_delete}</a></td></tr>
+<!--{/loop}-->
+<tr><td colspan=6>&nbsp;</td></tr>
+<tr><td align="center" colspan=5>
+<!--{if $page>1}-->
+<a href="my.php?command={$command}&page=1">{lang page_first}</a>
+<a href="my.php?command={$command}&page={$page_front}">{lang page_front}</a>                                                                                                                                                
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="my.php?command={$command}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="my.php?command={$command}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->
+</td></tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='myinfo'}-->
+<div class="mt mgb">{lang menu_my_info}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=2 cellpadding=2 width="100%" height="60" border="0">
+<tr>
+<td valign=top width="30%">
+      <TABLE cellSpacing=1 cellPadding=3 width="100%" bgColor="#dbdbdb" border=0>
+        <TR bgColor=#ffffff>
+			<td class="pad10L tbPad10">
+            <TABLE cellSpacing=0 cellPadding=2 width="200" border=0>
+			   <TR><td width=80 align=right>{lang menu_username}:</td>
+                   <td width=120><SPAN class=f14>{$members[username]}</SPAN></td></tr>
+               <TR><td width=80 align=right>{lang menu_gender}:</td>
+                   <td width=120><SPAN class=f14><!--{if $members[gender]==1}-->{lang menu_man}<!--{elseif $members[gender]==2}-->{lang menu_woman}<!--{else}-->{lang menu_baomi}<!--{/if}--></SPAN></td></tr>
+               <TR><td width=80 align=right>{lang menu_birthday}:</td>
+                   <td width=120><SPAN class=f14>{$members[bday]}</SPAN></td></tr>
+             </TABLE></td></tr>
+    </TABLE>
+</td>
+<td valign=top width="70%">
+      <TABLE cellSpacing=1 cellPadding=3 width="100%" bgColor="#dbdbdb" border=0>
+        <TR bgColor=#ffffff>
+			<td class="pad10L tbPad10" vAlign=center height=60>
+            <TABLE cellSpacing=0 cellPadding=3 width="100%" border=0>
+               <TR><td width=100 align=right>{lang menu_qq}:</td>
+                   <td><SPAN class=f14>{$members[qq]}</SPAN></td></tr>
+               <TR><td width=100 align=right>{lang menu_msn}:</td>
+                   <td><SPAN class=f14>{$members[msn]}</SPAN></td></tr>
+               <TR><td width="100" align="right" valign="top">{lang menu_signature}:</td>
+                   <td>{$members[signature]}</td></tr>
+             </TABLE></td></tr>
+    </TABLE>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<!--{elseif $command=='upinfo'}-->
+<div class="mt mgb">{lang menu_upinfo}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=2 cellpadding=3 width="100%" border=0>
+<script language="JavaScript">
+function check_upinfo(theForm)
+{
+	if(theForm.signature.value.length>500)
+	{
+      	document.getElementById("signaturetip").innerHTML='<font color="red">{lang warning_signature_lang}</font>';
+      	return false;
+	}
+	else
+	{
+		document.getElementById("signaturetip").innerHTML='';
+	}
+}
+</script>
+<tr>
+    <td class="pad10L tbPad10" vAlign=center height=60>
+       <table cellspacing=0 cellpadding=3 width="100%" border=0>
+       <form name=upinfoForm action="my.php" method="post" onsubmit="return check_upinfo(this);" enctype="multipart/form-data">
+         <TR><td width=100 align=right>{lang menu_username}:</td>
+             <td width=90%><SPAN class=f14>{$members[username]}</SPAN></td></tr>
+         <TR><td width=100 align=right>{lang menu_gender}:</td>
+             <td width=90%><SPAN class=f14><select name="gender"><option value=0 <!--{if $members[gender]==0}-->selected<!--{/if}--> >{lang menu_baomi}</option><option value=1 <!--{if $members[gender]==1}-->selected<!--{/if}--> >{lang menu_man}</option><option value=2 <!--{if $members[gender]==2}-->selected<!--{/if}--> >{lang menu_woman}</option></select></SPAN></td></tr>
+         <TR><td width=100 align=right>{lang menu_birthday}</td>
+             <td width=90%><SPAN class=f14><input type=text name="bday" size=10 maxlength=10 value={$members[bday]}></SPAN></td></tr>
+         <TR><td width=100 align=right>{lang menu_qq}:</td>
+             <td width=90%><SPAN class=f14><input type=text name="qq" size=20 maxlength=12 value="{$members[qq]}"></SPAN></td></tr>
+         <TR><td width=100 align=right>{lang menu_msn}:</td>
+             <td width=90%><SPAN class=f14><input type=text name="msn" size=20 maxlength=40 value="{$members[msn]}"></SPAN></td></tr>
+         <TR><td width=100 align=right>{lang menu_signature}:</td>
+             <td width=90%><SPAN class=f14>
+             <textarea name="signature" cols="50" rows="6">{$members[signature]}</textarea></SPAN></td></tr>
+         <TR><td width="100%" height="5" colspan="2">&nbsp;</td></tr>
+         <TR><td width=100 align=right>&nbsp;</td>
+             <td width=90%><SPAN class=f14>
+             <input type="hidden" name="command" value="upinfosubmit" />
+             <input type="hidden" name="formhash" value="{echo form_hash()}" />
+             <input type="submit" name="upinfosubmit" value="{lang button_submit}" /></SPAN></td></tr>
+        </form>
+        </table>
+  </td>
+ </tr>
+</TABLE>
+</div>
+</div>
+<!--{elseif $command=='uppassword'}-->
+<div class="mt mgb">{lang menu_uppw}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=2 cellpadding=3 width="100%" height="300" border=0>
+<script language="JavaScript">
+function check_password(theForm)
+{
+	if(theForm.opw.value == "")
+	{
+      		document.getElementById("pwtip").innerHTML = "<font color=red>{lang warning_old_pw}</font>";
+	  	theForm.opw.focus();
+      		return false;
+	}
+	else
+	{
+		document.getElementById("pwtip").innerHTML = "";
+	}
+	if(theForm.npw.value == "")
+	{
+      		document.getElementById("npwtip").innerHTML = "<font color=red>{lang warning_new_pw}</font>";
+	  	theForm.npw.focus();
+      		return false;
+	}
+	else
+	{
+		document.getElementById("npwtip").innerHTML = "";
+	}
+}
+
+</script>
+<tr>
+    <td class="pad10L tbPad10" valign="top" height=60>
+     <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+      <form action="my.php" method="post" onsubmit="return check_password(this);">
+       <tr>
+      <td width="100" class="pad10L" height=30>{lang menu_username}:</td>
+      <td>{$cyask_user}</td>
+       </tr>
+       <tr>
+      <td width="100" class="pad10L" height=30>{lang menu_email}:</td>
+      <td><input name="email" type="text" id="email" size="20"></td>
+       </tr>
+      <tr>
+      <td height="30" class="pad10L">{lang menu_oldpw}:</td>
+      <td><input name="opw" type="password" id="word" size="20">&nbsp;<span id=pwtip></span></td>
+		</tr>
+	<tr>
+      <td height="30" class="pad10L">{lang menu_newpw}:</td>
+      <td>
+        <input name="npw" type="password" id="npw" size="20">&nbsp;<span id=npwtip></span>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="pad10L">&nbsp;</td>
+      <td valign="bottom">
+        <br />
+        <input type="hidden" value="uppwsubmit" name="command" />
+		<input type="hidden" name="formhash" value="{echo form_hash()}" />
+        <input type="submit" name="uppwsubmit" value="{lang button_submit}" />
+      </td>
+    </tr>
+    </form>
+    </TABLE>
+  </td>
+ </tr>
+</TABLE>
+</div>
+</div>
+<!--{elseif $command=='sendmsg'}-->
+<div class="mt mgb">{lang menu_send_message}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing=2 cellpadding=3 width="100%" height=300 border=0>
+<script type="text/javascript">
+function check_sendmsg(theForm)
+{
+	if(theForm.username.value == '')
+	{
+      	document.getElementById("usertip").innerHTML = '<font color="red">{lang warning_msg_user_null}</font>';
+	  	theForm.username.focus();
+      	return false;
+	}
+	else
+	{
+		document.getElementById("usertip").innerHTML = '';
+	}
+	if(theForm.content.value == '')
+	{
+      	document.getElementById("contenttip").innerHTML = '<font color="red">{lang warning_msg_content_null}<br /></font>';
+	  	theForm.content.focus();
+      	return false;
+	}
+	else
+	{
+		document.getElementById("titletip").innerHTML = '';
+	}
+}
+
+</script>
+<tr>
+    <td class="pad10L tbPad10" vAlign=center height=60>
+       <table cellspacing=0 cellpadding=3 width="100%" border=0>
+       <form name="sendmsgForm" action="my.php" method="post" onsubmit="return check_sendmsg(this);">
+         <TR><td width=100 align=right>{lang menu_username}:</td>
+             <td width=90%><SPAN class=f14><input type=text name="username" size=30 value="{$_GET['username']}" /></SPAN>&nbsp;<span id=usertip></span></td></tr>
+         <TR><td width=100 align=right valign=top>{lang menu_msg_content}:</td>
+             <td width=90%><span id=contenttip></span>
+             <SPAN class=f14><textarea name="content" rows=10 cols=60></textarea></SPAN></td></tr>
+         <TR><td width=100 align=right>&nbsp;</td>
+             <td width=90%><SPAN class="f14">
+             <input type="hidden" name="command" value="sendmsg" />
+             <input type="hidden" name="formhash" value="{echo form_hash()}" />
+             <input type="submit" name="submit" value="{lang button_submit}" /></SPAN></td></tr>
+        </form>
+        </table>
+  </td>
+ </tr>
+</TABLE>
+</div>
+</div>
+<!--{elseif $command=='readmsg'}-->
+<div class="mt mgb">{lang menu_read_message}</div>
+<div class="mb mcb">
+<div class="w100">
+<table cellspacing="2" cellpadding="3" width="100%" height="30" border="0">
+<script language="javascript">
+function check_sendmsg(theForm)
+{
+	if(theForm.content.value == "")
+	{
+      	document.getElementById("contentip").innerHTML = "<font color=red>{lang warning_msg_content_null}</font>";
+	  	theForm.content.focus();
+      	return false;
+	}
+	else
+	{
+		document.getElementById("contentip").innerHTML = "";
+	}
+}
+
+</script>
+    
+<tr>
+    <td class="pad10L tbPad10" vAlign="top" height=30>
+       <table cellspacing=2 cellpadding=2 width="95%" border=0>
+       <!--{loop $msg_list $message}-->
+         <tr>
+         <td width="100" valign=top><span class="f14b">{$message['fromusername']}:</span></td>
+         <td width="500">{$message['mbody']}</td>
+         </tr>
+         <tr><td colspan="2" height="3"><hr size=1 color="#cccccc" width="99%" /></td></tr>
+       <!--{/loop}-->
+        </table>
+  </td>
+ </tr>
+</table>
+<table cellspacing=2 cellpadding=3 width="95%" height=30 border=0>
+ <tr>
+    <td class="pad10L tbPad10" vAlign="top" height=60>
+       <table cellspacing=0 cellpadding=3 width="100%" border=0>
+       <form name="sendmsgForm" action="my.php" method="post" onsubmit="return check_sendmsg(this);">
+       <tr>
+			<td width="100">&nbsp;</td>
+            <td width="90%"><span id="contentip"></span></td>
+        </tr>
+        <tr>
+			<td width=100 align=right valign=top>&nbsp;ªÿ∏¥£∫</td>
+             <td width=90%>
+             <textarea name="content" rows=8 cols=60></textarea></td></tr>
+        <tr>
+			<td width=100 align=right>&nbsp;</td>
+             <td width=90%><SPAN class="f14">
+             <input type="hidden" name="command" value="replymsg" />
+             <input type="hidden" name="mkey" value="{$mkey}" />
+             <input type="hidden" name="reply_uid" value="{$reply_uid}" />
+             <input type="hidden" name="reply_username" value="{$reply_username}" />
+             <input type="hidden" name="boxtype" value="{$_GET[boxtype]}" />
+             <input type="hidden" name="page" value="{$_GET[page]}" />
+             <input type="hidden" name="formhash" value="{echo form_hash()}" />
+             <input type="submit" name="submit" value="{lang button_submit}" />
+             <input type="button" name="close" value="∑µªÿ" onclick="history.back();" />
+             </SPAN></td></tr>
+        </form>
+        </table>
+  </td>
+ </tr>
+</table>
+</div>
+</div>
+<!--{/if}-->
+</div>
+{template footer}

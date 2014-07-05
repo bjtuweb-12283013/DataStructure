@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="帖子搜索, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="帖子搜索, 分类目录, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<title>搜索_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html -->
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a> &gt; <b>站内搜索</b></div>
+<div id="B">
+<div class="nameset">找到相关数据{searchArr.TopicNum}条，用时{searchTime}秒</div>
+<div class="namecont">
+<table width="100%" align="center" cellpadding="0" cellspacing="1">
+<tr class="tr1">
+<td class="td1" width="*">标题</td>
+<td class="td1" width="14%">贴吧</td>
+<td class="td1" width="13%">作者</td>
+<td class="td1" width="10%" align="center">回复/查看</td>
+<td class="td1" width="13%" align="right">最后发表</td>
+</tr>
+<!-- BEGIN searchArr.Topic -->
+<tr>
+<td class="td2"><a href="{rewrite_topic:tid}" target="_blank">{subject}</a></td>
+<td class="td2"><a href="{rewrite_forum:fid}" target="_blank">{fname}</a></td>
+<td class="td2">
+<!-- IF authorid>"0" -->
+<a href="{rewrite_member:authorid}" target="_blank">{author}</a>
+<!-- ELSE -->
+{author}
+<!-- ENDIF authorid -->
+<br>
+{dateline}
+</td>
+<td class="td2" align="center">{replies} / {views}</td>
+<td class="td2" align="right">
+{lasttime}
+<br>
+<!-- IF lastauthorid>"0" -->
+by <a href="{rewrite_member:lastauthorid}" target="_blank">{lastauthor}</a>
+<!-- ELSE -->
+by <u>{lastauthor}</u>
+<!-- ENDIF lastauthorid -->
+</td>
+</tr>
+<tr class="td3"><td colspan="5"></td></tr>
+<!-- END searchArr.Topic -->
+<tr>
+<td colspan="5" class="td4">
+<!-- IF searchArr.Page.pageList -->
+	{searchArr.Page.pageList}
+<!-- ELSE -->
+	<b>1</b>
+<!-- ENDIF searchArr.Page.pageList -->
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

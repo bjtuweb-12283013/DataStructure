@@ -1,0 +1,11 @@
+安装说明：
+
+1.把压缩包解压到网站的根目录。
+2.恢复备份 http://域名/dg  用户名 admin 密码 123456  步骤：参数设置（填上你的数据库帐号与密码）---恢复数据--选择目录--1230530com-选中你的数据库--开始恢复。
+3.修改数据库链接文件
+搜猫 ：include/db_config.php 
+贴吧：ieba/database/config_mysql.php
+
+
+OK，进前台 http://域名/admin    admin 123456789xxx
+ 

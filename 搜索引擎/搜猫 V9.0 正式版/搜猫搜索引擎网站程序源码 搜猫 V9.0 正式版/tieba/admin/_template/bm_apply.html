@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>申请审核_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>申请审核</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">申请审核</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td width="11%"></td>
+			<td class="td1" width="10%" align="center">类型</td>
+			<td class="td1" width="15%">贴吧</td>
+			<td class="td1" width="12%">申请人</td>
+			<td class="td1">申请理由</td>
+			<td class="td1" width="12%" align="right">申请时间</td>
+			</tr>
+			<!-- BEGIN applyArr.Apply -->
+				<tr>
+				<td class="td2" align="center">
+				<a href="javascript:;" onclick="applyAuditing({aid},1);">通过</a>&nbsp;&nbsp;
+				<a href="javascript:;" onclick="applyAuditing({aid},0);">删除</a>
+				</td>
+				<td class="td2" align="center"><!-- IF type=="1" -->申请吧主<!-- ELSE -->吧主辞职<!-- ENDIF type --></td>
+				<td class="td2"><a href="{rewrite_forum:fid}" target="_blank">{fname}</a></td>
+				<td class="td2"><a href="{rewrite_member:uid}" target="_blank">{uname}</a></td>
+				<td class="td2">{message}</td>
+				<td class="td2" align="right">{dateline}</td>
+				</tr>
+				<tr class="td3"><td colspan="6"></td></tr>
+			<!-- END applyArr.Apply -->
+			<!-- IF applyArr.Page.pageTotal > "1" -->
+			<tr><td colspan="6" class="td4" align="center">{applyArr.Page.pageList}</td></tr>
+			<!-- ENDIF applyArr.Page.pageTotal -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

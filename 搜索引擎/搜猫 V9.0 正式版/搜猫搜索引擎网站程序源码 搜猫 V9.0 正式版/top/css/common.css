@@ -1,0 +1,82 @@
+/* common width left style CSS Document */
+body{margin:0;padding:0 0 20px 0;font:12px "宋体", Arial;background:url(../img/cloud.gif) no-repeat center top;}
+form,iframe,ul,li,h1,h2,h3,dl,dt,dd,p{padding:0;margin:0;}
+img{border:none;}
+li{list-style:none;}
+h1{font-size:14px;}
+a{text-decoration:none;color:#3a64b0;}
+a:hover {text-decoration:underline;}
+a:visited {color: purple;text-decoration: underline;}
+.wrap{width:985px;margin:0 auto;}
+.l{float:left;}
+.r{float:right;}
+.cl{clear:both;height:0;line-height:0;font-size:0;}
+.width836{width:836px;}
+.width270{width:270px;}
+.b{border:1px solid #eaeaea;}
+.width442{width:442px;height:198px;display:inline;}
+.width834{width:834px;}
+
+/* for search */
+.search{background:url(../img/top-bar.gif) no-repeat center bottom;padding-bottom:13px;height:85px;padding:20px 0 0 0;position:relative;}
+.search-home{background:url(../img/top-bar.gif) no-repeat center bottom;padding-bottom:13px;height:108px;padding:20px 0 0 0;position:relative;}
+
+/* 大搜索样式 */
+.clearfix:after {content: ".";display: block;height: 0;line-height:0;clear: both;visibility: hidden;}
+.clearfix {zoom:1;}
+/* #hd search-logo */
+#ba{margin:1px 0 10px 60px;*margin:0 0 10px 60px;font:Arial,sans-serif 14px}
+#ba_lg,#ba_sc{float:left}
+#ba form{margin:0;padding:0;}
+#ba a{color:#261CDC;text-decoration:underline}
+#ba_nv a,#ba_nv strong,#ba .ba-baidu{font-size:14px}
+/*#hd input {vertical-align:middle;}*/
+#ba_lg{width:135px;height:61px;margin-right:9px;margin-top:4px}
+#ba_lg img{width:135px;height:61px;border:0;}
+#ba_nv{margin:0 0 2px 0;*margin:0 0 3px 0;line-height:17px;*line-height:18px}
+#ba_nv a{margin:0 0 0 0}
+#ba_hp{font-size:12px;display:block;margin-top:27px;float:left}
+#ba_hp a{cursor:pointer;}
+#ba .ba-kw {font-size:16px;margin:0 7px 0 0;padding:4px 1px 3px 1px;color:#000;width:358px;*padding:3px 1px;}
+#ba .ba-baidu {width:78px;height:28px;line-height:24px;margin:0 8px 0 0;}
+
+/* side-bar */
+.side-bar{width:143px;background:#3b9bee url(../img/side-bg.gif) repeat-x 0 0;}
+.nav-bar{border-left:1px solid #5b8ec2;border-right:1px solid #5b8ec2;}
+.end{background:url(../img/l-b.gif) no-repeat left bottom scroll;height:133px;width:143px;}
+
+/* main-cont */
+.main-cont{width:836px;}
+.word-adv{background:url(../img/info.gif) no-repeat 10px 5px;line-height:25px;height:25px;padding-left:30px;color:#a32500;position:absolute;top:-45px;left:0;}
+.word-adv a{color:#a32500;}
+.crumbs{position:relative;line-height:26px;height:26px;margin:10px auto;border-bottom:1px solid #c8e6ff;background:url(../img/crumbs.gif) no-repeat 3px center;padding-left:15px;color:#6c6c6c;}
+.crumbs .comment{position:absolute;right:54px;top:0;background:url(../img/split.gif) no-repeat right center;padding-right:8px;}
+.crumbs .rss{position:absolute;right:2px;top:0;}
+
+/* content common style */
+.content{border:1px solid #ebebeb;border-top:none 0;background:url(../img/tit-bg2.gif) repeat-x;}
+.content h1{background:url(../img/icon-tit.gif) no-repeat 13px 7px;line-height:35px;height:35px;border-bottom:1px solid #ebebeb;padding-left:41px;color:#3e3e3e;margin-bottom:4px;position:relative;}
+.content .renwu{background-position:13px -271px;}
+.content .event{background-position:13px -233px;}
+.content .yule{background-position:13px -311px;}
+.content .shenghuo{background-position:13px -351px;}
+.content .top10{background-position:13px 7px;}
+.content .weekhotspot{background-position:13px -33px;}
+.content .top_keyword{background-position:13px -191px;}
+.content .xinci{background-position:13px -150px;}
+.content .qiyi{background-position:13px -113px;}
+.content .feidian{background-position:13px -73px;}
+.content .auto{background-position:13px -391px;}
+.content .mmogame{background-position:13px -430px;}
+.content .it{background-position:13px -471px;}
+.content .finance{background-position:13px -513px;}
+.content .jiaoyu{background-position:13px -551px;}
+.content .shouji{background-position:13px -591px;}
+
+/* add list to my site */
+.add-list{position:absolute;right:13px;top:9px;line-height:0;cursor:pointer;}
+.add{position:absolute;right:3px;top:6px;cursor:pointer;}
+
+/* footer */
+.footer{text-align:center;padding-top:40px;font-family:Arial;}
+.footer,.footer a{text-decoration:none;color:#3e3e3e;}

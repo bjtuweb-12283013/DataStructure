@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>分类管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+<script language="javascript">$(document).ready(function(){$("form")[0].reset();});</script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>分类管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">分类管理</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<!-- IF category -->
+			<tr class="tr1">
+			<td class="td1" width="20%" align="center"><u>父</u></td>
+			<td class="td1" width="20%" align="center"><u>子</u></td>
+			<td class="td1" width="15%" align="center"></td>
+			<td class="td1" width="15%" align="center"></td>
+			</tr>
+			<!-- BEGIN category -->
+				<tr>
+				<td align="center"><b>{name}</b></td>
+				<td class="td2">&nbsp;</td>
+				<td align="center"><a href="#edit" onclick="updateCategory({cid},0,'{name}');">修改</a></td>
+				<td align="center"><a href="javascript:;" onclick="delCategory({cid});">删除</a></td>
+				</tr>
+				<tr class="td3"><td colspan="4"></td></tr>
+				<!-- BEGIN subcategory -->
+					<tr>
+					<td class="td2">&nbsp;</td>
+					<td align="center">{name}</td>
+					<td align="center"><a href="#edit" onclick="updateCategory({cid},{fid},'{name}');">修改</a></td>
+					<td align="center"><a href="javascript:;" onclick="delCategory({cid});">删除</a></td>
+					</tr>
+					<tr class="td3"><td colspan="4"></td></tr>
+				<!-- END subcategory -->
+			<!-- END category -->
+			<!-- ENDIF category -->
+			<tr><td colspan="4" class="td2"><a name="#edit">&nbsp;</a></td></tr>
+			<tr>
+			<td colspan="4" align="center">
+				<form name="cForm" id="cForm" method="post" target="sypost" action="./category.php?action=do">
+				<select id="father" name="father">
+				<option value="0">一级目录</option>
+				<!-- BEGIN category -->
+				<option value="{cid}">{name}</option>
+				<!-- END category -->
+				</select>
+				<input type="text" id="name" name="name" value="" maxlength="10" class="ipt">
+				<input type="hidden" id="cid" name="cid" value="0">
+				<input type="submit" value="新建分类" class="btn">
+				</form>
+				<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+			</td>
+			</tr>
+			<tr><td colspan="4" class="td2">&nbsp;</td></tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

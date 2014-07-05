@@ -1,0 +1,3 @@
+<?php
+	$dbBakPath = "./_bak/";
+?>

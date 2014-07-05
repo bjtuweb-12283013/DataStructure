@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>邮件设置_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>邮件设置</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">邮件设置</div>
+		<div class="namecont">
+			<form name="setForm" id="setForm" method="post" target="sypost" action="./set_mail.php?action=update">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr>
+			<td align="right" width="30%">发送方式：</td>
+			<td>
+				<select name="T" />
+				<option value="sendmail"<!-- IF mailType=="sendmail" --> selected<!-- ENDIF mailType -->>sendmail</option>
+				<option value="smtp"<!-- IF mailType=="smtp" --> selected<!-- ENDIF mailType -->>smtp</option>
+				</select>			
+			</td>
+			</tr>
+			<tr>
+			<td align="right">发件人邮箱：</td>
+			<td>
+				<input type="text" name="E" class="inp" value="{sendEmail}" />
+			</td>
+			</tr>
+			<tr class="tr1"><td class="td1" colspan="2" align="center"><b>以下设置仅在发送方式为 smtp 时有效</b></td></tr>
+			<tr>
+			<td align="right">SMTP 服务器：</td>
+			<td>
+				<input type="text" name="S" class="inp" value="{smtpServer}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right">SMTP 端口：</td>
+			<td>
+				<input type="text" name="P" class="inp" value="{smtpPort}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right">SMTP 服务器要求身份验证：</td>
+			<td>
+				<input type="radio" name="A" value="true"<!-- IF smtpAuth=="1" --> checked<!-- ENDIF smtpAuth --> />是
+				<input type="radio" name="A" value="false"<!-- IF smtpAuth=="0" --> checked<!-- ENDIF smtpAuth --> />否
+			</td>
+			</tr>
+			<tr>
+			<td align="right">SMTP 用户：</td>
+			<td>
+				<input type="text" name="U" class="inp" value="{smtpUser}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right">SMTP 密码：</td>
+			<td>
+				<input type="text" name="W" class="inp" value="{smtpPassword}" />
+			</td>
+			</tr>
+			<tr><td></td><td><input type="submit" value="修改设置" class="sub"></td></tr>
+			<tr><td height="30" colspan="2"></td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

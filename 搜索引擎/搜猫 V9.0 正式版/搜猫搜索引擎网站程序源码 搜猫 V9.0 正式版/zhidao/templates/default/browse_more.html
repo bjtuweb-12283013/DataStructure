@@ -1,0 +1,104 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt&gt
+<!--{if $type==0}-->{lang menu_all_ques}
+<!--{elseif $type==1}-->{lang menu_nosolve_ques}
+<!--{elseif $type==2}-->{lang menu_solve_ques}
+<!--{elseif $type==3}-->{lang menu_vote_ques}
+<!--{elseif $type==5}-->{lang menu_highscore_ques}
+<!--{elseif $type==6}-->{lang menu_intro_ques}
+<!--{/if}-->
+</div>
+<div id="left2">
+<div class="w100">
+<div id="subline"></div>
+<div id="sub">
+<!--{if $type==0}-->
+<span>{lang menu_all_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php"><b>{lang menu_all_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==2}-->
+<span>{lang menu_solve_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?type=2"><b>{lang menu_solve_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==1}-->
+<span>{lang menu_nosolve_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?type=1"><b>{lang menu_nosolve_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==3}-->
+<span>{lang menu_vote_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?type=3"><b>{lang menu_vote_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==5}-->
+<span>{lang menu_highscore_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?type=5"><b>{lang menu_highscore_ques}</b></a>
+<!--{/if}-->
+</div>
+<div class="subt bgg">{lang menu_same_ques_count}</div>
+<!--{if $quescount}-->
+<script type="text/javascript">
+function disQstate(s)
+{ 
+	switch (s)
+	{
+		case 1:var op='<img src="{$web_path}{$styledir}/icn_time.gif" alt="{lang menu_nosolve_ques}">';break;
+		case 2:var op='<img src="{$web_path}{$styledir}/icn_ok.gif"  alt ="{lang menu_solve_ques}">';break;
+		case 3:var op='<img src="{$web_path}{$styledir}/icn_vote.gif" alt="{lang menu_vote_ques}">';break;
+		case 4:var op='<img src="{$web_path}{$styledir}/icn_cancel.gif" alt="{lang menu_closed_ques}">';break;
+		default: var op='{lang menu_unknown_ques}';
+	}
+	document.write(op);
+}
+</script>
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr><td class="nl" height="30">{lang menu_ques_title}</td>
+<td class="nl" align="center" width="10%">{lang menu_answer_count}</td>
+<td class="nl" align="center" width="10%">{lang menu_ques_status}</td>
+<td class="nl" align="center" width="10%">{lang menu_ques_time}</td></tr>
+<!--{loop $ques_list $question}-->
+<tr><td>
+<!--{if $question['score']}-->
+<img width="12" height="11" align="absmiddle" alt="{lang ques_prize_score}" src="{$web_path}{$styledir}/s_money.gif" /><span class="red" title="{lang ques_prize_score}">{$question['score']}</span>
+<!--{/if}-->
+<span class="f14"><a href="{$web_path}question.php?qid={$question['qid']}" target="_blank">{$question['title']}</a> [<a class="lgy" href="{$web_path}browse.php?sortid={$question['sid']}&type={$type}">{$question['sort']}</a>]</span></td>
+<td align="center">{$question['answercount']}</td>
+<td align="center"><script type="text/javascript">disQstate({$question['status']});</script></td>
+<td align="center">{$question['asktime']}</td></tr>
+<!--{/loop}-->
+</table>
+<!--{else}-->
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr><td height="30" align="center">{lang page_nopage}</td></tr>
+</table>
+<!--{/if}-->
+<div id="pg">
+<!--{if $page>1}-->
+<a href="{$web_path}browse.php?type={$type}&page=1">{lang page_first}</a>                                                                                                          
+<a href="{$web_path}browse.php?type={$type}&page={$page_front}">{lang page_front}</a>
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="{$web_path}browse.php?type={$type}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="{$web_path}browse.php?type={$type}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->                     
+</div>
+</div>
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hq}-->
+&#8226; <span class="f13"><a class="lq" href="{$web_path}question.php?qid={$hq['qid']}" target="_blank" title="{$hq['title']}">{$hq['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+<br />
+{template footer}

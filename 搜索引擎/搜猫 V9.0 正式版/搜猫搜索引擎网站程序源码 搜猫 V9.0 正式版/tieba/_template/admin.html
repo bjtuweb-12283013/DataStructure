@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="{siteName}, 企业贴吧, 贴吧, 说吧" />
+<title>系统管理员登录_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/div.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<div class="admin_div">
+	<form name="login-form" id="login-form" onsubmit="return false;">
+		<ul>
+			<li>
+				请输入您的密码：
+
+				<input type="password" name="login-pwd" id="login-pwd" maxlength="18" class="btn_input" value="" onkeydown="if(event.keyCode==13)admin()" />
+				&nbsp;
+				<input type="button" value="登 录" class="btn_login" onclick="admin();">
+			</li>
+		</ul>
+	</form>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

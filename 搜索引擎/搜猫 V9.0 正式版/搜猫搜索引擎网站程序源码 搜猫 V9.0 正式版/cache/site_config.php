@@ -1,0 +1,27 @@
+<?php
+$config['name']="²Ý¸ù°ÉËÑË÷";
+$config['user_agent']="somao";
+$config['adtitle']="²Ý¸ù°ÉËÑË÷ÒýÇæ";
+$config['copyright']="caogen8.cc";
+$config['icp']="";
+$config['url']="http://www.caogen8.cc";
+$config['status_content']="";
+$config['statcode']="http://www.caogen8.cc";
+$config['Keywords']="²Ý¸ù°ÉËÑË÷ÒýÇæ; http://www.caogen8.cc";
+$config['description']="²Ý¸ù°ÉËÑË÷ÒýÇæ; http://www.caogen8.cc";
+$config['telephone']="";
+$config['qq']="2483206247";
+$config['is_tijiao_shoulu']="1";
+$config['spider_depth']=1;
+$config['author']="http://www.somao123.com/";
+$config['copyright']="caogen8.cc";
+$config['filter_word']=array (
+  0 => 'ÔÓÖÖ',
+  1 => 'ÂèµÄ',
+  2 => 'Âè±Æ',
+  3 => '²åÄã',
+  4 => 'ÈÕÄã',
+  5 => '¸ÉÄã',
+  6 => '',
+);
+?>

@@ -1,0 +1,30 @@
+/* list CSS Document 
+ * used by
+ *
+ */
+.list{padding:1px 5px 5px;}
+.list table{width:100%;text-align:center;border-style:solid;border-color:#e3e3e3;border-width:1px 0 0 1px;}
+.list table{position:relative;}
+.list table .th{background-color:#f1f1f1;}
+.list table .th td{line-height:23px;height:23px;color:#464646;}
+.list table th{color:#cbcbcb;font-size:14px;width:40px;}
+.list table td{line-height:26px;height:26px;color:#757575;padding:0 6px;}
+.list table td,.list table th{border-style:solid;border-color:#e3e3e3;border-width:0 1px 1px 0;}
+.list .key{text-align:left;padding-left:10px;width:340px;overflow:hidden;border-right:none;}
+
+/*  */
+.trend{background:url(../img/icon-trend.gif) no-repeat;height:13px;width:11px;display:inline-block;}
+.rise{background-position:0 2px;}
+.down{background-position:0 -27px;}
+.fair{background-position:0 -58px;}
+.detail{background:url(../img/icon-dec.gif) no-repeat;height:17px;width:17px;display:inline-block;position:relative;top:4px;*top:1px;}
+.detail:hover{background-position:0px -30px;}
+.line{background:url(../img/split.gif) no-repeat right center;height:23px;padding-right:6px;}
+.link{background:url(../img/icon-link.gif) no-repeat;height:20px;width:20px;display:inline-block;position:relative;top:4px;*top:1px;cursor:pointer;}
+.play{background-position:0 0px;}
+a:hover .play{background-position:-30px 0px;}
+.zoom{background-position:0 -27px;}
+a:hover .zoom{background-position:-30px -27px;}
+.toy{background-position:0 -53px;}
+a:hover .toy{background-position:-30px -53px;}
+

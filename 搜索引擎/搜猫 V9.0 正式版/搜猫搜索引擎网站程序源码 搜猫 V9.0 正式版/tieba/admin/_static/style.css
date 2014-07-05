@@ -1,0 +1,45 @@
+body{margin:0;padding:0;background:#FFF;font-family:"arial","simsun","georgia","Verdana";font-size:12px;color:#000;}
+div,table,p,img,form,ul,ol,li,dl,dd,dt,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+table,img{border:0}
+li{list-style-type:none;}
+a:link,a:visited,a:hover{text-decoration:underline;}
+
+#header{margin:3px 8px auto 8px;}
+#header #logo{width:160px;float:left;}
+#header #info{float:right;}
+#header #info a{color:#003366;}
+
+#footer{clear:both;margin:auto;padding:15px;text-align:center;font-family:"Verdana","arial","simsun";}
+#footer a{color:#03C;text-decoration:none;}
+
+#guid{clear:both;background:#edf7ff;border-top:1px solid #b2d0ea;font:12px/24px "Verdana","SimSun","Arial";padding:0 6px;}
+
+#B{width:980px;margin:10px auto;}
+#B #L{width:180px;float:left;}
+#B #R{width:790px !important; width:772px; float:right;}
+.nameleft {padding:3px 8px;height:17px;background:#FAFAFA;border:1px solid #B2D0EA;text-align:left;color:#6AA5D8;font-size:14px;font-weight:bold;float:left;width:162px !important;width:180px;}
+.nameleftcont{padding:7px 8px 12px 8px !important;padding:6px 8px;background:#FAFAFA;border:1px solid #B2D0EA;border-top:0;text-align:left;float:left;width:162px !important;width:180px;line-height:180%;}
+.nameleftcont ul li{font-size:14px;background:url(../../images/left_view.gif) 1px 8px no-repeat;padding:5px 0 0 23px;}
+.nameleftcont ul li ul li{font-size:14px;background:url(../../images/manage_icon.gif) 5px 8px no-repeat;padding:5px 0 0 23px;}
+.nameleftcont a{color:#1F376D;text-decoration:none;}
+.nameset {border-left:1px solid #B5CFE8;border-right:1px solid #B5CFE8;border-top:1px solid #B5CFE8;background:#E7F5FF;padding:5px 10px 5px 10px;}
+.namecont{border:1px solid #B5CFE8;border-top:0;}
+.namecont .tr1{background:#F7F7F7;color:#3A4343}
+.namecont .td1{padding:4px 10px 4px 10px;background:#F7F7F7;height:18px;}
+.namecont .td2{padding:5px 10px;word-break:break-all;word-wrap:break-word;}
+.namecont .td3{background:#EAEAEA;height:1px;}
+.namecont .td4{padding:5px 0 5px 10px;text-align:center;}
+.namecont .td4 a{margin:5px;padding:1px 5px;font-family:"Verdana";font-size:14px;text-decoration:none;color:#4585C5;border:1px solid #B5CFE8;}
+.namecont .td4 b{margin:5px;padding:1px 0px;font-family:"Verdana";font-size:14px;}
+
+.del{background:url(../../images/bar_bg03.gif) 0px -185px no-repeat;width:18px;height:18px;display:block;cursor:pointer;}
+.edit{background:url(../../images/bar_paper_bg01.gif) 0 -59px no-repeat;width:16px;height:17px;display:block;cursor:pointer;}
+.down{background:url(../../images/bar_paper_bg01.gif) 0 -90px no-repeat;width:16px;height:16px;display:block;cursor:pointer;}
+.up{background:url(../../images/bar_paper_bg01.gif) 0 -150px no-repeat;width:16px;height:16px;display:block;cursor:pointer;}
+
+.tex{width:520px;border:1px solid #b2d0ea;background:white;font-size:12px;font-family:"verdana","arial","simsun"}
+.inp{width:320px;height:16px;padding:2px;border:1px solid #b2d0ea;font-size:14px;font-family:"verdana","arial","simsun"}
+.ipt{height:16px;padding:2px;border:1px solid #b2d0ea;font-size:14px;text-align:center;}
+.sub{background:url(../../images/bar_bg03.gif) no-repeat;background-position:-40px -120px;color:#127c26;width:87px;height:24px;line-height:22px;font-size:12px;border:0;cursor:pointer;margin-top:15px;margin-right:10px;}
+.btn{height:22px;border:1px solid #b2d0ea;background:#FBFBFB;color:#069;font-size:14px;font-family:"simsun","verdana","arial"}
+.int{width:320px;padding:2px;border:1px solid #b2d0ea;font-size:14px;font-family:"arial","simsun",sans-serif;}

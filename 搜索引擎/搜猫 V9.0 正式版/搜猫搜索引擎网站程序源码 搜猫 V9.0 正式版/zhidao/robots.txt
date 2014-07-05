@@ -1,0 +1,11 @@
+#
+# robots.txt for Cyask
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /askdata/
+Disallow: /attachments/
+Disallow: /uc_client/
+Disallow: /include/
+Disallow: /process/
+Disallow: /templates/

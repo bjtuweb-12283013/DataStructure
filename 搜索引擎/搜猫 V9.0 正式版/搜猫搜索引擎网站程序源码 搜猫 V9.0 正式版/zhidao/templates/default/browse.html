@@ -1,0 +1,111 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt;&gt; {$guide}</div>
+<div id="left2">
+<!--{if $menu_list}-->
+<div class="t3 bcg"><div class="t3t bgg">{$sort_title}</div></div>
+<div class="b3 bcg mb12">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<!--{loop $menu_list $sl}-->
+<!--{if !($sl['id']%4)}--><tr><!--{/if}-->
+<!--{if $sl['sid']==$sortid}-->
+<td class="f14" width="25%" height="22">&#8226;&nbsp;<font color="red">{$sl['sort']}({$sl['qcount']})</font></td>
+<!--{else}-->
+<td class="f14" width="25%" height="22">&#8226;&nbsp;<a href="{$web_path}browse.php?sortid={$sl['sid']}">{$sl['sort']}</a>({$sl['qcount']})</td>
+<!--{/if}-->
+<!--{/loop}-->
+</table>
+</div>
+<!--{/if}-->
+
+<div id="subline"></div>
+<div id="sub">
+<!--{if $type==0}-->
+<span>{lang menu_all_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?sortid={$sortid}"><b>{lang menu_all_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==2}-->
+<span>{lang menu_solve_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type=2"><b>{lang menu_solve_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==1}-->
+<span>{lang menu_nosolve_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type=1"><b>{lang menu_nosolve_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==3}-->
+<span>{lang menu_vote_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type=3"><b>{lang menu_vote_ques}</b></a>
+<!--{/if}-->
+<!--{if $type==5}-->
+<span>{lang menu_highscore_ques}</span>
+<!--{else}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type=5"><b>{lang menu_highscore_ques}</b></a>
+<!--{/if}-->
+</div>
+<div class="subt bgg">{lang menu_same_ques_count}</div>
+<!--{if $quescount}-->
+<script type="text/javascript">
+function disQstate(s)
+{ 
+	switch (s)
+	{
+		case 1:var op='<img src="{$web_path}{$styledir}/icn_time.gif" alt="{lang menu_nosolve_ques}">';break;
+		case 2:var op='<img src="{$web_path}{$styledir}/icn_ok.gif"  alt ="{lang menu_solve_ques}">';break;
+		case 3:var op='<img src="{$web_path}{$styledir}/icn_vote.gif" alt="{lang menu_vote_ques}">';break;
+		case 4:var op='<img src="{$web_path}{$styledir}/icn_cancel.gif" alt="{lang menu_closed_ques}">';break;
+		default: var op='{lang menu_unknown_ques}';
+	}
+	document.write(op);
+}
+</script>
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr>
+	<td class="nl" height="30">{lang menu_ques_title}</td>
+	<td class="nl" align="center" width="7%">{lang menu_answer_count}</td>
+	<td class="nl" align="center" width="10%">{lang menu_ques_status}</td>
+	<td class="nl" align="center" width="10%">{lang menu_ques_time}</td></tr>
+<!--{loop $question_list $question}-->
+<tr><td>
+<!--{if $question['score']}-->
+	<img width="12" height="11" align="absmiddle" alt="{lang ques_prize_score}" src="{$web_path}{$styledir}/s_money.gif" /><span class="red" title="{lang ques_prize_score}">{$question['score']}</span>
+<!--{/if}-->
+	<span class="f14"><a href="{$web_path}{$question['url']}" target="_blank">{$question['title']}</a>
+  [<a class="lgy" href="{$web_path}browse.php?sortid={$question['sid']}&type={$type}">{$question['sort']}</a>]</span></td>
+	<td align="middle">{$question['answercount']}</td>
+	<td align="middle"><script type="text/javascript">disQstate({$question['status']});</script></td>
+	<td align="middle">{$question['asktime']}</td></tr>
+<!--{/loop}-->
+</table>
+<!--{else}-->
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr><td height="30" align="center">{lang page_nopage}</td></tr>
+</table>
+<!--{/if}-->
+<div id="pg">
+<!--{if $page>1}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type={$type}&page=1">{lang page_first}</a>                                                                                                          
+<a href="{$web_path}browse.php?sortid={$sortid}&type={$type}&page={$page_front}">{lang page_front}</a>
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="{$web_path}browse.php?sortid={$sortid}&type={$type}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="{$web_path}browse.php?sortid={$sortid}&type={$type}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->                     
+</div>
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hq}-->
+&#8226; <span class="f13"><a class="lq" href="{$web_path}{$hq['url']}" target="_blank" title="{$hq['title']}">{$hq['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+{template footer}

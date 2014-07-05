@@ -1,0 +1,51 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt;&gt; {$toplink}</div>
+<div id="left2">
+<div class="t3 bcg"><div class="t3t bgg"><!--{if $ques_status==2}-->{lang menu_solve_ques}<!--{elseif $ques_status==4}-->{lang menu_closed_ques}
+<!--{else}-->{lang menu_unknown_ques}<!--{/if}--></div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<div class="f14b">{$ques_title}</div>
+<div><!--{if $ques_score}--><img width="16" height="16" src="{$web_path}{$styledir}/money.gif" align="absmiddle" /> <font color="red">{lang ques_prize_score}</font><!--{/if}-->
+&nbsp;<!--{if $left_time}-->{language ques_left_time}<!--{/if}--></div>
+<div class="f14">{lang menu_ques_supplement}: {$ques_supplement}</div>
+<div class="f13" align="right">{lang ques_asker}:{$ques_user} &nbsp;{lang menu_ques_time}:{$ques_asktime} &nbsp;</div>
+</div>
+</div>
+<!--{if $ques_status==2}-->
+<div class="t3 bcy"><div class="t3t bgy"><img src="{$web_path}{$styledir}/best_answer.gif" width="24" height="22" align="absmiddle" />&nbsp;{lang menu_ques_bestanswer}</div></div>
+<div class="b3 bcy mb12">
+<div class="w100">
+<div><span class="f14b"><a href="member.php?uid={$adoptanswer['uid']}" title="{$adoptanswer['role']}" target="_blank"><u>{$adoptanswer['username']}&nbsp;{lang ques_of_answer}</u></a></span>&nbsp; ( {lang ques_answer_adopttime}: {$adoptanswer['adopttime']} )</div>
+<br />
+<div class="f14">{$adoptanswer['answer']}</div>
+<div class="f13" align="right"><a href="{$web_path}response.php?aid={$adoptanswer['aid']}#response">{$adoptanswer['response']}&nbsp;{lang menu_answer_response}</a> &nbsp;{lang menu_answer_time}: {$adoptanswer['answertime']}&nbsp;</div>
+</div>
+</div>
+<div class="t3 bcg"><div class="t3t bgg">{lang menu_ques_otheranswer}&nbsp;({$answer_count})</div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<!--{loop $answer_list $answer}-->
+<div class="f14"><a href="{$web_path}member.php?uid={$answer['uid']}" title="{$answer['role']}" target="_blank"><u>{$answer['username']}&nbsp;{lang ques_of_answer}</u></a></div>
+<br />
+<div class="f14">{$answer['answer']}</div>
+<div class="f13" align="right"><a href="{$web_path}response.php?aid={$answer['aid']}#response">{$answer['response']}&nbsp;{lang menu_answer_response}</a> &nbsp;{lang menu_answer_time}: {$answer['time']}&nbsp;</div>
+<div class="f12"><hr size="1" width="99%" color="#cccccc"></div>
+<!--{/loop}-->
+</div>
+</div>
+<!--{/if}-->
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hotquestion}-->
+&#8226; <span class="f13"><a class="lq" href="{$web_path}{$hotquestion['qid']}" target="_blank" title="{$hotquestion['title']}">{$hotquestion['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+{template footer}

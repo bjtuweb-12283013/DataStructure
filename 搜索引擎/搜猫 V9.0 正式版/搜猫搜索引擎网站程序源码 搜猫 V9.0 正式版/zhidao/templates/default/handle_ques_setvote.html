@@ -1,0 +1,67 @@
+{template header}
+<div id="middle">
+<div id="c90">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_ques_vote}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<br />
+<div class="f14">{lang menu_myask}:{$ques_title}</div>
+<script language="javascript">
+function check_vote_list()
+{
+	var vote_count = 0;
+	var vote_list = "";
+	var vote = document.getElementsByName("vote_array");
+	var checknum = vote.length;
+  	for (i = 0 ; i < checknum ; i++)
+  	{
+      		if (vote[i].checked == true)
+      		{
+          		vote_count++;
+          		if (vote_list != "") vote_list += "|";
+          		vote_list += vote[i].value;
+      		}
+  	}
+  	if(vote_count<2)
+	{
+		alert("{lang warning_vote_short}");
+		return false;
+	}
+	if(vote_count>3)
+	{
+		alert("{lang warning_vote_more}");
+		return false;
+	}
+	vote_list_form.vote_count.value = vote_count;
+	vote_list_form.vote_list.value= vote_list;
+  	vote_list_form.submit();
+  	return true;
+}
+</script>
+<div class="f14">&nbsp;</div>
+<form name="vote_list_form" action="handle.php" method="post" onsubmit="return check_vote_list()">
+<div class="f14"><font color="red">{lang ques_vote_set_explain}</font></div>
+<div style="padding-bottom: 5px; padding-top: 5px"><hr color="#cccccc" size="1" width="98%"></div>
+<!--{loop $answer_list $answer}-->
+<div class="f14">{lang ques_solution} {$answer['id']}:</div>
+<div class="f13">{$answer['answer']}</div>
+<div class="f14"><input type="checkbox" name="vote_array" value="{$answer[aid]}" id="vote{$answer['id']}" />&nbsp;<label for="vote{$answer['id']}">{lang ques_vote_set2}</label></div>
+<div style="padding-bottom: 5px; padding-top: 5px"><hr color="#cccccc" size="1" width="98%"></div>
+<!--{/loop}-->   
+<div class="f14">
+<input type="hidden" name="command" value="ques_vote_submit" />
+	<input type="hidden" name="qid" value="{$qid}" />
+	<input type="hidden" name="vote_count" value="" />
+	<input type="hidden" name="vote_list" value="" />
+	<input type="hidden" name="formhash" value="{echo form_hash()}" />
+	<input type="hidden" name="url" value="{echo get_referer($default = './')}" />
+	<input type="submit" name="quesvotesubmit" value="{lang button_submit}" class="bnsrh" />&nbsp;&nbsp; 
+	<input type="button" name="Submit2" onClick="history.back();" value="{lang button_notdo}" class="bnsrh" />
+</div>
+</form>
+<br />
+</div>
+</div>
+</div>
+</div>
+{template footer}

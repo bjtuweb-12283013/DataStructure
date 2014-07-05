@@ -1,0 +1,36 @@
+/*基础元素*/
+body{margin:0;padding:0;background:#FFF;font-family: "arial","simsun",sans-serif;font-size:12px;color:#000;}
+div,table,p,img,form,ul,ol,li,dl,dd,dt,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+table,img{border:0}
+td,th,div,p,input{font-family: "arial","simsun",sans-serif;}
+li{list-style-type:none;}
+a:link,a:visited,a:hover{text-decoration:underline;}
+a:link,.blue a{color:#03C;}
+
+/*公用元素*/
+.ft_l{float:left;}
+.ft_r{float:right;}
+.ta_l{text-align:left;}
+.ta_m{text-align:center;}
+.ta_r{text-align:right;}
+.k{clear:both;font-size:0;height:0;line-height:0;}
+.bd_t{border-top:1px solid #B2D0EA;}
+
+#header{margin-bottom:1px;}
+
+/*搜索框*/
+.search{clear:left;margin:auto;padding-top:1px;}
+.search .logo{margin:0 8px;}
+.search li{float:left;padding-bottom:3px;}
+.search dd{float:left;line-height:28px;}
+.search dd a{margin:0 4px;color:#03C;}
+.s{width:21.75em;height:1.5em;border:1px solid #69C;margin-right:8px;font:16px/1.5em "arial","simsun",sans-serif;}
+.bt{width:5em;height:2.1em;margin:0 4px 0 0;font:14px/1.5em "arial","simsun",sans-serif;cursor:pointer;}
+.search li label{padding:0 6px 0 0;}
+
+/*页尾*/
+#footer{margin:auto;text-align:center;line-height:150%;padding-bottom:7px;}
+#footer ul{margin-bottom:5px;}
+#footer li{display:inline;}
+#footer li a{margin:0 4px;}
+#footer a{color:#03C;}

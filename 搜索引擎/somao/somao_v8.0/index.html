@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=gb2312">
+<title>搜猫一下，你就知道</title>
+<meta name="Keywords" content="搜猫,搜索引擎,搜索引擎登录,搜索引擎源码,仿百度搜索引擎">
+<meta name="description" content="搜猫专找网站,为你找好网站!搜猫搜索引擎.本站仿百度.程序源码出售中,不需要服务器,一般空间就可以运行的了.联系QQ:22568190">
+<style>body{margin:4px 0}p{margin:0;padding:0}img{border:0}td,p,#u{font-size:12px}#b,#u,#l td,a{font-family:arial}#kw{font:16px Verdana;height:1.78em;padding-top:2px}#b{height:30px;padding-top:4px}#b,#b a{color:#77c}#u{padding-right:10px;line-height:19px;text-align:right;margin:0 0 3px !important;margin:0 0 10px}#sb{height:2em;width:5.6em}#km{height:5px}#l{margin:0 0 5px 15px}#l td{padding-left:107px}p,table{width:650px;border:0}#l td,#sb,#km{font-size:14px}#l a,#l b{margin-right:1.14em}a{color:#00c}a:active{color:#f60}#hp{position:absolute;margin-left:6px}#lg{margin:-26px 0 -44px}#lk{width:auto;line-height:18px;vertical-align:top}form{position:relative;z-index:9}
+#hot_kw{width:500px;white-space: nowrap;line-height:20px;}
+#hot_kw a{font-size:13px;}
+#statcode{text-align:center;display:none;}
+.ad_tb{background:#cccccc;}
+.ad_tb td{background:#FFFFFF;width:25%;text-align:center;}
+#tags {}
+#tags a { }
+#tags a:hover { text-decoration:none }
+#tags a.focu {color:#000000;TEXT-DECORATION:none;font-weight:bold;}
+.popupMenu{width:100px;BORDER-RIGHT: #3366CC 1px solid; BORDER-TOP: #A2BAE7 1px solid; BORDER-LEFT: #A2BAE7 1px solid; BORDER-BOTTOM: #3366CC 1px solid; BACKGROUND-COLOR:#ffffff;line-height:180%;font-size:75%; position:absolute; z-index:100}
+</style>
+<script language="javascript" type="text/javascript">
+function selectTag(showContent,wd,cate_id,selfObj){
+	var tag = document.getElementById("tags").getElementsByTagName("a");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.className = "focu";
+	
+	document.f.wd.focus();
+	document.f.wd.value=wd;
+	document.f.s.value=cate_id;
+	f.attributes[83].value=showContent;
+	//document.f.action=showContent;
+
+}
+function selectTag_tieba(showContent,wd,cate_id,selfObj){
+	var tag = document.getElementById("tags").getElementsByTagName("a");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.className = "focu";
+	
+	document.f.wd.focus();
+	document.f.wd.value=wd;
+	document.f.s.disabled="disabled";
+	f.attributes[83].value=showContent;
+	document.f.wd.name="kw";
+	//document.f.action=showContent;
+
+}
+</script>
+<script language="javascript" src="js/zeidu_menu.php"></script>
+</head>
+<body onLoad="onLoadHandler()" onMouseOut="window.status='什么是搜猫?会搜网站的叫搜猫!!!^_^';return true">
+<SCRIPT LANGUAGE="JavaScript">
+<!--//
+function killErr(){
+	return true;
+}
+window.onerror=killErr;
+//-->
+</SCRIPT>
+<div id=u>&nbsp;
+<!--
+<a href="user/login.php">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="user/reg.php">注册</a>&nbsp;-->
+<a href="search/url_submit.php" target="_blank">登录</a></div>
+<center><img src="images/zeidu_logo.gif" width=270 height=129 usemap="#mp" id=lg><br><br><br><br><table cellpadding=0 cellspacing=0 id=l><tr><td>
+<div id=m>
+<div id="tags">
+<a href="javascript:void(0)" class=focu onClick="selectTag('s','网页','',this)">网页</a><div id="Memu_Desc_356" class="popupMenu" style="display:none"></div><a id="Memu_Desc_356_link" href="javascript:void(0)" onClick="selectTag('s','企业','356',this)">企业</a><div id="Memu_Desc_335" class="popupMenu" style="display:none"></div><a id="Memu_Desc_335_link" href="javascript:void(0)" onClick="selectTag('s','购物','335',this)">购物</a><div id="Memu_Desc_261" class="popupMenu" style="display:none"></div><a id="Memu_Desc_261_link" href="javascript:void(0)" onClick="selectTag('s','生活','261',this)">生活</a><div id="Memu_Desc_47" class="popupMenu" style="display:none"></div><a id="Memu_Desc_47_link" href="javascript:void(0)" onClick="selectTag('s','商务','47',this)">商务</a><div id="Memu_Desc_29" class="popupMenu" style="display:none"></div><a id="Memu_Desc_29_link" href="javascript:void(0)" onClick="selectTag('s','人物','29',this)">人物</a><div id="Memu_Desc_15" class="popupMenu" style="display:none"></div><a id="Memu_Desc_15_link" href="javascript:void(0)" onClick="selectTag('s','名站','15',this)">名站</a><!--<a href="javascript:void(0)"  onClick="selectTag_tieba('tieba/f','贴吧','',this)">贴吧</a>--></div>
+</div></td></tr></table>
+<table cellpadding=0 cellspacing=0 style="margin-left:15px"><tr valign=top><td style="height:62px;padding-left:92px" nowrap><form name=f action=s><input name=wd type=text id=kw size=42 maxlength=100> 
+<input type="hidden" name=s value="">
+<input type=submit value=搜猫一下 id=sb><span id=hp><a href="search/url_submit.php">快速<br>
+收录</a></span>
+</form></td></tr></table>
+<p id=km>&nbsp;</p>
+<br>
+<div id="hot_kw">
+<a target="_blank" href="soso/">搜猫集成搜索</a>&nbsp;&nbsp;<a target="_blank" href="site/">网址导航</a>&nbsp;&nbsp;</div><br><br>
+<p style=height:30px><a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://127.0.0.1')" href=#>把搜猫设为主页</a>&nbsp;&nbsp;
+<a href="g/#write">给搜猫留言</a>
+</p>
+<p style="height:14px">
+<a target="_blank" href="/a/zeidu.html">关于程序</a> | 
+<a target="_blank" href="s/newsite.php">最新收录</a> | 
+<a target="_blank" href="tg/">搜猫推广</a> | 
+<a target="_blank" href="top/">搜索风云榜</a> | 
+<a target="_blank" href="/a/AboutSomao.html">About Somao</a> | 
+</p><p id=b>&copy;2004 搜猫 <a href=#>使用前必读</a> <a href=http://www.miibeian.gov.cn target=_blank></a>
+<!--Powered by <a target="_blank" href="http://www.zeidu.com/">ZeiDu</a>-->&nbsp;<a target="_blank" href="http://www.miibeian.gov.cn/">豫ICP备5201314号</a><img src=images/gs.gif>
+</p>
+<script>var w=document.f.wd;function s(o){if(w.value.length>0){var h=o.href;var q=encodeURIComponent(w.value);if(h.indexOf("q=")!=-1){o.href=h.replace(new RegExp("q=[^&$]*"),"q="+q)}else{o.href+="?q="+q}}};(function(){if(new RegExp("q=([^&]+)").test(location.search)){w.value=decodeURIComponent(RegExp.$1)}})();if(navigator.cookieEnabled&&!/sug?=0/.test(document.cookie)){document.write('<script src=http://www.baidu.com/js/bdsug.js?v=1.1.0.3><\/script>')};if(window.attachEvent){window.attachEvent("onload",function(){w.focus();})}else{window.addEventListener('load',function(){w.focus()},true)};window.onunload=function(){};</script>
+<map name=mp><area shape=rect coords="43,22,227,91" href="javascript:window.external.AddFavorite(window.location.href,document.title);"  title="点此收藏 搜猫"></map></center>
+<script language="javascript">
+document.writeln("<script src=\"js\/shoulu.php?ref="+escape(document.referrer)+"\"><\/script>");
+var url = top.location;
+var user_id;
+url = url.toString();
+user_id=url.substring(url.indexOf("?")+1,url.length);
+if(!isNaN(user_id))
+{
+ // document.write(user_id);
+  document.writeln("<script src=\"js\/zz.php?user_id="+user_id+"\"><\/script>");
+}
+
+</script>
+</body>
+</html><div style="display:none">http://www.qiaso.com</div>

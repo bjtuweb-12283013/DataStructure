@@ -1,0 +1,75 @@
+FORM {
+	MARGIN: 0px
+}
+P {
+	MARGIN: 0px
+}
+OL {
+	MARGIN: 0px
+}
+UL {
+	MARGIN: 0px
+}
+LI {
+	MARGIN: 0px
+}
+H1 {
+	MARGIN: 0px
+}
+H2 {
+	MARGIN: 0px
+}
+H3 {
+	MARGIN: 0px
+}
+H4 {
+	MARGIN: 0px
+}
+BODY {
+	MARGIN: 10px; FONT: 14px arial,'ËÎÌו'; COLOR: #000; TEXT-ALIGN: center
+}
+TABLE {
+	cellspacing: 0; cellpadding: 0
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+TABLE {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.main {
+	MARGIN: 0px auto; WIDTH: 960px; TEXT-ALIGN: left
+}
+#header {
+	POSITION: relative
+}
+#header A {
+	TEXT-DECORATION: none
+}
+#header .header_left {
+	HEIGHT: 55px
+}
+#header .header_left LABEL {
+	VERTICAL-ALIGN: 4px
+}
+#header .header_right {
+	FONT-SIZE: 12px; RIGHT: 0px; POSITION: absolute; TOP: 0px
+}
+#header .header_right SPAN {
+	MARGIN-LEFT: 3px; VERTICAL-ALIGN: baseline; MARGIN-RIGHT: 3px
+}
+#footer {
+	TEXT-ALIGN: center
+}
+#footer {
+	PADDING-RIGHT: 0px; BORDER-TOP: #f0f0f9 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 0.9em; PADDING-BOTTOM: 20px; MARGIN: 10px 0px 0px; COLOR: #7777cc; PADDING-TOP: 20px
+}
+#footer .b {
+	PADDING-TOP: 4px; FONT-FAMILY: arial; HEIGHT: 30px; TEXT-ALIGN: center
+}
+#b {
+	COLOR: #7777cc
+}
+#b A {
+	COLOR: #7777cc
+}

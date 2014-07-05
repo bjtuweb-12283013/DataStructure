@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<title>{$site_name}{lang button_login}</title>
+<link href="{$styledir}/default.css" type=text/css rel=stylesheet />
+<script type="text/javascript" src="include/functions.js"></script>
+<script type="text/javascript">
+function check_loginform(f)
+{
+	var username;
+	var password;
+	username=str_trim(f.username.value);
+	password=str_trim(f.password.value);
+	f.username.value=username;
+	f.password.value=password;
+	if(f.username.value=="")
+	{
+		f.username.focus();
+		alert("{lang warning_username_null}");
+		return false;
+	}
+	if(f.password.value=="")
+	{
+		f.password.focus();
+		alert("{lang warning_password_null}");
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="main" style="height:100%">
+<div align="left">
+<table cellspacing="3" cellpadding="3" width="100%" border="0">
+<tr><td valign="top" width="160">&nbsp;&nbsp;<a href="./"><img src="{$styledir}/1000ask.gif" border="0" /></a></td>
+<td class="f14" nowrap="nowrap">&nbsp;&nbsp;<a href="./"><b>{lang button_back_index}</b></a></td></tr>
+</table>
+</div>
+<div id="c90">
+<div class="t3 bcb"><div class="t3t bgb">{lang button_login}</div></div>
+<div class="b3 bcb mb12">
+<br />
+<form name="loginform" action="login.php" method="post" onsubmit="return check_loginform(this);">
+<table cellspacing="0" cellpadding="0" width="100%" valign="top" border="0">
+<tr>
+	<td class="f14" width="100%" height="50" colspan="2" valign="top" align="center">{lang warning_login_note}</td></tr>
+<tr>
+<td class="f14" width="40%" height="35" align="right" valign="top" nowrap="nowrap">{lang menu_username} :&nbsp;&nbsp;&nbsp;</td>
+	<td width="60%" height="35" valign="top">
+	<input type="text" name="username" size="20" maxlength="20" value="{$loginuser}" />
+	{if $loginuser}&nbsp;&nbsp;{lang menu_activationauth}{/if}
+	</td>
+</tr>
+<tr>
+	<td class="f14" height="35" align="right" valign="top" nowrap="nowrap">{lang menu_password} :&nbsp;&nbsp;&nbsp;</td>
+	<td height="35" valign="top">
+	<input type="password" name="password" size="20" maxlength="32" />
+	</td>
+</tr>
+<tr>
+	<td class="f14" height="35" align="right" nowrap="nowrap">&nbsp;</td>
+	<td height="35" valign="top">
+	<input type="checkbox" name="cookietime" value="1" checked /> {lang menu_cookie_time}</td>
+</tr>
+<tr>
+<td class="f14" height="35" align="right" valign="top" nowrap="nowrap">&nbsp;</td>
+<td height="35" valign="top">
+<input type="submit" name="loginsubmit" value="{lang button_login}" class="bnsrh" />
+<input type="hidden" name="command" value="login" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="hidden" name="url" value="{$url}" />
+&nbsp;&nbsp;<a href="register.php?command=getpw">{lang button_getpass}</a>
+</td></tr>
+</table>
+</form>
+<br />
+</div>
+</div>
+<br />
+{template footer}

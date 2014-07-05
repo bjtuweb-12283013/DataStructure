@@ -1,0 +1,300 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="./">{$site_name}</a> &gt;&gt; {lang menu_ask_ques}</div>
+<script type="text/javascript">
+function check_askform(obj)
+{
+	gcv();
+	if(obj.cid.value=="" || obj.cid.value==0)
+	{
+		alert("{lang warning_sort_mistake}");return false;
+	}
+	if(obj.qtitle.value =="" || obj.qtitle.value.length ==0)
+	{
+		alert("{lang warning_ques_mistake}");obj.qtitle.focus();return false;
+	}
+	var leftChars = get_left_chars(obj.qtitle,50);
+   
+    if ( leftChars < 0) 
+	{
+      alert("{lang warning_qtitle_lang}");
+      obj.qtitle.focus();
+      return false;    
+    }
+	if(leftChars>92)
+	{
+      alert("{lang warning_ques_short}");
+      obj.qtitle.focus();
+      return false;    
+	}
+	var qs_length = obj.qsupply.value.length;
+  
+	if(qs_length >3000) 
+	{   
+      alert("{lang warning_qsupply_lang}");
+      obj.qsupply.focus();
+      return false;    
+    }
+}
+function  gcv()  
+{  
+	var aa = document.getElementsByName("sa");
+	for(var  i=0;  i<aa.length; i++)  
+	{
+		if(aa[i].checked)
+        {
+			document.askform.cid.value = aa[i].value;
+        }
+	}  
+}
+</script>
+<noscript><div class="t3 bcb" align="center"><div class="t3t bgb">&nbsp;</div></div>
+<div class="b3 bcb f14b" align="center">{lang warning_not_javascript}</div>
+</noscript>
+
+<div id="c90">
+<div id="dht">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_ask_ques}</div></div>
+<div class="b3 bcb">
+<form name="askform" method="post" action="ask.php" onSubmit="return check_askform(this);">
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+<tr valign="top"><td width="110" class="f14" nowrap>{lang ques_your_question}:</td>
+<td><input type="text" name="qtitle" value="{$ques_title}" size="67" /></td>
+</tr>
+</table>
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0">
+<tr valign="top"><td width="110" class="f14" nowrap>{lang menu_ques_supplement}:</td>
+<td><textarea name="qsupply" cols="66" rows="8"></textarea> 
+<br />{lang ques_supplement_intro}</td></tr>
+</table>
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+<tr valign="top"><td width="110" nowrap class="f14">{lang menu_sort}:</td>
+<td class="f14">
+<span id="classid">
+<table cellspacing="0" cellpadding="0" border="0">
+<tr><td><select id="ClassLevel1" style="WIDTH: 125px" size="8" name="ClassLevel1"><option selected></option></select></td>
+<td width="20"><div align="center"><B>¡ú</B></div></td>
+<td><select id="ClassLevel2" style="width: 100px" size="8" name="ClassLevel2"><option selected></option></select></td>
+<td width=20><div id="jiantou" align="center"><B>¡ú</B></div></td>
+<td><select id="ClassLevel3" style="width: 100px" onchange="getCidValue();" size="8" name="ClassLevel3"><option selected></option></select></td>
+</tr>
+</table>
+<script language="javascript">
+function getCidValue()
+{
+	var _cl1 = document.askform.ClassLevel1;
+	var _cl2 = document.askform.ClassLevel2;
+	var _cl3 = document.askform.ClassLevel3;
+	var _cid = document.askform.cid;
+	if(_cl1.value!=0) _cid.value = _cl1.value;
+	if(_cl2.value!=0) _cid.value = _cl2.value;
+	if(_cl3.value!=0) _cid.value = _cl3.value;
+}
+var g_ClassLevel1;
+var g_ClassLevel2;
+var g_ClassLevel3;
+var class_level_1=new Array(
+{$class1}
+);
+var class_level_2=new Array(
+{$class2}
+);
+var class_level_3=new Array(
+{$class3}
+);
+function FillClassLevel1(ClassLevel1)
+{
+    ClassLevel1.options[0] = new Option("aa", "0");
+    for(i=0; i<class_level_1.length; i++)
+    {
+        ClassLevel1.options[i] = new Option(class_level_1[i][1], class_level_1[i][0]);
+    }
+    // ClassLevel1.options[0].selected = true;
+    ClassLevel1.length = i;
+}
+function FillClassLevel2(ClassLevel2, class_level_1_id)
+{
+    ClassLevel2.options[0] = new Option("{lang button_noselect}", "");
+    count = 1;
+    for(i=0; i<class_level_2.length; i++){
+    if(class_level_2[i][0].toString() == class_level_1_id) {
+            ClassLevel2.options[count] = new Option(class_level_2[i][2], class_level_2[i][1]);
+            count = count+1;}
+    }
+    ClassLevel2.options[0].selected = true;
+    ClassLevel2.length = count;
+}
+function FillClassLevel3(ClassLevel3, class_level_2_id)
+{
+    ClassLevel3.options[0] = new Option("{lang button_noselect}", "");
+    count = 1;
+    for(i=0; i<class_level_3.length; i++) {
+        if(class_level_3[i][0].toString() == class_level_2_id) {
+            ClassLevel3.options[count] = new Option(class_level_3[i][2], class_level_3[i][1]);
+            count = count+1;}
+    }
+    ClassLevel3.options[0].selected = true;
+    ClassLevel3.length = count;       
+}
+function ClassLevel2_onchange()
+{
+    getCidValue();
+    FillClassLevel3(g_ClassLevel3, g_ClassLevel2.value); 
+    if (g_ClassLevel3.length <= 1) {  
+     g_ClassLevel3.style.display = "none";
+	 document.getElementById("jiantou").style.display = "none";
+    }
+    else {
+     g_ClassLevel3.style.display = "";     
+	 document.getElementById("jiantou").style.display = "";	 
+    }       
+}
+ 
+function ClassLevel1_onchange()
+{
+    getCidValue();
+    FillClassLevel2(g_ClassLevel2, g_ClassLevel1.value);
+    ClassLevel2_onchange();
+	
+}
+function InitClassLevelList(ClassLevel1, ClassLevel2, ClassLevel3)
+{
+    g_ClassLevel1=ClassLevel1;
+    g_ClassLevel2=ClassLevel2;
+    g_ClassLevel3=ClassLevel3;
+    g_ClassLevel1.onchange = Function("ClassLevel1_onchange();");
+    g_ClassLevel2.onchange = Function("ClassLevel2_onchange();");
+    FillClassLevel1(g_ClassLevel1);
+    ClassLevel1_onchange();
+}
+InitClassLevelList(document.askform.ClassLevel1, document.askform.ClassLevel2, document.askform.ClassLevel3);
+
+var selected_id_list="0"
+var blank_pos = selected_id_list.indexOf(" ");
+var find_blank = true;
+if (blank_pos == -1) {
+    find_blank = false;
+    blank_pos = selected_id_list.length;
+}
+var id_str = selected_id_list.substr(0, blank_pos);
+g_ClassLevel1.value = id_str;
+ClassLevel1_onchange();
+
+if (find_blank == true) {
+    selected_id_list = selected_id_list.substr(blank_pos + 1, 
+    selected_id_list.length - blank_pos - 1);
+    blank_pos = selected_id_list.indexOf(" ");
+    if (blank_pos == -1) {
+        find_blank = false;
+        blank_pos = selected_id_list.length;
+    }
+    id_str = selected_id_list.substr(0, blank_pos);
+    g_ClassLevel2.value = id_str;
+    ClassLevel2_onchange();
+
+    if (find_blank == true) {
+        selected_id_list = selected_id_list.substr(blank_pos + 1, 
+        selected_id_list.length - blank_pos - 1);
+        blank_pos = selected_id_list.indexOf(" ");
+        if (blank_pos == -1) {
+            find_blank = false;
+            blank_pos = selected_id_list.length;
+        }
+        id_str = selected_id_list.substr(0, blank_pos);
+        g_ClassLevel3.value = id_str;
+    }
+}
+</script>
+</span>
+<script type="text/javascript">
+var _aa = document.getElementsByName("sa");
+if(_aa.length>0)
+{
+	document.write("<a href='javascript:void(0)' onClick=window.open('selectsort.php','','width=450,height=350');>{lang ques_update_sort}</a>");
+	_aa[0].checked=true;
+}
+</script>
+</td></tr>
+</table>
+<table width="80%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="110">&nbsp;</td><td>{lang ques_sort_prompt}</td></tr>
+</table>
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+<tr><td width="110" valign="top" nowrap class="f14">{lang menu_ques_score}:</td>
+<td><div class="f14">
+<script type="text/javascript">
+function check_myscore()
+{
+	var givescore=Number(document.askform.givescore.value);
+	var myscore=Number(document.askform.myscore.value);
+	if(givescore > myscore)
+	{
+      	document.getElementById("scoretip").innerHTML = "<font color=red>{lang warning_score_less}</font>";
+	  	document.askform.givescore.options[0].selected = true;
+	}
+	else
+	{
+		document.getElementById("scoretip").innerHTML = "";
+	}
+}
+function check_hid()
+{
+	var myscore=Number(document.askform.myscore.value);
+	if(myscore<5000)
+	{
+      	document.getElementById("hidtip").innerHTML = "<font color=red>{lang warning_grade_less}</font>";
+	  	document.askform.hidanswer.checked = false;
+	}
+	else
+	{
+		document.getElementById("hidtip").innerHTML = "";
+	}
+}
+</script>
+<select name="givescore" onchange="check_myscore();"> 
+<option value="0">0</option>
+<option value="5">5</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="30">30</option>
+<option value="50">50</option>
+<option value="80">80</option>
+<option value="100">100</option>
+</select>
+&nbsp;&nbsp;&nbsp;{lang ques_leftscore}<input type="text" name="myscore" value="{$my_score}" size="10" readonly="true" />
+<br /><span id="scoretip">{lang ques_score_explain}</span></div>
+</td></tr>
+</table>
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+<tr> 
+<td width="110" valign="top" nowrap="nowrap" class="f14">{lang ques_hid}:</td>
+<td valign="top" class="f14">
+<input type="checkbox" name="hidanswer" value="1" onclick="check_hid();" />
+&nbsp;<span id="hidtip">{lang ques_hid_explain}</div></td>
+</tr>
+</table>
+<br />
+<table width="80%" border="0" cellpadding="0" cellspacing="0" >
+<tr><td width="110" class="f14">&nbsp;</td>
+<td valign="top">
+<input type="hidden" name="cid" value="0"> 
+<input type="hidden" name="command" value="ask" />
+<input type="hidden" name="url" value="{$url}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="submit" name="submit" value="{lang button_submit}" class="bnsrh" />
+</td>
+</tr>
+</table>
+</form>
+<br />
+</div>
+</div>
+</div>
+</div>
+{template footer}

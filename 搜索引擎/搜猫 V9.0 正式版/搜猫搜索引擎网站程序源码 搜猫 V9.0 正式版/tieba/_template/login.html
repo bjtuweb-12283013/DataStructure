@@ -1,0 +1,20 @@
+<div class="login_div">
+<form name="login-form" id="login-form" onsubmit="return false;">
+<ul>
+<li style="padding-top:8px;">
+<label>通行证账号：</label>
+<input type="text" name="login-user" id="login-user" maxlength="45" class="btn_input" value="" onkeydown="if(event.keyCode==13)event.keyCode=9" />
+</li>
+<li><label>&nbsp;</label><span>电子邮箱地址或者用户名</span></li>
+<li class="bd_t1" style="padding:7px 0 6px 0;">
+<label>通行证密码：</label>
+<input type="password" name="login-pwd" id="login-pwd" maxlength="18" class="btn_input" value="" onkeydown="if(event.keyCode==13)login()" />
+</li>
+<li class="bd_t1">
+<label>&nbsp;</label>
+<input type="button" value="登 录" class="btn_login" onclick="login()">
+<input type="reset" value="重 填" class="btn_login">
+</li>
+</ul>
+</form>
+</div>

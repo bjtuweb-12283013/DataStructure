@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>Cookie设置_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<SCRIPT LANGUAGE="JavaScript">
+	function getrandom(len)
+	{
+		var seed = new Array('abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ','0123456789','!@_^~?,;:');
+		
+		var idx,i;
+		
+		var result = '';
+		
+		for (i=0; i<len; i++)
+		{
+			idx = Math.floor(Math.random()*4);
+
+			result += seed[idx].substr(Math.floor(Math.random()*(seed[idx].length)),1);
+		}
+		
+		return   result;
+	}   
+</SCRIPT>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>Cookie设置</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">Cookie设置</div>
+		<div class="namecont">
+			<form name="setForm" id="setForm" method="post" target="sypost" action="./set_secure.php?action=update">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr class="tr1"><td class="td1" colspan="2" align="center"><b>以下信息更改后将退出登录</b></td></tr>
+			<tr>
+			<td align="right" width="25%">Cookie 路径：</td>
+			<td>
+				<input type="text" name="cookie_path" id="cookie_path" class="inp" value="{cookie_path}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right" width="25%">Cookie 作用域：</td>
+			<td>
+				<input type="text" name="cookie_domain" id="cookie_domain" class="inp" value="{cookie_domain}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right" width="25%">用户 Cookie 密钥：</td>
+			<td>
+				<input type="text" name="cookie_key_login" id="cookie_key_login" class="inp" value="{cookie_key_login}" readonly />&nbsp;
+				<input type="button" onclick="cookie_key_login.value=getrandom(16);" value="生成随机密钥" class="btn">
+			</td>
+			</tr>
+			<tr>
+			<td align="right">管理员 Cookie 密钥：</td>
+			<td>
+				<input type="text" name="cookie_key_admin" id="cookie_key_admin" class="inp" value="{cookie_key_admin}" readonly />&nbsp;
+				<input type="button" onclick="cookie_key_admin.value=getrandom(16);" value="生成随机密钥" class="btn">
+			</td>
+			</tr>
+			<tr><td></td><td><input type="submit" value="更 新" class="sub"></td></tr>
+			<tr><td height="30" colspan="2"></td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

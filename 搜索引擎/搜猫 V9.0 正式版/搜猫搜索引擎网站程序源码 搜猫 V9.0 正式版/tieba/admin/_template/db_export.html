@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>数据备份_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <a href="./db_manage.php">数据管理</a> &gt; <b>数据备份</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">数据备份</div>
+		<div class="namecont">
+			<form name="Form1" id="Form1" method="post" target="sypost">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" align="center" width="6%"><strong>&nbsp;</strong></td>
+			<td class="td1" align="left" width="25%"><strong>数据表</strong></td>
+			<td class="td1" align="left" width=""><strong>说明</strong></td>
+			<td class="td1" align="left" width="12%"><strong>记录数</strong></td>
+			<td class="td1" align="left" width="12%"><strong>大小</strong></td>
+			</tr>
+			<!-- BEGIN dbTable -->
+			<tr>
+			<td class="td2" align="center"><input type="checkbox" name="dbTable[]" value="{Name}" checked /></td>
+			<td class="td2" align="left">{Name}</td>
+			<td class="td2" align="left">{Comment}</td>
+			<td class="td2" align="left">{Rows}</td>
+			<td class="td2" align="left">{Data_length}</td>
+			</tr>
+			<tr class="td3"><td colspan="5"></td></tr>
+			<!-- END dbTable -->
+			<tr><td colspan="5" align="center"><input type="submit" name="dbExport" value="备 份" class="sub"></td></tr>
+			<tr><td colspan="5" class="td2">&nbsp;</td></tr>
+			</table>
+			</form>
+		</div>
+		<div class="nameset" style="margin-top:10px;">备份设置</div>
+		<div class="namecont">
+			<form name="Form2" id="Form2" method="post" target="sypost">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr>
+			<td align="right" width="25%">备份目录：</td>
+			<td align="left">
+			<input type="text" id="bakDir" name="bakDir" class="inp" value="{dbBakDir}"  maxlength="20" />
+			<span style="margin-left:10px;color:#666;font-family:verdana;">可以使用英文字母、数字、下划线</span>
+			</td>
+			</tr>
+			<tr>
+			<td></td>
+			<td align="left"><input type="submit" name="bakSet" value="设 置" class="sub"></td>
+			</tr>
+			<tr><td colspan="2" class="td2">&nbsp;</td></tr>
+			</table>
+			</form>
+		</div>
+		<iframe scrolling=no width=0 height=0 src="" name="sypost" id="sypost" style="display:none"></iframe>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

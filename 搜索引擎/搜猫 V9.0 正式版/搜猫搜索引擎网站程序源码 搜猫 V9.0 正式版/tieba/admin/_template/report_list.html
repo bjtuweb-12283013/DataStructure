@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>举报管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>举报管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">举报管理</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<!-- IF reportArr.Total > "0" -->
+				<tr class="tr1">
+				<td class="td1" width="6%" align="center"><u>删除</u></td>
+				<td class="td1" width="6%" align="center"><u>帖子</u></td>
+				<td class="td1" width="15%" align="left"><u>举报人</u></td>
+				<td class="td1" width="15%" align="left"><u>被举报人</u></td>
+				<td class="td1" width="11%" align="center">举报时间</td>
+				<td class="td1">举报原由</td>
+				</tr>
+				<!-- BEGIN reportArr.Report -->
+					<tr>
+					<td class="td2" align="center"><a class="del" href="javascript:;" onclick="delReport({rid});"></a></td>
+					<td class="td2" align="center"><a href="{top.siteCatalog}redirect.php?pid={pid}" target="_blank">查看</a></td>
+					<td class="td2" align="left">
+					<!-- IF uid>"0" -->
+					<a href="{rewrite_member:uid}" target="_blank">{uname}</a>
+					<!-- ELSE -->
+					{uname}
+					<!-- ENDIF uid -->
+					</td>
+					<td class="td2" align="left">
+					<!-- IF authorid>"0" -->
+					<a href="{rewrite_member:authorid}" target="_blank">{author}</a>
+					<!-- ELSE -->
+					{author}
+					<!-- ENDIF authorid -->
+					</td>
+					<td class="td2" align="center">{dateline}</td>
+					<td class="td2">{message}</td>
+					</tr>
+					<tr class="td3"><td colspan="6"></td></tr>
+				<!-- END reportArr.Report -->
+				<!-- IF reportArr.Page.pageTotal > "1" -->
+					<tr><td colspan="6" class="td4" align="center">{reportArr.Page.pageList}</td></tr>
+				<!-- ENDIF reportArr.Page.pageTotal -->
+			<!-- ENDIF reportArr.Total -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

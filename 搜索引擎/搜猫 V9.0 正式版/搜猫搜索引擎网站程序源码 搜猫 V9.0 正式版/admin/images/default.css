@@ -1,0 +1,102 @@
+* {
+	LIST-STYLE-TYPE: none
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 10px 0px 0px; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+BODY {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+TH {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: #126191
+}
+.nob {
+	FONT-WEIGHT: normal
+}
+.table {
+	BORDER-RIGHT: #bcc7c3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #bcc7c3 1px solid; PADDING-LEFT: 0px; BACKGROUND: #f7f7f7; PADDING-BOTTOM: 5px; OVERFLOW: auto; BORDER-LEFT: #bcc7c3 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #bcc7c3 1px solid; BORDER-COLLAPSE: collapse
+}
+.lmbt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: 900; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 180px; COLOR: #099; LINE-HEIGHT: 15px; PADDING-TOP: 0px; HEIGHT: 20px
+}
+.lmright {
+	FLOAT: right
+}
+.lmright A {
+	MARGIN-RIGHT: 20px
+}
+.table TD {
+	BORDER-RIGHT: #bcc7c3 1px solid; BORDER-TOP: #bcc7c3 1px solid; BORDER-LEFT: #bcc7c3 1px solid; BORDER-BOTTOM: #bcc7c3 1px solid
+}
+.Attention {
+	COLOR: #ff0000
+}
+.drop {
+	FONT-SIZE: 12px; FILTER: dropshadow(color=#ffffff,offx=1,offy=1,positive=1)
+}
+A.mtitle:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ae700f; TEXT-DECORATION: none
+}
+A.mtitle:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ae700f; TEXT-DECORATION: none
+}
+A.mtitle:hover {
+	TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #126191; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #126191; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ae700f; TEXT-DECORATION: none
+}
+A.left:link {
+	COLOR: #ae700f; TEXT-DECORATION: none
+}
+A.left:visited {
+	COLOR: #ae700f; TEXT-DECORATION: none
+}
+A.left:hover {
+	COLOR: #ae700f; TEXT-DECORATION: underline
+}
+.pagenavi {
+	PADDING-BOTTOM: 10px; MARGIN: 0px; FONT: 11px Arial, tahoma, sans-serif; PADDING-TOP: 20px; TEXT-ALIGN: center
+}
+.pagenavi A {
+	BORDER-RIGHT: #bcc7c3 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #bcc7c3 1px solid; DISPLAY: inline-block; PADDING-LEFT: 6px; BACKGROUND: #ffffff; PADDING-BOTTOM: 2px; BORDER-LEFT: #bcc7c3 1px solid; COLOR: #c16012; PADDING-TOP: 2px; BORDER-BOTTOM: #bcc7c3 1px solid; TEXT-DECORATION: none
+}
+.pagenavi A:visited {
+	BORDER-RIGHT: #bcc7c3 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #bcc7c3 1px solid; PADDING-LEFT: 6px; BACKGROUND: #ffffff; PADDING-BOTTOM: 2px; BORDER-LEFT: #bcc7c3 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #bcc7c3 1px solid; TEXT-DECORATION: none
+}
+.pagenavi .break {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 6px; BORDER-TOP: medium none; PADDING-LEFT: 6px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 2px; BORDER-LEFT: medium none; COLOR: #c16012; PADDING-TOP: 2px; BORDER-BOTTOM: medium none; TEXT-DECORATION: none
+}
+.pagenavi .num {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 12pt; PADDING-BOTTOM: 0px; COLOR: #c16012; PADDING-TOP: 0px
+}
+.pagenavi .curr {
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; FONT-WEIGHT: bold; FONT-SIZE: 12pt; BORDER-LEFT-COLOR: #bcc7c3; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-BOTTOM-COLOR: #bcc7c3; PADDING-BOTTOM: 2px; BORDER-TOP-COLOR: #bcc7c3; PADDING-TOP: 2px; BORDER-RIGHT-COLOR: #bcc7c3
+}
+.pagenavi A:hover {
+	BACKGROUND: #eff7fd; COLOR: #c16012; TEXT-DECORATION: none
+}
+.xingmu {
+	FONT-WEIGHT: bolder; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../Images/tobbg.gif); COLOR: #0257a8; LINE-HEIGHT: 22px; BACKGROUND-REPEAT: repeat; FONT-FAMILY: Verdana, ??????
+}
+.RefreshLen {
+	BORDER-RIGHT: #bcc7c3 1px solid; BORDER-TOP: #bcc7c3 1px solid; MARGIN-TOP: 10px; MARGIN-BOTTOM: 5px; BORDER-LEFT: #bcc7c3 1px solid; WIDTH: 400px; BORDER-BOTTOM: #bcc7c3 1px solid; HEIGHT: 25px; TEXT-ALIGN: left
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>数据还原_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <a href="./db_manage.php">数据管理</a> &gt; <b>数据还原</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">数据还原</div>
+		<div class="namecont">
+		<table width="100%" cellspacing="0" cellpadding="0">
+		<tr class="tr1">
+		<td class="td1" align="center" width="6%"><strong>下载</strong></td>
+		<td class="td1" align="left" width=""><strong>文件名称</strong></td>
+		<td class="td1" align="left" width="19%"><strong>文件大小</strong></td>
+		<td class="td1" align="left" width="19%"><strong>备份时间</strong></td>
+		<td class="td1" align="center" width="6%"><strong>删除</strong></td>
+		<td class="td1" align="center" width="6%"><strong>还原</strong></td>
+		</tr>
+		<!-- BEGIN sqlFile -->
+		<tr id="TR1_{ROWCNT}">
+		<td class="td2" align="center"><a class="down" target="sypost" href="./db_import.php?do=down&file={file}"></a></td>
+		<td class="td2" align="left">{file}</td>
+		<td class="td2" align="left">{size}</td>
+		<td class="td2" align="left">{time}</td>
+		<td class="td2" align="center"><a class="del" target="sypost" href="./db_import.php?do=del&file={file}" onclick="if(!window.confirm('确定要删除？')){return false;}"></a></td>
+		<td class="td2" align="center"><a class="up" target="sypost" href="./db_import.php?do=import&file={file}" onclick="if(!window.confirm('确定要通过此备份文件还原？')){return false;}"></a></td>
+		</tr>
+		<tr id="TR2_{ROWCNT}" class="td3"><td colspan="6"></td></tr>
+		<!-- END sqlFile -->
+		<tr><td colspan="6" class="td4">&nbsp;</td></tr>
+		</table>
+		<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

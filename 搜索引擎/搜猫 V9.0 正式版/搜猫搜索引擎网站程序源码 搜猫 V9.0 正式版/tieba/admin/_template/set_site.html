@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>站点设置_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>站点设置</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">站点设置</div>
+		<div class="namecont">
+			<form name="setForm" id="setForm" method="post" target="sypost" action="./set_site.php?action=update">
+			<input type="hidden" name="code_name" value="{codeName}">
+			<input type="hidden" name="code_version" value="{codeVersion}">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr>
+			<td align="right" width="20%">站点名称：</td>
+			<td><input type="text" name="site_name" class="inp" value="{siteName}" maxlength="12" /></td>
+			</tr>
+			<tr>
+			<td align="right">站点域名：</td>
+			<td>
+				<input type="text" name="site_domain" class="inp" value="{siteDomain}" />
+				<span style="margin-left:10px;color:#666;font-family:verdana;">
+				不要添加 http:// ，不要以 / 结尾
+				</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">安装目录：</td>
+			<td>
+				<input type="text" name="site_catalog" class="inp" value="{siteCatalog}" />
+				<span style="margin-left:10px;color:#666;font-family:verdana;">
+				根目录：<font color="red">/</font>，非根目录类似：<font color="red">/bar/</font>
+				</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">开启伪静态：</td>
+			<td>
+				<input type="radio" name="site_rewrite" value="1"<!-- IF siteRewrite=="1" --> checked<!-- ENDIF siteRewrite --> />开启
+				<input type="radio" name="site_rewrite" value="0"<!-- IF siteRewrite=="0" --> checked<!-- ENDIF siteRewrite --> />关闭
+			</td>
+			</tr>
+			<tr>
+			<td align="right">备案信息：</td>
+			<td>
+				<input type="text" name="site_icp" class="inp" value="{siteIcp}" maxlength="15" />
+				<span style="margin-left:10px;color:#666;font-family:verdana;">
+				备案：<a href="http://www.miibeian.gov.cn" target="_blank">www.miibeian.gov.cn</a>
+				</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">服务器时区：</td>
+			<td>
+				<select name="site_timezone" />
+				<!-- BEGIN timeZone -->
+				<option value="{ROWVAL}"<!-- IF ROWVAL==parent.siteTimezone --> selected<!-- ENDIF -->>{ROWVAL}</option>
+				<!-- END timeZone -->
+				</select>
+				<span style="margin-left:10px;color:#666;font-family:verdana;">服务器时间：{datetime:}</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">用户创建吧：</td>
+			<td>
+				<input type="radio" name="create_allow" value="1"<!-- IF createAllow=="1" --> checked<!-- ENDIF createAllow --> />允许
+				<input type="radio" name="create_allow" value="0"<!-- IF createAllow=="0" --> checked<!-- ENDIF createAllow --> />禁止
+			</td>
+			</tr>
+			<tr>
+			<td align="right">首页缓存时间：</td>
+			<td>
+				<select name="cache_lifetime" />
+				<option value="1"<!-- IF cacheLifetime=="60" --> selected<!-- ENDIF cacheLifetime -->>一分钟</option>
+				<option value="2"<!-- IF cacheLifetime=="120" --> selected<!-- ENDIF cacheLifetime -->>两分钟</option>
+				<option value="5"<!-- IF cacheLifetime=="300" --> selected<!-- ENDIF cacheLifetime -->>五分钟</option>
+				<option value="10"<!-- IF cacheLifetime=="600" --> selected<!-- ENDIF cacheLifetime -->>十分钟</option>
+				<option value="30"<!-- IF cacheLifetime=="1800" --> selected<!-- ENDIF cacheLifetime -->>半小时</option>
+				<option value="60"<!-- IF cacheLifetime=="3600" --> selected<!-- ENDIF cacheLifetime -->>一小时</option>
+				<option value="180"<!-- IF cacheLifetime=="10800" --> selected<!-- ENDIF cacheLifetime -->>三小时</option>
+				<option value="360"<!-- IF cacheLifetime=="21600" --> selected<!-- ENDIF cacheLifetime -->>六小时</option>
+				<option value="720"<!-- IF cacheLifetime=="43200" --> selected<!-- ENDIF cacheLifetime -->>十二小时</option>
+				<option value="1440"<!-- IF cacheLifetime=="86400" --> selected<!-- ENDIF cacheLifetime -->>一天</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">每页帖子数：</td>
+			<td>
+				<select name="per_topic_num" />
+				<option value="10"<!-- IF perTopic=="10" --> selected<!-- ENDIF perTopic -->>10</option>
+				<option value="20"<!-- IF perTopic=="20" --> selected<!-- ENDIF perTopic -->>20</option>
+				<option value="30"<!-- IF perTopic=="30" --> selected<!-- ENDIF perTopic -->>30</option>
+				<option value="40"<!-- IF perTopic=="40" --> selected<!-- ENDIF perTopic -->>40</option>
+				<option value="50"<!-- IF perTopic=="50" --> selected<!-- ENDIF perTopic -->>50</option>
+				<option value="60"<!-- IF perTopic=="60" --> selected<!-- ENDIF perTopic -->>60</option>
+				<option value="70"<!-- IF perTopic=="70" --> selected<!-- ENDIF perTopic -->>70</option>
+				<option value="80"<!-- IF perTopic=="80" --> selected<!-- ENDIF perTopic -->>80</option>
+				<option value="90"<!-- IF perTopic=="90" --> selected<!-- ENDIF perTopic -->>90</option>
+				</select>
+				<span style="margin-left:10px;color:#666;">帖子列表页</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">每页回复数：</td>
+			<td>
+				<select name="per_post_num" />
+				<option value="10"<!-- IF perPost=="10" --> selected<!-- ENDIF perPost -->>10</option>
+				<option value="20"<!-- IF perPost=="20" --> selected<!-- ENDIF perPost -->>20</option>
+				<option value="30"<!-- IF perPost=="30" --> selected<!-- ENDIF perPost -->>30</option>
+				<option value="40"<!-- IF perPost=="40" --> selected<!-- ENDIF perPost -->>40</option>
+				<option value="50"<!-- IF perPost=="50" --> selected<!-- ENDIF perPost -->>50</option>
+				<option value="60"<!-- IF perPost=="60" --> selected<!-- ENDIF perPost -->>60</option>
+				<option value="70"<!-- IF perPost=="70" --> selected<!-- ENDIF perPost -->>70</option>
+				<option value="80"<!-- IF perPost=="80" --> selected<!-- ENDIF perPost -->>80</option>
+				<option value="90"<!-- IF perPost=="90" --> selected<!-- ENDIF perPost -->>90</option>
+				</select>
+				<span style="margin-left:10px;color:#666;">帖子内容页</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">登录用户匿名发帖：</td>
+			<td>
+				<input type="radio" name="post_anonymous" value="1"<!-- IF postAnonymous=="1" --> checked<!-- ENDIF postAnonymous --> />允许
+				<input type="radio" name="post_anonymous" value="0"<!-- IF postAnonymous=="0" --> checked<!-- ENDIF postAnonymous --> />禁止
+			</td>
+			</tr>
+			<tr>
+			<td align="right">发表主题增加积分：</td>
+			<td>
+				<select name="integral_topic" />
+				<option value="0"<!-- IF integralTopic=="0" --> selected<!-- ENDIF integralTopic -->>0</option>
+				<option value="1"<!-- IF integralTopic=="1" --> selected<!-- ENDIF integralTopic -->>1</option>
+				<option value="2"<!-- IF integralTopic=="2" --> selected<!-- ENDIF integralTopic -->>2</option>
+				<option value="3"<!-- IF integralTopic=="3" --> selected<!-- ENDIF integralTopic -->>3</option>
+				<option value="4"<!-- IF integralTopic=="4" --> selected<!-- ENDIF integralTopic -->>4</option>
+				<option value="5"<!-- IF integralTopic=="5" --> selected<!-- ENDIF integralTopic -->>5</option>
+				<option value="6"<!-- IF integralTopic=="6" --> selected<!-- ENDIF integralTopic -->>6</option>
+				<option value="7"<!-- IF integralTopic=="7" --> selected<!-- ENDIF integralTopic -->>7</option>
+				<option value="8"<!-- IF integralTopic=="8" --> selected<!-- ENDIF integralTopic -->>8</option>
+				<option value="9"<!-- IF integralTopic=="9" --> selected<!-- ENDIF integralTopic -->>9</option>
+				<option value="10"<!-- IF integralTopic=="10" --> selected<!-- ENDIF integralTopic -->>10</option>
+				</select>
+				<span style="margin-left:10px;color:#666;">删除减去相同的积分</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">发表回复增加积分：</td>
+			<td>
+				<select name="integral_reply" />
+				<option value="0"<!-- IF integralReply=="0" --> selected<!-- ENDIF integralReply -->>0</option>
+				<option value="1"<!-- IF integralReply=="1" --> selected<!-- ENDIF integralReply -->>1</option>
+				<option value="2"<!-- IF integralReply=="2" --> selected<!-- ENDIF integralReply -->>2</option>
+				<option value="3"<!-- IF integralReply=="3" --> selected<!-- ENDIF integralReply -->>3</option>
+				<option value="4"<!-- IF integralReply=="4" --> selected<!-- ENDIF integralReply -->>4</option>
+				<option value="5"<!-- IF integralReply=="5" --> selected<!-- ENDIF integralReply -->>5</option>
+				<option value="6"<!-- IF integralReply=="6" --> selected<!-- ENDIF integralReply -->>6</option>
+				<option value="7"<!-- IF integralReply=="7" --> selected<!-- ENDIF integralReply -->>7</option>
+				<option value="8"<!-- IF integralReply=="8" --> selected<!-- ENDIF integralReply -->>8</option>
+				<option value="9"<!-- IF integralReply=="9" --> selected<!-- ENDIF integralReply -->>9</option>
+				<option value="10"<!-- IF integralReply=="10" --> selected<!-- ENDIF integralReply -->>10</option>
+				</select>
+				<span style="margin-left:10px;color:#666;">删除减去相同的积分</span>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">精华主题增加积分：</td>
+			<td>
+				<select name="integral_elite" />
+				<option value="0"<!-- IF integralElite=="0" --> selected<!-- ENDIF integralElite -->>0</option>
+				<option value="1"<!-- IF integralElite=="1" --> selected<!-- ENDIF integralElite -->>1</option>
+				<option value="2"<!-- IF integralElite=="2" --> selected<!-- ENDIF integralElite -->>2</option>
+				<option value="3"<!-- IF integralElite=="3" --> selected<!-- ENDIF integralElite -->>3</option>
+				<option value="4"<!-- IF integralElite=="4" --> selected<!-- ENDIF integralElite -->>4</option>
+				<option value="5"<!-- IF integralElite=="5" --> selected<!-- ENDIF integralElite -->>5</option>
+				<option value="6"<!-- IF integralElite=="6" --> selected<!-- ENDIF integralElite -->>6</option>
+				<option value="7"<!-- IF integralElite=="7" --> selected<!-- ENDIF integralElite -->>7</option>
+				<option value="8"<!-- IF integralElite=="8" --> selected<!-- ENDIF integralElite -->>8</option>
+				<option value="9"<!-- IF integralElite=="9" --> selected<!-- ENDIF integralElite -->>9</option>
+				<option value="10"<!-- IF integralElite=="10" --> selected<!-- ENDIF integralElite -->>10</option>
+				</select>
+				<span style="margin-left:10px;color:#666;">取消减去相同的积分</span>
+			</td>
+			</tr>
+			<tr><td></td><td><input type="submit" value="修改设置" class="sub"></td></tr>
+			<tr><td height="30" colspan="2"></td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

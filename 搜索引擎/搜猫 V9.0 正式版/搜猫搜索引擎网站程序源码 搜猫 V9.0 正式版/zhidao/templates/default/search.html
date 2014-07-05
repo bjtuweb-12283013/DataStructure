@@ -1,0 +1,46 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="">{$site_name}</a> &gt;&gt; {lang menu_search}</div>
+<div id="c90">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_search} ({$quescount})</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<script type="text/javascript">
+function disQstate(s)
+{ 
+	switch (s)
+	{
+		case 1:var op='<img src="{$web_path}{$styledir}/icn_time.gif" alt="{lang menu_nosolve_ques}">';break;
+		case 2:var op='<img src="{$web_path}{$styledir}/icn_ok.gif"  alt ="{lang menu_solve_ques}">';break;
+		case 3:var op='<img src="{$web_path}{$styledir}/icn_vote.gif" alt="{lang menu_vote_ques}">';break;
+		case 4:var op='<img src="{$web_path}{$styledir}/icn_cancel.gif" alt="{lang menu_closed_ques}">';break;
+		case 7:var op='<img src="{$web_path}{$styledir}/icn_share.gif" alt="{lang menu_knowledge_sharing}">';break;
+		default: var op='{lang menu_unknown_ques}';
+	}
+	document.write(op);
+}
+</script>
+<!--{loop $search_list $search}-->
+<tr>
+	<td class="ln23 f14" align="left" width="80%" height="30"><a href="{$search['qid']}" target="_blank">{$search['title']}</a>
+	&nbsp;&nbsp;<script type="text/javascript">disQstate({$search['status']});</script></td></tr>
+<!--{/loop}-->
+</table>
+<div id="pg">
+<!--{if $page>1}-->
+<a href="search.php?word={$word}&page=1">{language page_first}</a>                                                                                                          
+<a href="search.php?word={$word}&page={$page_front}">{lang page_front}</a>
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="search.php?word={$word}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="search.php?word={$word}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->                     
+</div>
+</div>
+</div>
+</div>
+</div>
+<br />
+{template footer}

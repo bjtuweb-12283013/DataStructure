@@ -1,0 +1,145 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt;&gt; {$toplink}</div>
+<div id="left2">
+<div class="t3 bcg"><div class="t3t bgg"><!--{if $ques_status==1}-->{lang menu_nosolve_ques}<!--{else}-->{lang menu_unknown_ques}<!--{/if}--></div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<div class="f14b">{$ques_title}</div>
+<div><!--{if $ques_score}--><img width="16" height="16" src="{$web_path}{$styledir}/money.gif" align="absmiddle" /> <font color="red">{lang ques_prize_score}</font><!--{/if}-->
+&nbsp;<!--{if $left_time}-->{lang ques_left_time}<!--{/if}--></div>
+<div class="f14">{$ques_supplement}</div>
+<div class="f13" align="right">{lang ques_asker}: {$ques_user} &nbsp;{lang menu_ques_time}: {$ques_asktime} &nbsp;</div>
+<!--{if $ques_allowanswer}-->
+<div>
+<input name="answer" type="button" onclick="location.href='#reply'" value="{lang button_to_reply}" class="bnsrh" />
+</div>
+<!--{/if}-->
+<!--{if $ques_allowhandle}-->
+<br />
+<div style="padding-bottom: 3px"><form name="handleform1" action="{$web_path}handle.php" method="post">
+<input type="submit" name="submit" value="{lang menu_ques_supplement}" class="bnsrh" />
+<input type="hidden" name="command" value="ques_supply" />
+<input type="hidden" name="qid" value="{$qid}" />
+{lang ques_supplement_intro}</form></div>
+<div style="padding-bottom: 3px"><form name="handleform2" action="{$web_path}handle.php" method="post">
+<input type="submit" name="submit" value="{lang menu_ques_addscore}" class="bnsrh" />
+<input type="hidden" name="command" value="ques_addscore" />
+<input type="hidden" name="qid" value="{$qid}" />
+{lang ques_addscore_intro}</form></div>
+<!--{if $ques_allowsetvote}-->
+<div style="padding-bottom: 3px"><form name="handleform3" action="{$web_path}handle.php" method="post">
+<input type="submit" name="submit" value="{lang menu_ques_vote}" class="bnsrh" />
+<input type="hidden" name="command" value="ques_vote" />
+<input type="hidden" name="qid" value="{$qid}" />
+{lang ques_vote_intro}</form></div>
+<!--{/if}-->
+<!--{if $ques_allowclose}-->
+<div><form name="handleform4" action="{$web_path}handle.php" method="post">
+<input type="submit" name="submit" value="{lang menu_ques_close}" class="bnsrh" />
+<input type="hidden" name="command" value="ques_close" />
+<input type="hidden" name="qid" value="{$qid}" />
+{lang ques_close_intro}</form></div>
+<!--{/if}-->
+<!--{/if}-->
+</div>
+</div>
+<!--{if $answer_count}-->
+<div class="t3 bcg"><div class="t3t bgg">{lang menu_ques_answer} ( {$answer_count} )</div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<!--{loop $answer_list $answer}-->
+<div><font class="f14"><a href="{$web_path}member.php?uid={$answer['uid']}" target="_blank"><u>{$answer['username']}{lang ques_of_answer}</u></a></div>
+<br />
+<div class="f14">{$answer['answer']}</div>
+<div class="f13" align="right"><a href="{$web_path}response.php?aid={$answer['aid']}#response">{$answer['response']}&nbsp;{lang menu_answer_response}</a>&nbsp;&nbsp;{lang menu_answer_time}£º{$answer['time']}&nbsp;</div>
+<!--{if $ques_allowhandle}-->
+<div>
+<form name="adopt{$answer['aid']}" action="{$web_path}handle.php" method="post">
+<input type="hidden" name="command" value="answer_adopt" />
+<input type="hidden" name="aid" value="{$answer['aid']}" />
+<input type="hidden" name="qid" value="{$answer['qid']}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type=submit name="submit" value="{lang button_answer_adopt}" class="bnsrh" />
+</form>
+</div>
+<!--{/if}-->
+<div class="f12"><hr size=1 color="#cccccc" width="99%"></div>
+<!--{/loop}-->
+</div>
+</div>
+<!--{/if}-->
+<div class="b4 bcg mb12">
+<div class="w100">
+<script type="text/javascript">
+<!--
+function check_answer(f,des,limit_len,min_len)
+{
+	if(!cyask_user)
+	{
+			document.getElementById("msgtip").innerHTML ="<font size=\"2\" color=\"red\">{lang warning_nologin_note}</font>";
+			return false;
+	}
+	if(cyask_user==f.askername.value)
+	{
+		document.getElementById("msgtip").innerHTML = "<font size=\"2\" color=\"red\">{lang warning_not_youself}</font>";
+		return false;
+	}
+	if(f.content.value=="")
+	{
+		document.getElementById("msgtip").innerHTML = "<font size=\"2\" color=\"red\">{lang warning_write_info}</font>";
+		return false;
+	}
+	if(f.content.value.length<min_len)
+	{
+		document.getElementById("msgtip").innerHTML = "<font size=\"2\" color=\"red\">{lang warning_info_short}</font>";
+		return false;
+	}
+	if(!limit_words(f.content,des,limit_len)) return false;
+}
+-->
+</script>
+<form name="answerForm" action="{$web_path}answer.php" method="post" enctype="multipart/form-data" onsubmit="return check_answer(this,'{lang ques_content_answer}',10000,10);">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr><td class="f14" width="15%">&nbsp;</td><td width="85%"><span id="msgtip"></span></td></tr>
+<tr valign="top"><td class="f14" width="15%" align="right"><a name="reply"></a>{lang button_to_reply}£º&nbsp;</td>
+<td width="85%" align="left">
+<input type="hidden" name="content" value="">
+<script type="text/javascript" src="cyaskeditor/CyaskEditor.js"></script>
+<script type="text/javascript">
+<!--
+var editor = new CyaskEditor("editor");
+editor.hiddenName = "content";
+editor.editorType = "simple";
+editor.editorWidth = "500px";
+editor.editorHeight = "200px";
+editor.show();
+function cyaskeditorsubmit(){editor.data();}
+-->
+</script>
+<span id="tip2">{lang ques_reply_limit}</span><br /><br /></td></tr>
+<tr><td class="f14" width="15%">&nbsp;</td>
+<td width="85%">
+<input type="hidden" name="command" value="ques_answer" />
+<input type="hidden" name="qid" value="{$qid}" />
+<input type="hidden" name="askername" value="{$askername}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="submit" name="dosubmit" value="{lang button_submit_reply}" onclick="cyaskeditorsubmit()" class="bnsrh" /></td></tr>
+</table>
+</form>
+<br />
+</div>
+</div>
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hotquestion}-->
+&#8226; <span class="f13"><a class="ql" href="{$web_path}{$hotquestion['qid']}" target="_blank" title="{$hotquestion['title']}">{$hotquestion['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+{template footer}

@@ -1,0 +1,80 @@
+{template header}
+<div id="middle">
+<div id="left">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_sort}</div></div>
+<div class="b3 bcb mb12">
+<span class="grn">{lang menu_solve_ques_count} {$solve_ques_count}<br />{lang menu_nosolve_ques_count} {$nosolve_ques_count}</span><hr size="1" color="#999999" />
+<!--{loop $sort1_list $key $qs1}-->
+<span class="f14b"><a href="{$web_path}browse.php?sortid={$qs1['sid']}">{$qs1['sort']}</a></span> ({$qs1['qcount']})<br />
+<!--{loop $sort2_list[$key] $qs2}-->
+<a class="sort" href="{$web_path}browse.php?sortid={$qs2['sid']}">{$qs2['sort']}</a>&nbsp;&nbsp;
+<!--{if !($qs2['id']%3)}--><br /><!--{/if}-->
+<!--{/loop}-->
+<a href="{$web_path}browse.php?sortid={$qs1['sid']}">&gt&gt</a><br />
+<br class="per80" />
+<!--{/loop}-->
+</div>
+</div>
+<div id="right">
+<div class="t3 bcy"><div class="t3t bgy"><a class=lbk href="notelist.php" target="_blank">{lang menu_notice}</a></div></div>
+<div class="b3 bcy f14 mb12">
+<!--{loop $notice_list $nl}-->
+&#8226; <a class="lq" href="{$nl['id']}" target="_blank" title="{$nl['title']}">{$nl['stitle']}</a><br />
+<!--{/loop}-->
+<div class="lmore"><a class="lmore" href="notelist.php" target="_blank">{lang menu_more}</a></div>
+</div>
+
+<div class="t3 bcy"><div class="t3t bgy"><a class="lbk" href="scorelist.php">{lang menu_all_scorelist}</a></div></div>
+<div class="b3 bcy mb12">
+<table cellspacing=0 cellpadding=0 width="100%" border="0">
+<!--{loop $scorelist $sl}-->
+<tr><td class="ln23" width="50%">
+{$sl['orderid']}&nbsp;<a href="member.php?uid={$sl['uid']}" target="_blank">{$sl['username']}</a></td>
+<td class="ln23" width="50%" align="right">{$sl['allscore']}&nbsp;&nbsp;</td></tr>
+<!--{/loop}-->
+</table>
+<div class="lmore"><a class="lmore" href="scorelist.php">{lang menu_more}</a>&nbsp;&nbsp;</div>
+</div>
+
+<div class="t3 bcy"><div class="t3t bgy"><a class="lbk" href="scorelist.php?stype=week">{lang menu_lastweek_scorelist}</a></div></div>
+<div class="b3 bcy mb12">
+<table cellspacing=0 cellpadding=0 width="100%" border="0">
+<!--{loop $weeklist $sl}-->
+<tr><td class="ln23" width="50%">
+{$sl['orderid']}&nbsp;<a href="member.php?uid={$sl['uid']}" target="_blank">{$sl['username']}</a></td>
+<td class="ln23" width="50%" align="right">{$sl['wscore']}&nbsp;&nbsp;</td></tr>
+<!--{/loop}-->
+</table>
+<div class="lmore"><a class="lmore" href="scorelist.php?stype=week">{lang menu_more}</a>&nbsp;&nbsp;</div>
+</div>
+
+</div>
+<div id="center">
+
+<div class="t3 bcg"><div class="t3t bgg"><a href="{$web_path}browse.php?type=6" class="lbk">{lang menu_intro_ques}</a></div></div>
+<div id="intro" class="b3 bcg mb12 qlist">
+<!--{loop $intro_ques $ql}-->
+&#8226;&nbsp;<a class="lq" href="{$web_path}{$ql['url']}" target="_blank">{$ql['title']}</a>&nbsp;&nbsp;[<a class="lgy" href="{$web_path}browse.php?sortid={$ql['sid']}">{$ql['sort']}</a>]<br />
+ <!--{/loop}-->
+<div class="lmore"><a href="{$web_path}browse.php?type=6" class="lmore">{lang menu_more}</a></div>
+</div>
+
+<div class="t3 bcg"><div class="t3t bgg"><a href="{$web_path}browse.php?type=1" class="lbk">{lang menu_nosolve_ques}</a></div></div>
+<div id="nosolve" class="b3 bcg mb12 qlist">
+<!--{loop $nosolve_ques $ql}-->
+&#8226;&nbsp;<a class="lq" href="{$web_path}{$ql['url']}" target="_blank">{$ql['title']}</a>&nbsp;&nbsp;[<a href="{$web_path}browse.php?sortid={$ql['sid']}" class="lgy">{$ql['sort']}</a>]<br />
+ <!--{/loop}-->
+<div class="lmore"><a href="{$web_path}browse.php?type=1" class="lmore">{lang menu_more}</a></div>
+</div>
+
+<div class="t3 bcg"><div class="t3t bgg"><a href="{$web_path}browse.php?type=2" class="lbk">{lang menu_solve_ques}</a></div></div>
+<div id="solve" class="b3 bcg mb12 qlist">
+<!--{loop $solve_ques $ql}-->
+&#8226;&nbsp;<a class="lq" href="{$web_path}{$ql['url']}" target="_blank">{$ql['title']}</a>&nbsp;&nbsp;[<a href="{$web_path}browse.php?sortid={$ql['sid']}" class="lgy">{$ql['sort']}</a>]<br />
+<!--{/loop}-->
+<div class="lmore"><a href="{$web_path}browse.php?type=2" class="lmore">{lang menu_more}</a></div>
+</div>
+
+</div>
+</div>
+{template footer}

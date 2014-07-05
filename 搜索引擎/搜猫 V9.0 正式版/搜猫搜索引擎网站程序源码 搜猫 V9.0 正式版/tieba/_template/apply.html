@@ -1,0 +1,28 @@
+<div class="report_div">
+<!-- IF ForumArr.fid -->
+	<form name="apply-form" id="apply-form">
+		<ul>
+			<li>
+				<label>吧 名 称：</label><span>{ForumArr.name}</span>
+			</li>
+			<li class="bd_t1" style="padding:7px 0 6px 0;">
+				<label>申请理由：<br><span>(90个字内)</span></label>
+				<textarea name="applyreason" id="applyreason" rows="3" class="btn_textarea" cols=""></textarea>
+			</li>
+			<li class="bd_t1">
+				<label>&nbsp;</label>
+				<input type="hidden" name="applyfid" id="applyfid" value="{ForumArr.fid}">
+				<input type="hidden" name="applytype" id="applytype" value="1">
+				<input type="button" value="申 请" class="btn_login" onclick="apply()">
+				<input type="button" value="取 消" class="btn_login" onclick="tb_remove()">
+			</li>
+		</ul>
+	</form>
+<!-- ELSE -->
+	<div class="errorinfo">
+		该吧不存在或者已被关闭！
+		<br />
+		<input type="button" value="关 闭" class="btn_login" onclick="tb_remove()">
+	</div>
+<!-- ENDIF ForumArr.fid -->
+</div>

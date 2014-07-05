@@ -1,0 +1,27 @@
+
+cyask3.2_gbk Standard 独立安装版本
+
+ 安装说明
+
+
+1 检查系统环境
+
+php 4.3.5 及以上 
+MySQL 4.0.22 及以上
+ 
+ 
+2 上传Cyask
+
+修改
+ ./askdata/
+ ./attachments/
+目录及目录下文件属性为 0777
+
+修改 config.inc.php 属性为 0777
+
+3 安装
+
+输入安装地址，例如：http://localhost/cyask/install 进行自动安装
+
+
+如有其他技术问题，请登录 www.cyask.com 提问

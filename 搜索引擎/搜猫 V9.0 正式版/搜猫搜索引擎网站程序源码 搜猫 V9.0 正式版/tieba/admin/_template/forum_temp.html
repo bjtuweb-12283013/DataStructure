@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>新吧审核_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>新吧审核</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">新吧审核</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+			<td colspan="4" class="td2" align="right">
+				<form name="soForm" id="soForm" method="get">
+					<input type="text" id="name" name="name" value="" maxlength="15" class="ipt">
+					<input type="submit" value="搜索" class="btn">
+				</form>
+			</td>
+			</tr>
+			<tr class="tr1">
+			<td width="11%"></td>
+			<td class="td1" width="18%"><b>贴吧</b></td>
+			<td class="td1"><b>简介</b></td>
+			<td class="td1" width="18%" align="right"><b>创建者</b></td>
+			</tr>
+			<!-- BEGIN forumArr.Forum -->
+				<tr>
+				<td class="td2" align="center">
+				<a href="javascript:;" onclick="forumAuditing({fid},1);">通过</a>&nbsp;
+				<a href="javascript:;" onclick="forumAuditing({fid},0);">删除</a>
+				</td>
+				<td class="td2"><u>{name}</u></td>
+				<td class="td2">{synopsis}</td>
+				<td class="td2" align="right">
+				{dateline}<br>By <a href="javascript:;" onclick="alert('IP：{ipaddress}');">{founder}</a>
+				</td>
+				</tr>
+				<tr class="td3"><td colspan="4"></td></tr>
+			<!-- END forumArr.Forum -->
+			<!-- IF forumArr.Page.pageTotal > "1" -->
+				<tr><td colspan="4" class="td4" align="center">{forumArr.Page.pageList}</td></tr>
+			<!-- ENDIF forumArr.Page.pageTotal -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

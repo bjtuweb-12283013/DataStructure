@@ -1,0 +1,135 @@
+HTML {
+	FONT-SIZE: 14px; FONT-FAMILY: arial,'ËÎÌå'
+}
+BODY {
+	FONT-SIZE: 14px; FONT-FAMILY: arial,'ËÎÌå'
+}
+BODY {
+	BACKGROUND: url(../image/bodybg.gif) #e4eef8 repeat-x; MARGIN: auto; TEXT-ALIGN: center
+}
+#wrapper {
+	MARGIN: auto; WIDTH: 978px; TEXT-ALIGN: left
+}
+#header {
+	HEIGHT: 75px
+}
+#header {
+	MARGIN: 0px 5px; POSITION: relative
+}
+#header A {
+	TEXT-DECORATION: none
+}
+#header .header_left {
+	
+}
+#header .header_left IMG {
+	BORDER-TOP-WIDTH: 0px; MARGIN-TOP: 10px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+#header .header_right {
+	FONT-SIZE: 12px; RIGHT: 0px; POSITION: absolute; TOP: 3px
+}
+#header .header_right SPAN {
+	MARGIN-LEFT: 3px; MARGIN-RIGHT: 3px
+}
+#footer {
+	HEIGHT: 60px; TEXT-ALIGN: center
+}
+#footer {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.9em; PADDING-BOTTOM: 20px; MARGIN: 10px 0px 0px; COLOR: #7876ca; PADDING-TOP: 20px
+}
+#footer .b {
+	PADDING-TOP: 4px; FONT-FAMILY: arial; HEIGHT: 30px; TEXT-ALIGN: center
+}
+#footer .b {
+	FONT-SIZE: 12px; COLOR: #7777cc
+}
+#footer .b A {
+	FONT-SIZE: 12px; COLOR: #7777cc
+}
+#container {
+	BACKGROUND: url(../image/wrapbg.png) repeat-y; MARGIN: 0px; ZOOM: 1
+}
+#container_white {
+	BACKGROUND: url(../image/wrapbg_white.png) repeat-y; MARGIN: 0px; ZOOM: 1
+}
+#ci_inner {
+	MARGIN: 0px 5px
+}
+#container_bottom {
+	FONT-SIZE: 0px; BACKGROUND: url(../image/blue_bj-1.png) no-repeat -5px 0px; MARGIN-LEFT: 6px; WIDTH: 970px; LINE-HEIGHT: 0; HEIGHT: 3px
+}
+#container_inner {
+	BACKGROUND: url(../image/blue_bj.png) repeat-x left top; MARGIN: 0px 5px
+}
+#content {
+	FLOAT: left; WIDTH: 100%; MARGIN-RIGHT: -760px
+}
+#content_inner {
+	WIDTH: 195px; MARGIN-RIGHT: 764px
+}
+#content_inner .line {
+	CLEAR: both; BORDER-TOP: #b2beda 1px solid; MARGIN: 5px 10px; OVERFLOW: hidden; HEIGHT: 1px; BACKGROUND-COLOR: #fff; _height: 2px
+}
+#aside {
+	FLOAT: right; WIDTH: 747px
+}
+#aside_inner {
+	PADDING-LEFT: 10px; PADDING-BOTTOM: 30px; PADDING-TOP: 30px
+}
+#aside H2 {
+	FONT-SIZE: 18px; FONT-FAMILY: 'ºÚÌå'
+}
+.dotline {
+	FONT-SIZE: 0px; BACKGROUND: url(../image/dotline.gif) repeat-x; MARGIN: 10px 0px; WIDTH: 98%; LINE-HEIGHT: 0; HEIGHT: 3px
+}
+.subbutton {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(../image/button.gif) no-repeat; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 0px auto; WIDTH: 112px; CURSOR: pointer; HEIGHT: 30px; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 0px
+}
+.sugtxt {
+	FONT-SIZE: 12px; COLOR: #999
+}
+.errMsg {
+	FONT-SIZE: 12px; COLOR: red
+}
+.okMsg {
+	FONT-SIZE: 12px; COLOR: green
+}
+.help {
+	FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-LEFT: 10px; LINE-HEIGHT: 150%; MARGIN-RIGHT: 10px; TEXT-ALIGN: left
+}
+#container {
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="image/wrapbg.png"); _background: none; _margin-top: 1px
+}
+#container_inner {
+	ZOOM: 1; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="image/ie6_1.png"); _background: none
+}
+#container_bottom {
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="image/blue_bj-1.png"); _background: none
+}
+#container_inner A {
+	_position: relative
+}
+#container_inner INPUT {
+	_position: relative
+}
+#container_inner BUTTON {
+	_position: relative
+}
+#container_inner IMG {
+	_position: relative
+}
+#container_inner TEXTAREA {
+	_position: relative
+}
+#container_inner SELECT {
+	_position: relative
+}
+#content_inner_white {
+	PADDING-TOP: 20px
+}
+#container_white {
+	MIN-HEIGHT: 500px; ZOOM: 1; _height: 500px
+}
+#container_inner BUTTON {
+	CURSOR: pointer
+}

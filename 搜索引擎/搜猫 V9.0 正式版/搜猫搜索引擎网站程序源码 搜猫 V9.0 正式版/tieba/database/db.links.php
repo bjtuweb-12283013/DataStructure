@@ -1,0 +1,1 @@
+<?php exit;?>a:2:{i:0;a:2:{s:4:"name";s:12:"菏泽搜索";s:3:"url";s:22:"http://www.1230530.com";}i:1;a:2:{s:4:"name";s:15:"菏泽门户网";s:3:"url";s:17:"http://shiwww.com";}}

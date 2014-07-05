@@ -1,0 +1,69 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt&gt {lang menu_scorelist}</div>
+<div id="left2">
+<div class="w100">
+<div id="subline"></div>
+<div id="sub">
+<!--{if $stype=='all'}-->
+<span>{lang menu_all_scorelist}</span>
+<!--{else}-->
+<a href="{$web_path}scorelist.php"><b>{lang menu_all_scorelist}</b></a>
+<!--{/if}-->
+<!--{if $stype=='week'}-->
+<span>{lang menu_lastweek_scorelist}</span>
+<!--{else}-->
+<a href="{$web_path}scorelist.php?stype=week"><b>{lang menu_lastweek_scorelist}</b></a>
+<!--{/if}-->
+<!--{if $stype=='month'}-->
+<span>{lang menu_lastmonth_scorelist}</span>
+<!--{else}-->
+<a href="{$web_path}scorelist.php?stype=month"><b>{lang menu_lastmonth_scorelist}</b></a>
+<!--{/if}-->
+</div>
+<div class="subt bgg">{lang menu_member_count}</div>
+<!--{if $membercount}-->
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr>
+	<td class="nl" nowrap="nowrap" align="center" height="30" width="5%">&nbsp;&nbsp;{lang menu_list}</td>
+	<td class="nl" nowrap="nowrap" align="center" width="15%">{lang menu_username}</td>
+	<td class="nl" nowrap="nowrap" align="center" width="10%">{lang menu_score}</td>
+	<td class="nl" nowrap="nowrap" align="center" width="5%">{lang menu_gender}</td>
+	<td class="nl" nowrap="nowrap" align="center" width="20%">{lang menu_lastlogin}</td>
+	</tr>
+<!--{loop $score_list $members}-->
+<tr>
+	<td height="65" align=center>{$members['orderid']}</td>
+	<td height="65" align=center>
+	<a href="{$web_path}member.php?uid={$members['uid']}" target="_blank">{$members['username']}</a>
+	</td>
+	<td height="65" align=center>{$members['newscore']}</td>
+	<td height="65" align=center><!--{if $members['gender']==1}-->{lang menu_man}<!--{elseif $members['gender']==2}-->{lang menu_woman}<!--{else}-->{lang menu_baomi}<!--{/if}--></td>
+	<td height="65" align=center>{$members['lastlogin']}</td>
+	</tr>
+<!--{/loop}-->
+</table>
+<!--{else}-->
+<table class="tlp4" id="tl" cellspacing="0" width="100%" border="0">
+<tr><td height="30" align="center">&nbsp;</td></tr>
+</table>
+<!--{/if}-->
+<div id="pg">
+<!--{if $page>1}-->
+<a href="{$web_path}scorelist.php?type={$stype}&page=1">{lang page_first}</a>                                                                                                          
+<a href="{$web_path}scorelist.php?type={$stype}&page={$page_front}">{lang page_front}</a>
+<!--{/if}-->
+<!--{if $pagecount>1}-->{$pagelinks}<!--{/if}-->
+<!--{if $page<$pagecount}-->
+<a href="{$web_path}scorelist.php?type={$stype}&page={$page_next}">{lang page_next}</a>                                                                                                                        
+<a href="{$web_path}scorelist.php?type={$stype}&page={$pagecount}">{lang page_last}</a>
+<!--{/if}-->                     
+</div>
+</div>
+</div>
+<div id="right2">
+&nbsp;
+</div>
+</div>
+<br />
+{template footer}

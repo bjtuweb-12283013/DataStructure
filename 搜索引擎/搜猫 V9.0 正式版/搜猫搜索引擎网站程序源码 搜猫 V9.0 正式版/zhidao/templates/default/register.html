@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}" />
+<title>{$site_name}{lang button_regist} - Powered by Cyask</title>
+<link href="{$web_path}{$styledir}/default.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{$web_path}js/base.js"></script>
+<script type="text/javascript" src="{$web_path}include/functions.js"></script>
+<script type="text/javascript" src="{$web_path}include/xmlhttp.js"></script>
+<script type="text/javascript">
+function parse_message(data)
+{
+	var did=document.getElementById("usernametip");
+	if(data)
+	{
+		if(data=='no')
+		did.innerHTML='<font size="2" color="red">{lang warning_username_used}</font>';
+		else if(data=='yes')
+		did.innerHTML='<font size="2" color="green">{lang warning_username_good}</font>';
+		else if(data=='error')
+		did.innerHTML='<font size="2" color="red">{lang warning_username_error}</font>';
+		else
+		did.innerHTML='<font size="2" color="red"></font>';
+	}
+	else
+	{
+		did.innerHTML='<font size="2" color="red">{lang warning_data_checking}</font>';
+	}
+}
+function check_username(uname)
+{
+	var did=document.getElementById("usernametip");
+	var url='process/usercheck.php?username='+uname;
+	if(uname=="")
+	{
+		did.innerHTML='<font size="2" color="red">{lang warning_username_null}</font>';
+	}
+	else if(uname.length<2)
+	{
+		did.innerHTML='<font size="2" color="red">{lang warning_username_short}</font>';
+	}
+	else
+	{
+		XMLHttp.getR(url,parse_message,'text');
+	}
+}
+function check_password(f)
+{
+	if(f.password.value == '' || f.password.value == null)
+	{
+		document.getElementById("passwordtip").innerHTML="<font size=\"2\" color=\"red\">{lang warning_password_null}</font>";
+		//f.password.focus();
+	}
+	else
+	{
+		document.getElementById("passwordtip").innerHTML="";
+	}
+}
+function check_confirmpw(f)
+{
+	if(f.password.value != f.confirmpw.value)
+	{
+		document.getElementById("confirmpwtip").innerHTML="<font size=\"2\" color=\"red\">{lang warning_password_error}</font>";
+		//f.confirmpw.focus();
+	}
+	else
+	{
+		document.getElementById("confirmpwtip").innerHTML="";
+	}
+}
+function check_registform(f)
+{
+	var username=str_trim(f.username.value);
+	f.username.value=username;
+	if(f.username.value == '' || f.username.value == null)
+	{
+		document.getElementById("usernametip").innerHTML='<font size="2" color="red">{lang warning_username_null}</font>';
+		f.username.focus();
+		return false;
+	}
+	if(f.password.value == '' || f.password.value == null)
+	{
+		document.getElementById("passwordtip").innerHTML="<font size=\"2\" color=\"red\">{lang warning_password_null}</font>";
+		f.password.focus();
+		return false;
+   	}
+	if(f.password.value.length<3)
+	{
+		document.getElementById("passwordtip").innerHTML="<font size=\"2\" color=\"red\">{lang warning_password_short}</font>";
+		f.password.focus();
+		return false;
+	}
+	if(f.password.value != f.confirmpw.value)
+	{
+		document.getElementById("confirmpwtip").innerHTML="<font size=\"2\" color=\"red\">{lang warning_password_error}</font>";
+		f.password.value = '';
+		f.confirmpw.value = '';
+		f.password.focus();
+		return false;
+	}
+	if(f.email.value=="" || f.email.value.indexOf("@")==-1 || f.email.value.indexOf(".")==-1)
+	{
+		document.getElementById("emailtip").innerHTML="<font color=\"red\">{lang warning_email_error}</font>";
+		return false;
+	} 
+}
+</script>
+</head>
+
+<body>
+<div id="main" style="height:100%">
+<div align="left">
+<table cellspacing="3" cellpadding="3" width="100%" border="0">
+<tr><td valign="top" width="160">&nbsp;&nbsp;<a href="{$web_path}"><img src="{$styledir}/1000ask.gif" border="0" /></a></td>
+<td class="f14" nowrap="nowrap">&nbsp;&nbsp;<a href="{$web_path}"><b>{lang button_back_index}</b></a></td></tr>
+</table>
+</div>
+<div id="c90">
+<div class="t3 bcb"><div class="t3t bgb">{lang button_regist}</div></div>
+<div class="b3 bcb mb12">
+<form name="registform" action="{$web_path}register.php" method="post" onsubmit="return check_registform(this);">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr valign="middle"><td class="f14" height="50" align="center" colspan="3">{lang warning_regist_note}</td></tr>
+<tr valign="middle" bgcolor="#efefef">
+<td class="f14" width="35%" height="50" align="right" nowrap="nowrap">{lang menu_username} £º</td>
+<td width="20%"><input name="username" size="20" maxlength="18" onBlur="check_username(this.value);" /></td>
+<td width="45%"><span id="usernametip">{lang set_username_explain}</span></td>
+</tr>
+<tr valign="middle">
+<td class="f14" width="35%" align="right" height="45" nowrap="nowrap">{lang menu_password} £º</td>
+<td width="20%"><input type="password" name="password" size="20" maxlength="16" onBlur="check_password(registform);"/></td>
+<td width="45%"><span id="passwordtip">{lang set_pw_explain}</span></td>
+</tr>
+<tr valign="middle" bgcolor="#efefef">
+<td class="f14" width="35%" align="right" height="45" nowrap="nowrap">{lang menu_confirmpw} £º</td>
+<td width="20%"><input type="password" name="confirmpw" size="20" maxlength="16" onBlur="check_confirmpw(registform);" /></td>
+<td width="45%"><span id="confirmpwtip">{lang set_repw_explain}</span>
+</td>
+</tr>
+<tr valign="middle">
+<td class="f14" width="35%" align="right" height="45" nowrap="nowrap">{lang menu_email} £º</td>
+<td width="20%"><input type="text" name="email" size="20" maxlength="40" /></td>
+<td width="45%"><span id="emailtip"></span>
+</td>
+</tr>
+<tr valign="middle">
+<td width="35%">&nbsp;</td>
+<td width="65%" height="50" colspan="2" align="left">
+<input type="submit" name="registsubmit" value="{lang button_submit}" class="bnsrh" />
+<input type="hidden" name="command" value="registed" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="hidden" name="url" value="{$url}" />
+</td></tr>
+</table>
+</form>
+</div>
+<br />
+{template footer}

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>帖子管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>帖子管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">当前共找到 {postArr.Total} 篇帖子</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+				<tr>
+				<td colspan="5" class="td4">
+					<form name="soForm" id="soForm" method="get">
+						<input type="text" id="tid" name="tid" value="" maxlength="10" class="ipt">
+						<input type="submit" value="搜索" class="btn">
+					</form>
+				</td>
+				</tr>
+				<tr class="tr1">
+				<td class="td1" width="30" align="center">
+				<a href="javascript:selectAll();">全</a>|<a href="javascript:toggleSelect();">反</a>
+				</td>
+				<td class="td1" width="80">主题ID</td>
+				<td class="td1" width="*">内容</td>
+				<td class="td1" width="80">操作</td>
+				</tr>
+				<!-- BEGIN postArr.Post -->
+					<tr>
+					<td class="td2" align="center"><input type="checkbox" class="operchk" value="{pid}" /></td>
+					<td class="td2"><a href="{top.siteCatalog}redirect.php?pid={pid}" target="_blank">{tid}</a></td>
+					<td class="td2"><textarea rows="5" class="tex" id="message_{pid}">{message}</textarea></td>
+					<td class="td2"><input type="submit" value="修改" onclick="modifyPostContent({pid});" class="btn"></td>
+					</tr>
+					<tr class="td3"><td colspan="5"></td></tr>
+				<!-- END postArr.Post -->
+				<tr>
+				<td class="td2" align="center"><a href="javascript:delSelItems();">删除</a></td>
+				<td colspan="4" class="td4" align="center">{postArr.Page.pageList}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

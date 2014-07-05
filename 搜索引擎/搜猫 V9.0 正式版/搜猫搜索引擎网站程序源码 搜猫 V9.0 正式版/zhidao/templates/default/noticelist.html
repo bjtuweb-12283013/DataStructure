@@ -1,0 +1,22 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="./">{$site_name}</a> &gt;&gt; {lang menu_notice}</div>
+<div id="c90">
+<div class="t3 bcg"><div class="t3t bgg">{lang menu_notice}</div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<!--{loop $notice_list $notice}-->
+<tr>
+	<td class="f14" align="left" width="70%" height="26"><a href="{$notice['id']}" target="_blank">{$notice['title']}</a></td>
+	<td align="center" width="10%">{$notice['author']}</td>
+	<td align="center" width="20%">{$notice['time']}</td></tr>
+<tr><td colspan="3"><hr size=1 color="#cccccc"></td></tr>
+<!--{/loop}-->
+</table>
+</div>
+</div>
+</div>
+</div>
+<br />
+{template footer}

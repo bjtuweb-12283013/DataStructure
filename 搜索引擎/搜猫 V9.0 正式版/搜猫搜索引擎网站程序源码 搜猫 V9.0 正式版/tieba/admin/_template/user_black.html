@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>黑名单管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>黑名单管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">共找到 <span id="TotalNum">{blackListArr.Total}</span> 条数据</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+			<td colspan="6" class="td2" align="right">
+				<a href="javascript:;" onclick="unBlack('expire');">解封一个月前的数据</a>
+				&nbsp;
+				<a href="javascript:;" onclick="unBlack('id');">解封全部会员</a>
+				&nbsp;
+				<a href="javascript:;" onclick="unBlack('ip');">解封全部IP</a>
+				&nbsp;
+				<a href="javascript:;" onclick="unBlack('all');">解封全部对象</a>
+			</td>
+			</tr>
+			<tr class="tr1">
+			<td class="td1" width="18%">被封对象</td>
+			<td class="td1" width="">所在吧</td>
+			<td class="td1" width="18%">操作人</td>
+			<td class="td1" width="16%">操作时间</td>
+			<td class="td1" width="6%">解封</td>
+			<td class="td1" width="6%">全封</td>
+			</tr>
+			<!-- BEGIN blackListArr.Black -->
+			<tr id="TR1_{bid}">
+			<td class="td2">
+			<!-- IF uid > "0" -->
+			<a href="{rewrite_member:uid}" target="_blank">{uname}</a>
+			<!-- ELSE -->
+			{uname}
+			<!-- ENDIF uid -->
+			</td>
+			<td class="td2"><!-- IF fid > "0" --><a href="{rewrite_forum:fid}" target="_blank">{fname}</a><!-- ELSE -->全局<!-- ENDIF fid --></td>
+			<td class="td2"><a href="{rewrite_member:adminid}" target="_blank">{adminname}</a></td>
+			<td class="td2">{dateline}</td>
+			<td class="td2"><a href="javascript:;" onclick="removeBlack({bid});">解封</a></td>
+			<td class="td2"><!-- IF fid > "0" --><a href="javascript:;" onclick="blackAll({uid},'{uname}');">全封</a><!-- ENDIF fid --></td>
+			</tr>
+			<tr id="TR2_{bid}" class="td3"><td colspan="6"></td></tr>
+			<!-- END blackListArr.Black -->
+			<tr>
+			<td colspan="6" class="td4" align="center">
+			<!-- IF blackListArr.Page.pageList -->{blackListArr.Page.pageList}<!-- ELSE -->&nbsp;<!-- ENDIF blackListArr.Page.pageList -->
+			</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

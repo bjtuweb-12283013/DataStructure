@@ -1,0 +1,11 @@
+body{font-size:12px;line-height:20px;background:#FFFFFF;line-height:15px}
+a{
+	font-size:12px;
+	font-weight:bold;
+	text-decoration: none;
+}
+dl{margin:0px;}
+dt{font-size:15px;font-weight:bold;color:#000000;background:#F5F5F5;border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;padding:3px 0px 3px 10px;margin:0px;}
+dd{margin-top:5px;margin-left:5px;margin-bottom:5px;}
+a:link,a:visited{color:#2A3E67}
+a:hover{color:#FF0000;}

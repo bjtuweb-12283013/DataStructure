@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{ForumArr.name}, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="{ForumArr.name}, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<title>被封管理_{ForumArr.name}_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html --> 
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a><!-- IF ForumArr.classid>"0" -->
+ &gt; <a href="{rewrite_category:ForumArr.catalogid}">{ForumArr.catalogname}</a> &gt; <a href="{rewrite_category:ForumArr.classid}">{ForumArr.classname}</a><!-- ENDIF ForumArr.classid --> &gt; <a href="{rewrite_forum:ForumArr.fid}">{ForumArr.name}</a></div>
+<div id="B">
+	<!-- INCLUDE forum_manage_left.html --> 
+	<div id="R">
+		<div class="nameset"><!-- IF getType == "1" -->被封IP管理<!-- ELSE -->被封会员管理<!-- ENDIF getType --></div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" width="25%">被封对象</td>
+			<td class="td1" width="25%">操作人</td>
+			<td class="td1" width="">操作时间</td>
+			<td class="td1" width="10%">操作</td>
+			</tr>
+			<!-- BEGIN blackListArr.Black -->
+			<tr>
+			<td class="td2">
+			<!-- IF uid > "0" -->
+			<a href="{rewrite_member:uid}" target="_blank">{uname}</a>
+			<!-- ELSE -->
+			{uname}
+			<!-- ENDIF uid -->
+			</td>
+			<td class="td2"><a href="{rewrite_member:adminid}" target="_blank">{adminname}</a></td>
+			<td class="td2">{dateline}</td>
+			<td class="td2"><!-- IF fid > "0" --><a href="./forum_blacklist.php?fid={fid}&bid={bid}&do=delete" target="sypost">解封</a><!-- ENDIF fid --></td>
+			</tr>
+			<tr class="td3"><td colspan="5"></td></tr>
+			<!-- END blackListArr.Black -->
+			<tr>
+			<td colspan="5" class="td4" align="center">
+			<!-- IF blackListArr.Page.pageList -->
+			{blackListArr.Page.pageList}
+			<!-- ELSE -->
+			&nbsp;
+			<!-- ENDIF blackListArr.Page.pageList -->
+			<iframe src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+			</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

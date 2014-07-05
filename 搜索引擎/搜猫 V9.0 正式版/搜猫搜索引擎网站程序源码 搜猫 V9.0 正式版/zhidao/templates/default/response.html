@@ -1,0 +1,92 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt;&gt; {$toplink}</div>
+<div id="left2">
+<div class="t3 bcb"><div class="t3t bgb">
+<!--{if $ques_status==1}-->{lang menu_nosolve_ques}<!--{elseif $ques_status==2}-->{lang menu_solve_ques}<!--{elseif $ques_status==3}-->{lang menu_vote_ques}<!--{elseif $ques_status==4}-->{lang menu_closed_ques}<!--{else}-->
+{lang menu_unknown_ques}<!--{/if}--></div></div>
+<div class="b3 bcb mb12">
+<div class="f14B"><br />{$ques_title}</div>
+<div><!--{if $ques_score}--><img width="16" height="16" src="{$web_path}{$styledir}/money.gif" align="absmiddle" /> <font color="red">{lang ques_prize_score}</font><!--{/if}-->
+&nbsp;<!--{if $left_time}-->{lang ques_left_time}<!--{/if}--></div>
+<div class="f13" align="right">{lang ques_asker}:<a href="{$web_path}member.php?uid={$ques_uid}" target="_blank">{$ques_user}</a> &nbsp;{lang menu_ques_time}:{$ques_asktime}&nbsp;</div>
+<div class="f14">
+<form name="collectForm" action="{$web_path}collect.php" method="post">
+<!--{if $cyask_user}--><input type="submit" name="submit" value="{lang button_to_collect}" class="bnsrh" /><!--{/if}-->
+&nbsp;<a href="question.php?qid={$qid}"><u>{lang menu_ques_otheranswer}</u></a>
+</form>
+</div>
+<div class="f12">&nbsp;</div>
+<div class="f14">{$answer['answer']}</div>
+<div class="f13" align="right">{lang ques_answer_user}:<a href="{$web_path}member.php?uid={$answer['uid']}" target="_blank">{$answer['username']}</a> &nbsp;{lang menu_answer_time}:{$answer['time']}&nbsp;</div>
+<div class="f14b"><a name="response"></a>{lang menu_answer_rescount}</div>
+<!--{loop $response_list $response}-->
+<div class="f14">{$response['content']}</div>
+<div class="f13" align="right">{lang menu_response_user}:<a href="{$web_path}{$response['userlink']}">{$response['username']}</a> &nbsp;{lang menu_answer_restime}:{$response['time']}&nbsp;</div>
+<div class="f12"><hr size="1" width="99%" color="#cccccc"></div>
+<!--{/loop}-->
+</div>
+
+<div class="b4 bcb mb12">
+<div class="w100">
+<script type="text/javascript">
+<!--
+function check_comment(f,des,limit_len,min_len)
+{
+	if(f.content.value=="")
+	{
+		document.getElementById("msgtip").innerHTML = "<font size=\"2\" color=\"red\">{lang warning_write_info}</font>";
+		return false;
+	}
+	if(f.content.value.length<min_len)
+	{
+		document.getElementById("msgtip").innerHTML = "<font size=\"2\" color=\"red\">{lang warning_info_short}</font>";
+		return false;
+	}
+	if(!limit_words(f.content,des,limit_len)) return false;
+}
+-->
+</script>
+<form name="commentForm" action="{$web_path}answer.php" method="post" enctype="multipart/form-data" onsubmit="return check_comment(this,'»ØÓ¦ÄÚÈÝ',5000,5);">
+<table cellspacing="0" cellpadding="0" width="100%" border="0">
+<tr><td class="f14" width="15%">&nbsp;</td><td width="85%"><span id="msgtip"></span></td></tr>
+<tr valign="top"><td class="f14" width="15%" align="right"><a name="comment"></a>{lang button_to_response}&nbsp;</td>
+<td width="85%" align="left">
+<input type="hidden" name="content" value="">
+<script type="text/javascript" src="cyaskeditor/CyaskEditor.js"></script>
+<script type="text/javascript">
+<!--
+var editor = new CyaskEditor("editor");
+editor.hiddenName = "content";
+editor.editorType = "simple";
+editor.editorWidth = "500px";
+editor.editorHeight = "200px";
+editor.show();
+function cyaskeditorsubmit(){editor.data();}
+-->
+</script>
+<span id="tip2">{lang answer_response_limit}</span><br /><br /></td></tr>
+<tr><td class="f14" width="15%">&nbsp;</td>
+<td width="85%">
+<input type="hidden" name="command" value="answer_response" />
+<input type="hidden" name="aid" value="{$aid}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="submit" name="dosubmit" value="{lang button_submit_response}" onclick="cyaskeditorsubmit()" class="bnsrh" /></td></tr>
+</table>
+</form>
+<br />
+</div>
+</div>
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hotquestion}-->
+&#8226; <span class="f13"><a class="question" href="{$web_path}question.php?qid={$hotquestion['qid']}" target="_blank" title="{$hotquestion['title']}">{$hotquestion['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+{template footer}

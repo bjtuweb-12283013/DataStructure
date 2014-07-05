@@ -1,0 +1,24 @@
+.admin_div{line-height:150%;font-size:14px;color:#555;text-align:center;margin:200px auto;}
+.admin_div li{border-top:1px dashed #b2d0ea;border-bottom:1px dashed #b2d0ea;padding-bottom:15px;list-style-type:none;}
+.login_div{line-height:150%;font-size:14px;color:#555;}
+.login_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+.login_div li label{width:85px;float:left;margin-left:2px;}
+.login_div li span{font-size:12px;color:#999;}
+.reg_div{line-height:150%;font-size:14px;color:#555;}
+.reg_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+.reg_div li label{width:70px;float:left;margin-left:2px;}
+.reg_div li span{font-size:12px;color:#999;}
+.btn_input{width:200px;padding:2px;border:1px solid #b2d0ea;font-size:12px;color:#666;font-family: "arial","simsun",sans-serif;}
+.btn_login{background:url(../images/bar_bg03.gif) no-repeat;background-position:-40px -120px;color:#127c26;width:87px;height:24px;line-height:22px;font-size:12px;border:0;cursor:pointer;margin-top:15px;margin-right:10px;}
+.recover_div{line-height:150%;font-size:14px;color:#555;}
+.recover_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+.recover_div li label{width:70px;float:left;margin-left:2px;}
+.recover_div li span{font-size:12px;color:#999;}
+#recover_result{display:none;color:red;font-size:12px;padding-top:15px;}
+#recover_step2{display:none;}
+.report_div{line-height:150%;font-size:14px;color:#555;}
+.report_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+.report_div li label{width:70px;float:left;margin-left:2px;}
+.report_div li span{font-size:12px;color:#888;}
+.report_div .errorinfo{font:bold 14px "simsun";color:green;text-align:center;margin-top:50px;}
+.btn_textarea{width:210px;padding:2px;border:1px solid #b2d0ea;font-size:14px;font-family:"arial","simsun",sans-serif;}

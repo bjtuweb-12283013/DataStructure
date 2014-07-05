@@ -1,0 +1,27 @@
+<div class="reg_div">
+<form name="anonymity-form" id="anonymity-form" onsubmit="return false;">
+<ul>
+<li style="padding-top:8px;padding-bottom:6px;">
+<label>您的昵称：</label>
+<input type="text" name="nickname" id="nickname" maxlength="15" class="btn_input" value="{loginArr.name}" onkeydown="if(event.keyCode==13)anonymity_update()" /> <span class="icon_guest" title="游客">&nbsp;</span>
+</li>
+<li class="bd_t1">
+<label>&nbsp;</label>
+<input type="button" value="设 置" class="btn_login" onclick="anonymity_update()">
+<!-- IF loginArr.name -->
+	<input type="button" value="删 除" class="btn_login" onclick="anonymity_delete()">
+<!-- ELSE -->
+	<input type="button" value="关 闭" class="btn_login" onclick="tb_remove()">
+<!-- ENDIF loginArr.name -->
+</li>
+<li style="padding-top:5px;">
+<label>&nbsp;</label>
+我们建议您<a href="./login.php?height=142&width=308" class="thickbox" title="会员登录">登录</a>后发言！
+</li>
+<li style="padding-top:1px;">
+<label>&nbsp;</label>
+还不是会员请先<a href="./register.php?height=216&width=296" class="thickbox" title="会员注册">注册</a>。
+</li>
+</ul>
+</form>
+</div>

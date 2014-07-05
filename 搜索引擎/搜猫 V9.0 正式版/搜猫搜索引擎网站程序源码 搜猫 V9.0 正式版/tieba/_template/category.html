@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{categoryArr.thisArr.name}<!-- IF categoryArr.thatArr -->_{categoryArr.thatArr.name}<!-- ENDIF categoryArr.thatArr -->_{siteName}</title>
+<meta name="keywords" content="{categoryArr.thisArr.name}, 分类目录, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="{categoryArr.thisArr.name}, {siteName}分类目录" />
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html --> 
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a><!-- IF categoryArr.thatArr --> &gt; <a href="{rewrite_category:categoryArr.thatArr.cid}">{categoryArr.thatArr.name}</a><!-- ENDIF categoryArr.thatArr --> &gt; <a href="{rewrite_category:categoryArr.thisArr.cid}">{categoryArr.thisArr.name}</a></div>
+<div id="B">
+	<div id="L">
+		<div class="nameleft">
+		<!-- IF categoryArr.thatArr -->
+			{categoryArr.thatArr.name}
+		<!-- ELSE -->
+			{categoryArr.thisArr.name}
+		<!-- ENDIF categoryArr.thatArr -->
+		</div>
+		<div class="nameleftcont">
+		 <ul>
+			<!-- BEGIN categoryArr.categoryArr -->
+			<!-- IF id == cid -->
+				<li class="on">{name}</li>
+			<!-- ELSE -->
+				<li><a href="{rewrite_category:cid}">{name}</a></li>
+			<!-- ENDIF id -->
+			<!-- END categoryArr.categoryArr -->
+		 </ul>
+		</div>
+		<div class="k"></div>
+	</div>
+	<div id="R">
+		<div class="nameset">共{forumArr.Total}个吧</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" width="28%">吧名称</td>
+			<td width="50%">吧简介</td>
+			<td width="25%">吧主</td>
+			</tr>
+			<!-- BEGIN forumArr.Forum -->
+			<tr>
+			<td class="td2"><a href="{rewrite_forum:fid}" target="_blank">{name}</a></td>
+			<td>{synopsis}</td>
+			<td>
+			<!-- BEGIN moderator -->
+			<a href="{rewrite_member:uid}" target="_blank">{name}</a>&nbsp;
+			<!-- END BEGIN moderator -->
+			</td>
+			</tr>
+			<tr class="td3"><td colspan="3"></td></tr>
+			<!-- END BEGIN forumArr.Forum -->
+			<tr>
+			<td colspan="3" class="td4">
+				<!-- IF forumArr.Page.pageList -->
+					{forumArr.Page.pageList}
+				<!-- ELSE -->
+					<b>1</b>
+				<!-- ENDIF forumArr.Page.pageList -->
+			</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

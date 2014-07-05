@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{ForumArr.name}_{siteName}</title>
+<meta name="keywords" content="{ForumArr.name}, {siteName}, 企业贴吧, 贴吧, 小组" />
+<meta name="description" content="{ForumArr.synopsis} - {ForumArr.name}" />
+<link rel="alternate" type="application/rss+xml" href="./rss.php?fid={ForumArr.fid}" title="{ForumArr.name}_{siteName}" />
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/form.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js?v2"></script>
+</head>
+<body>
+<!-- INCLUDE header.html -->
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a><!-- IF ForumArr.classid>"0" -->
+ &gt; <a href="{rewrite_category:ForumArr.catalogid}">{ForumArr.catalogname}</a> &gt; <a href="{rewrite_category:ForumArr.classid}">{ForumArr.classname}</a><!-- ENDIF ForumArr.classid --></div>
+<div id="leftmain">
+<div class="barInfo">
+<div class="ft_l"><strong class="fs_14 p_b">{ForumArr.name}</strong> </div>
+<div class="ft_r fs_14">
+<!-- IF ForumArr.moderator --><span class="bar_host">&nbsp;</span>吧主：<!-- BEGIN ForumArr.moderator --><a href="{rewrite_member:uid}" target="_blank">{name}</a>&nbsp;&nbsp;<!-- END ForumArr.moderator --><!-- ENDIF ForumArr.moderator --><!-- IF isModerator=="1" --><a href="./forum_set.php?fid={ForumArr.fid}" style="margin-left:30px">[吧务管理]</a><!-- ELSE --><a href="./apply.php?fid={ForumArr.fid}&height=159&width=305" class="thickbox" style="margin-left:30px" rel="nofollow">[申请做吧主]</a><!-- ENDIF isModerator -->
+</div>
+<div class="k"></div>
+</div>
+<div class="barFun">
+<div class="ft_l">
+<a class="btn_new" href="#say">发表新帖</a></div>
+<div class="pagecontent ft_r">
+<!-- IF TopicArr.Page.pagePre -->
+<span class="pgpre">{TopicArr.Page.pagePre}</span>
+<!-- ENDIF TopicArr.Page.pagePre -->
+<span class="pg">
+<!-- IF TopicArr.Page.pageFirst -->
+{TopicArr.Page.pageFirst}
+<span class="pge">...</span>
+<!-- ENDIF TopicArr.Page.pageFirst -->
+<!-- IF TopicArr.Page.pageList -->
+{TopicArr.Page.pageList}
+<!-- ENDIF TopicArr.Page.pageList -->
+<!-- IF TopicArr.Page.pageLast -->
+<span class="pge">...</span>
+{TopicArr.Page.pageLast}
+<!-- ENDIF TopicArr.Page.pageLast -->
+</span>
+<!-- IF TopicArr.Page.pageNext -->
+<span class="pgnext">{TopicArr.Page.pageNext}</span>
+<!-- ENDIF TopicArr.Page.pageNext -->
+</div>
+<div class="k"></div>
+</div>
+<div class="barList">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr class="bg2">
+<td class="wh_1">点击</td>
+<td class="wh_2">回复</td>
+<td class="title">
+<div class="bar_lei">
+<!-- IF Digest=="true" -->
+<a href="{rewrite_forum:ForumArr.fid}">全部帖子</a> <span class="ft_l tpl_top">|</span> <a href="{siteCatalog}forum.php?fid={ForumArr.fid}&digest=1" class="on">加精帖</a>
+<!-- ELSE -->
+<a href="{rewrite_forum:ForumArr.fid}" class="on">全部帖子</a> <span class="ft_l tpl_top">|</span> <a href="{siteCatalog}forum.php?fid={ForumArr.fid}&digest=1">加精帖</a>
+<!-- ENDIF Digest -->
+</div>
+</td>
+<td width="90"><div class="wh_3">作者</div></td>
+<td width="140"><div class="wh_4">最后回复</div></td>
+</tr>
+<!-- BEGIN TopicArr.Topic -->
+<tr<!-- IF ROWBIT=="1" --> class="bg1"<!-- ENDIF ROWBIT -->>
+<td>{views}</td>
+<td>{replies}</td>
+<td class="title">
+<!-- IF isdigest=="" --><!-- IF stick>"0" --><span class="icon_ding" title="置顶帖">&nbsp;</span><!-- ENDIF stick --><!-- ENDIF isdigest -->
+<a href="{rewrite_topic:tid}" title="{title}" target="_blank" class="blue">{subject}</a>
+<!-- IF digest=="1" --> <span class="icon_jing" title="精华帖">&nbsp;</span><!-- ENDIF digest -->
+<!-- IF replies>"50" --> <span class="icon_hot" title="热帖">&nbsp;</span><!-- ENDIF replies -->
+</td>
+<td>
+<!-- IF authorid>"0" -->
+<a href="{rewrite_member:authorid}" target="_blank">{author}</a>
+<!-- IF authorico=="3" --><span class="icon_vip mgt hand" title="VIP会员">&nbsp;</span>
+<!-- ELSEIF authorico="4" --><span class="icon_bazhu mgt" title="吧主">&nbsp;</span>
+<!-- ELSEIF authorico="5" --><span class="icon_generalAdmin mgt" title="普通管理员">&nbsp;</span>
+<!-- ELSEIF authorico="6" --><span class="icon_highAdmin mgt" title="高级管理员">&nbsp;</span>
+<!-- ENDIF authorico -->
+<!-- ELSE -->{author}<!-- ENDIF authorid -->
+</td>
+<td>
+{lasttime}&nbsp;/&nbsp;<!-- IF lastauthorid>"0" --><a href="{rewrite_member:lastauthorid}" target="_blank">{lastauthor}</a>
+<!-- IF lastauthorico=="3" --><span class="icon_vip mgt hand" title="VIP会员">&nbsp;</span>
+<!-- ELSEIF lastauthorico="4" --><span class="icon_bazhu mgt" title="吧主">&nbsp;</span>
+<!-- ELSEIF lastauthorico="5" --><span class="icon_generalAdmin mgt" title="普通管理员">&nbsp;</span>
+<!-- ELSEIF lastauthorico="6" --><span class="icon_highAdmin mgt" title="高级管理员">&nbsp;</span>
+<!-- ENDIF lastauthorico -->
+<!-- ELSE -->{lastauthor}<!-- ENDIF lastauthorid -->
+</td>
+</tr>
+<!-- END TopicArr.Topic -->
+</table>
+</div>
+<div class="barPage">
+<div class="pagecontent ft_r">
+<!-- IF TopicArr.Page.pagePre -->
+<span class="pgpre">{TopicArr.Page.pagePre}</span>
+<!-- ENDIF TopicArr.Page.pagePre -->
+<span class="pg">
+<!-- IF TopicArr.Page.pageFirst -->
+{TopicArr.Page.pageFirst}
+<span class="pge">...</span>
+<!-- ENDIF TopicArr.Page.pageFirst -->
+<!-- IF TopicArr.Page.pageList -->
+{TopicArr.Page.pageList}
+<!-- ELSE -->
+<b>1</b>
+<!-- ENDIF TopicArr.Page.pageList -->
+<!-- IF TopicArr.Page.pageLast -->
+<span class="pge">...</span>
+{TopicArr.Page.pageLast}
+<!-- ENDIF TopicArr.Page.pageLast -->
+</span>
+<!-- IF TopicArr.Page.pageNext -->
+<span class="pgnext">{TopicArr.Page.pageNext}</span>
+<!-- ENDIF TopicArr.Page.pageNext -->
+</div>
+<div class="k"></div>
+</div>
+<div class="bar_new" onkeyup="quick_send(event);">
+<h3>发表新帖<a name="say" style="visibility:hide">&nbsp;</a></h3>
+<div class="bar_new_con fs_14">
+<form id="submit_form" name="submit_form">
+<input type="hidden" name="do" id="do" value="Topic" />
+<input type="hidden" name="fid" id="fid" value="{ForumArr.fid}" />
+<ul>
+<!-- IF loginArr.state=="1" -->
+<li><label>&nbsp;</label>{loginArr.name}，<!-- IF loginArr.group>"2" -->您是{groupArr.name}<!-- ELSE -->您已登录<!-- ENDIF loginArr.group -->。<!-- IF postAnonymous=="1" -->&nbsp;&nbsp;<input name="anony" type="checkbox" value="" tabindex="999" />匿名发表</li><!-- ENDIF postAnonymous -->
+<!-- ELSE -->
+<li><label>&nbsp;</label><span id="loginStateInfo"><!-- IF loginArr.name -->{loginArr.name}，您未登录。<!-- ELSE -->您未登录，帖子将以匿名发表。<!-- ENDIF loginArr.name --></span><a href="./anonymity.php?height=139&width=303" class="thickbox" title="游客昵称设置">设置昵称</a> | <a href="./login.php?height=142&width=308" class="thickbox" title="登录到{siteName}">登录</a> | <a href="./register.php?height=216&width=296&modal=true" class="thickbox">注册</a></li>
+<!-- ENDIF loginArr.state -->
+<li><label>帖子标题：</label><input type="text" id="title" name="title" maxlength="32" class="bar_inp" style="color:#666;" value="至少3个字符，不超过32个字符" onfocus="if (this.value=='至少3个字符，不超过32个字符') this.value='';this.style.color='';" /></li>
+<li><label>帖子内容：</label><div class="ft_l"><div class="bar_text"><div class="bar_new_opera"><div id="ed_ins_face" class="face img"></div><div id="ed_ins_pic" class="pic img"></div><div id="ed_ins_vid" class="video img"></div></div><textarea name="content" id="ed_text_area" rows="11"<!-- IF groupArr.verify=="1" --> onfocus="show_verify_image('topic');"<!-- ENDIF groupArr.verify -->></textarea></div><div class="bar_text_opera"><span class="ft_r"><span id="ed_more_rows" class="add">加大</span><span id="ed_less_rows" class="plus">减小</span></span></div></div></li>
+<!-- IF groupArr.verify=="1" -->
+<li id="verify_div" style="clear:both;display:none"><label>验 证 码：</label>
+<table width="230" cellpadding="0" cellspacing="0" class="bar_codet">
+<tr>
+<td colspan="2" valign="middle">
+<input type="text" name="verifyNum" class="disableAutoComplete bar_code" style="color:#666;" value="输入图中字符，不区分大小写" onfocus="if (this.value.length != 4) this.value='';this.style.color='';" />
+</td>
+</tr>
+<tr>
+<td width="138" valign="middle" id="verify_cell"></td>
+<td valign="middle" id="retry_cell"></td>
+</tr>
+</table>
+</li>
+<!-- ENDIF groupArr.verify -->
+<li class="bd_t1" style="clear:left">
+<label>&nbsp;</label>
+<input type="submit" id="btn" name="btn" class="btn_sub" value="确认发布" />
+<span class="bar_new_txt">快捷键：Ctrl+Enter</span>
+</li>
+</ul>
+</form>
+<div class="k"></div>
+</div>
+</div>
+</div>
+<div id="rightmain">
+<div class="bd_l2">
+<input name="dingyue" type="button" value="" class="dingyue" onclick="barRss({ForumArr.fid});" />
+  <h1>本吧信息</h1>
+  <ul>
+	<li><!-- IF ForumArr.synopsis -->吧简介：{ForumArr.synopsis}<!-- ENDIF ForumArr.synopsis --></li>
+	<li>帖子数：{TopicNum}</li>
+	<li>回复数：{ReplyNum}</li>
+  </ul>
+  <!-- IF ForumArr.friend -->
+	<h1>同盟吧</h1>
+	<ul>
+	<!-- BEGIN ForumArr.friend -->
+		<li><a href="{rewrite_forum:fid}" target="_blank">{name}</a></li>
+	<!-- END ForumArr.friend -->
+	</ul>
+  <!-- ENDIF ForumArr.friend -->
+  <!-- IF NewTopic -->
+	<h2>最新主题</h2>
+	<ul>
+	<!-- BEGIN NewTopic -->
+		<li><a href="{rewrite_topic:tid}" title="{title}" target="_blank">{subject}</a></li>
+	<!-- END NewTopic -->
+	</ul>
+  <!-- ENDIF NewTopic -->
+</div>
+</div>
+</div>
+<!-- INCLUDE edit_insert.html -->
+<script type="text/javascript">$(function(){postBind();});</script>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

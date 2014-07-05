@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>全部贴吧_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>全部贴吧</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">全部贴吧</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<!-- IF forumArr.Total > "0" -->
+				<tr>
+				<td colspan="5" class="td4">
+					<form name="soForm" id="soForm" method="get" action="./forum_list.php">
+						<input type="text" id="name" name="name" value="" maxlength="15" class="ipt">
+						<input type="submit" value="搜索" class="btn">
+					</form>
+				</td>
+				</tr>
+				<tr class="tr1">
+				<td class="td1" width="6%" align="center"><u>编辑</u></td>
+				<td class="td1" width="16%"><u>贴吧</u></td>
+				<td class="td1">简介</td>
+				<td class="td1" width="16%"><u>分类</u></td>
+				<td class="td1" width="6%" align="center">推荐</td>
+				</tr>
+				<!-- BEGIN forumArr.Forum -->
+					<tr>
+					<td class="td2" align="center"><a class="edit" href="./forum_edit.php?fid={fid}"></a></td>
+					<td class="td2"><a href="{rewrite_forum:fid}" target="_blank">{name}</a></td>
+					<td>{synopsis}</td>
+					<td class="td2">
+					<!-- IF cid > "0" -->
+					<a href="{rewrite_category:cid}" target="_blank">{cname}</a>
+					<!-- ENDIF cid -->
+					</td>
+					<td class="td2" align="center"><!-- IF commend > "0" -->√<!-- ENDIF commend --></td>
+					</tr>
+					<tr class="td3"><td colspan="5"></td></tr>
+				<!-- END forumArr.Forum -->
+				<!-- IF forumArr.Page.pageTotal > "1" -->
+					<tr><td colspan="5" class="td4" align="center">{forumArr.Page.pageList}</td></tr>
+				<!-- ENDIF forumArr.Page.pageTotal -->
+			<!-- ENDIF forumArr.Total -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

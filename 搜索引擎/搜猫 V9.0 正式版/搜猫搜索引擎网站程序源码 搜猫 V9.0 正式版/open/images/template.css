@@ -1,0 +1,30 @@
+#aside H4 {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bolder; FONT-SIZE: 14px; WIDTH: 80%
+}
+#aside #templates {
+	
+}
+#aside .templates_ul {
+	LINE-HEIGHT: 150%
+}
+#aside .templates_li {
+	MARGIN-TOP: 20px; FLOAT: left; MARGIN-RIGHT: 20px
+}
+#aside .templates {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; WIDTH: 216px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 117px
+}
+#aside .templates .template_inner {
+	BACKGROUND: url(../image/template_innerbg.gif) #f0f0f0 repeat-x; MARGIN: 1px; HEIGHT: 115px
+}
+#aside .templates IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 8px 8px 0px; WIDTH: 200px; HEIGHT: 75px; BORDER-RIGHT-WIDTH: 0px
+}
+#aside .templates A {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: top; FONT-FAMILY: 'ËÎÌו'; outline: none
+}
+#aside .templates_radio {
+	MARGIN-TOP: 2px; TEXT-ALIGN: center
+}
+#aside .templates_radio INPUT {
+	MARGIN-RIGHT: 5px
+}

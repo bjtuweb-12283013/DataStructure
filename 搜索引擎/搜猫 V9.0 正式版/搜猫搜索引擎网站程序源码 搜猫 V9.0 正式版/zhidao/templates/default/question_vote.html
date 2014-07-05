@@ -1,0 +1,67 @@
+{template header}
+<div id="middle">
+<div id="path"><a href="{$web_path}">{$site_name}</a> &gt;&gt; {$toplink}</div>
+<div id="left2">
+<div class="t3 bcg"><div class="t3t bgg"><!--{if $ques_status==3}-->{lang menu_vote_ques}<!--{else}-->{lang menu_unknown_ques}<!--{/if}--></div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<div class="f14b">{$ques_title}</div>
+<div><!--{if $ques_score}--><img width="16" height="16" src="{$web_path}{$styledir}/money.gif" align="absmiddle" /> <font color="red">{lang ques_prize_score}</font><!--{/if}-->
+&nbsp;<!--{if $left_time}--><font class="f13">{lang ques_left_time}</font><!--{/if}--></div>
+<div class="f14">{lang menu_ques_supplement}: {$ques_supplement}</div>
+<div class="f13" align="right">{lang ques_asker}: {$ques_user} &nbsp;{lang menu_ques_time}: {$ques_asktime} &nbsp;</div>
+</div>
+</div>
+<div class="t3 bcg"><div class="t3t bgg">{lang menu_ques_answer}</div></div>
+<div class="b3 bcg mb12">
+<div class="w100">
+<div class="f14b">{lang menu_ques_voteanswer}&nbsp;&nbsp;({$vote_count})</div>
+<!--{loop $vote_list $voteanswer}-->
+<div class="f14"><a href="{$web_path}member.php?uid={$voteanswer['uid']}" title="{$voteanswer['role']}" target="_blank"><u>{$voteanswer['username']} {lang ques_of_answer}</u></a>&nbsp;( <font color="red">{lang ques_voted_count} : {$voteanswer['votevalue']}</font> )</div>
+<div class="f14">{$voteanswer['answer']}</div>
+<div class="f13" align="right"><a href="{$web_path}response.php?aid={$voteanswer['aid']}#response">{$voteanswer['response']}&nbsp;{lang menu_answer_response}</a> &nbsp;{lang menu_answer_time}: {$voteanswer['answertime']} &nbsp;</div>
+<!--{if $ques_allowhandle}-->
+<div>
+<form name="adoptform{$voteanswer['aid']}" action="{$web_path}handle.php" method="post">
+<input type="hidden" name="command" value="answer_adopt" />
+<input type="hidden" name="aid" value="{$voteanswer['aid']}" />
+<input type="hidden" name="qid" value="{$voteanswer['qid']}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type=submit name="adoptsubmit" value="{lang button_answer_adopt}" class="bnsrh" />
+</form>
+</div>
+<!--{else}-->
+<div>
+<form name="voteform{$voteanswer['aid']}" action="{$web_path}vote.php" method="post">
+<input type="hidden" name="aid" value="{$voteanswer['aid']}" />
+<input type="hidden" name="formhash" value="{echo form_hash()}" />
+<input type="submit" name="votesubmit" value="{lang button_to_vote}" class="bnsrh" />
+</form>
+</div>
+<!--{/if}-->
+<div style="padding-bottom: 5px; padding-top: 5px"><hr color="#ddf1d8" size="1" /></div>
+<!--{/loop}-->
+<!--{if $answer_count}-->
+<div class="f14b">{lang menu_ques_otheranswer}&nbsp;&nbsp;&nbsp;({$answer_count})</div>
+<!--{loop $answer_list $answer}-->
+<div class="f14"><a href="{$web_path}member.php?uid={$voteanswer['uid']}" title="{$answer['role']}" target="_blank"><u>{$answer['username']} {lang ques_of_answer}</u></a></div>
+<div class="f14">{$answer['answer']}</div>
+<div class="f13" align="right"><a href="{$web_path}response.php?aid={$answer['aid']}#response">{$answer['response']}&nbsp;{lang menu_answer_response}</a> &nbsp;{lang menu_answer_time}: {$answer['answertime']} &nbsp;</div>
+<div style="padding-bottom: 5px; padding-top: 5px"><hr color="#ddf1d8" size="1" /></div>
+<!--{/loop}-->
+<!--{/if}-->
+</div>
+</div>
+</div>
+<div id="right2">
+<div class="t3 bcb"><div class="t3t bgb">{lang menu_hot_ques}</div></div>
+<div class="b3 bcb mb12">
+<div class="w100">
+<!--{loop $hotques_list $hotquestion}-->
+&#8226; <span class="f13"><a class="question" href="{$web_path}{$hotquestion['qid']}" target="_blank" title="{$hotquestion['title']}">{$hotquestion['stitle']}</a></span><br />
+<!--{/loop}-->
+</div>
+</div>
+</div>
+</div>
+{template footer}

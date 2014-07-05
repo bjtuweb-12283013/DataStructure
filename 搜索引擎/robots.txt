@@ -1,0 +1,9 @@
+# 这里是一些说明
+# robots.txt for  xxx.com
+# 
+#
+
+User-agent: *
+
+Disallow: /admin/
+Disallow: /include/

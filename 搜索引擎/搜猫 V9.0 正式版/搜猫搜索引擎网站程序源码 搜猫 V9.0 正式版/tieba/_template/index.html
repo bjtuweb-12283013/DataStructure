@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{siteName} 亿时达 - 让您的产品与品牌服务两个小时内传遍互联网！</title>
+<meta name="keywords" content="{siteName}, 企业贴吧, 菏泽本地产品推广平台" />
+<meta name="description" content="亿时达 - 菏泽企业推广平台，让您的产品与品牌服务两个小时内传遍互联网！" />
+<link rel="stylesheet" type="text/css" href="./css/index.css?v3" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</head>
+<body>
+<div id="topw">
+	<div id="top">
+		<div id="header_left"><a href="./">亿时达企业推广平台</a></div>
+		<div id="header_links"></div>
+	</div>
+</div>
+<div id="search">
+	<div id="search_l"></div>
+	<form id="search_c" method="get" action="./search.php" onsubmit="return SearchSubmit(this)">
+	<div id="logo"></div>
+	<ul id="ipt">
+		<li class="ipt_t" id="clueon">输入贴吧名称直接回车即可进入该吧，如果吧不存在即可创建。</li>
+		<li><input class="ipt_sr" type="text" name="wd" id="wd" /></li>
+		<li class="ipt_b">
+			<em><input type="radio" name="tb" id="s1" value="1" onclick="clueOn(this.value);" checked />贴吧</em>
+			<em><input type="radio" name="tb" id="s2" value="2" onclick="clueOn(this.value);" />贴子</em>
+			<em><input type="radio" name="tb" id="s3" value="3" onclick="clueOn(this.value);" />作者</em>
+		</li>
+	</ul>
+	<input id="iptbt" type="submit" value=" " />
+	</form>
+	<div id="search_r"></div>
+</div>
+<div id="wrap">
+	<div class="listleft">
+		<div class="tiezi">
+		  <h1>最热帖</h1>
+		  <ul>
+			<!-- BEGIN hotTopic -->
+			<li><a href="{rewrite_topic:tid}" title="{subject}" target="_blank">{subject}</a></li>
+			<!-- END -->
+		  </ul>
+		</div>
+		<div class="tiezi">
+		  <h1>最新帖</h1>
+		  <ul>
+			<!-- BEGIN newTopic -->
+			<li><a href="{rewrite_topic:tid}" title="{subject}" target="_blank">{subject}</a></li>
+			<!-- END -->
+		  </ul>
+		</div>
+		<div class="category">
+		  <h1>贴吧目录</h1>
+		  <!-- BEGIN category -->
+		  <dl>
+			<dt><a href="{rewrite_category:cid}" target="_blank">[{name}]</a></dt>
+			<dd><!-- BEGIN subcategory --><a href="{rewrite_category:cid}" target="_blank">{name}</a><!-- END subcategory --></dd>
+		  </dl>
+		  <!-- END category -->
+		</div>
+		<div class="friend">
+		  <h1>友情链接</h1>
+		  <div><!-- BEGIN friendLink --><a href="{url}" target="_blank">{name}</a><!-- END --></div>
+		</div>
+	</div>
+	<div class="listright">
+		<div class="tieba">
+		  <h1>推荐贴吧</h1>
+		  <!-- BEGIN topForum -->
+		  <dl>
+			<dt><a href="{rewrite_forum:fid}" target="_blank">{name}</a></dt>
+			<dd>{synopsis}</dd>
+		  </dl>
+		  <!-- END -->
+		</div>
+		<div class="member">
+		  <h1>活跃用户</h1>
+		  <ul>
+			<!-- BEGIN topMember -->
+			<li><a href="{rewrite_member:uid}" title="{name}" target="_blank"><img src="{avatar:uid}" /><br>{name}</a></li>
+			<!-- END -->
+		  </ul>
+		</div>
+	</div>
+</div>
+<div id="foot">
+	<!-- INCLUDE footer_copyright.html -->
+</div>
+</body>
+</html>

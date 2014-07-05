@@ -1,0 +1,33 @@
+#content_inner .leftbar {
+	FONT-SIZE: 14px; FLOAT: right; WIDTH: 183px; COLOR: #0054ba; LINE-HEIGHT: 32px
+}
+#content_inner .leftbar A {
+	COLOR: #0055bb
+}
+#content_inner .leftbar .tools SPAN {
+	FONT-SIZE: 12px; COLOR: #666
+}
+#content_inner .leftbar .tools {
+	PADDING-LEFT: 20px
+}
+#content_inner .leftbar .on {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(../image/focus.png) no-repeat; FONT-FAMILY: 'ËÎÌו'
+}
+#content_inner .leftbar .off {
+	
+}
+#content_inner .leftbar SPAN {
+	COLOR: #ccc
+}
+#content_inner .leftbar A {
+	TEXT-DECORATION: none
+}
+#content_inner .leftbar H3 {
+	FONT-WEIGHT: bold; MARGIN-LEFT: 20px; COLOR: #000
+}
+#content_inner .focus {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(../image/focus_big.png) no-repeat; PADDING-BOTTOM: 0px; MARGIN: 20px 0px 5px; LINE-HEIGHT: 29px; PADDING-TOP: 4px; FONT-FAMILY: 'ËÎÌו'; HEIGHT: 37px
+}
+#content_inner .unfocus {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; MARGIN: 20px 0px 5px; LINE-HEIGHT: 29px; PADDING-TOP: 4px; FONT-FAMILY: 'ËÎÌו'; HEIGHT: 37px
+}

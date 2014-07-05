@@ -1,0 +1,26 @@
+body{font-size:13px;background:#F2F4F7;line-height:20px;padding:20px;color:#000000;}
+.pageStyle{text-align:center;}
+
+a{
+	font-size:14px;
+	font-weight:bold;
+	text-decoration: none;
+}
+a:link,a:visited{color:#830303}
+a:hover{color:#FF0000;}
+
+
+.tablebg{background:#859CAE;margin-top:10px;}
+.tablebg td{background:#FFFFFF;padding:5px;}
+.tablebg th{background:#E6E9EF}
+.pagetoptitle{text-align:center;line-height:30px;}
+
+.table_td_center td{text-align:center;}
+.pagestyle{text-align:center;margin-top:3px;}
+
+.nav{text-align:center}
+.nav a{margin-right:10px;}
+.class_nav a{display:block;float:left;margin-right:10px;padding:3px;white-space: nowrap;}
+.selectstyle{color:#00FF00;background:#C1BCF5}
+a.selected{color:#FF0000;}
+.red{color:#FF0000}

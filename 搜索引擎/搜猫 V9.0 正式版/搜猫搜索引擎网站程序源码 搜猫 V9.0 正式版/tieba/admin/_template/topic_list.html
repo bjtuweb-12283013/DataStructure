@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>主题帖管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>主题帖管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">当前共找到 {topicArr.Total} 篇主题帖</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+				<tr>
+				<td colspan="5" class="td4">
+					<form name="soForm" id="soForm" method="get">
+						<input type="text" id="wd" name="wd" value="" maxlength="15" class="ipt">
+						<input type="submit" value="搜索" class="btn">
+					</form>
+				</td>
+				</tr>
+				<tr class="tr1">
+				<td class="td1" width="30" align="center">
+				<a href="javascript:selectAll();">全</a>|<a href="javascript:toggleSelect();">反</a>
+				</td>
+				<td class="td1" width="80">点击/回复</td>
+				<td class="td1" width="*">标题</td>
+				<td class="td1" width="85"><u>作者</u></td>
+				<td class="td1" width="135"><u>最后回复</u></td>
+				</tr>
+				<!-- BEGIN topicArr.Topic -->
+					<tr>
+					<td class="td2" align="center"><input type="checkbox" class="operchk" value="{tid}" /></td>
+					<td class="td2">{views}/{replies}</td>
+					<td class="td2">
+					<a href="{rewrite_topic:tid}" title="{title}" target="_blank">{subject}</a>
+					</td>
+					<td class="td2">
+					<!-- IF authorid>"0" -->
+					<a href="{rewrite_member:authorid}" target="_blank">{author}</a>
+					<!-- ELSE -->
+					{author}
+					<!-- ENDIF authorid -->
+					</td>
+					<td class="td2">
+					{lasttime}&nbsp;/&nbsp;<!-- IF lastauthorid>"0" --><a href="{rewrite_member:lastauthorid}" target="_blank">{lastauthor}</a><!-- ELSE -->{lastauthor}<!-- ENDIF lastauthorid -->
+					</td>
+					</tr>
+					<tr class="td3"><td colspan="5"></td></tr>
+				<!-- END topicArr.Topic -->
+				<tr>
+				<td class="td2" align="center"><a href="javascript:delSelItems();">删除</a></td>
+				<td colspan="4" class="td4" align="center">{topicArr.Page.pageList}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

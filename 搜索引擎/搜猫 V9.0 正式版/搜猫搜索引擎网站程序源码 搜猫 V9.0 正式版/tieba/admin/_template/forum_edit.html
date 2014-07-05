@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>修改吧信息_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="./_static/phpsay.js"></script>
+<script language="javascript">$(document).ready(function(){$("#category").val({forumArr.cid});});</script>
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <a href="./forum_list.php">吧管理</a> &gt; <b>修改吧信息</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">修改吧信息</div>
+		<div class="namecont">
+			<form name="eForm" id="eForm" method="post" target="sypost">
+			<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+			<tr><td height="30" colspan="2"></td></tr>
+			<tr>
+			<td align="right">吧 名 称：</td>
+			<td>
+				<input type="text" id="name" name="name" class="inp" value="{forumArr.name}" />
+			</td>
+			</tr>
+			<tr>
+			<td align="right" width="30%">吧 类 别：</td>
+			<td>
+				<select id="category" name="category" />
+				<option value="0">不设置分类</option>
+				<!-- BEGIN category -->
+				<optgroup label="{name}">
+				<!-- BEGIN subcategory -->
+				<option value="{cid}">{name}</option>
+				<!-- END subcategory -->
+				</optgroup>
+				<!-- END category -->
+				</select>			
+			</td>
+			</tr>
+			<tr>
+			<td align="right" valign="top">吧 简 介：</td>
+			<td>
+				<textarea id="intro" name="intro" class="int" rows="8" cols="">{forumArr.synopsis}</textarea>
+			</td>
+			</tr>
+			<tr>
+			<td align="right">推 荐 吧：</td>
+			<td>
+				<!-- IF forumArr.commend == "0" -->
+					<input type="radio" id="push" name="push" value="0" checked />否
+					<input type="radio" id="push" name="push" value="1" />是
+				<!-- ELSE -->
+					<input type="radio" id="push" name="push" value="0" />取消
+					<input type="radio" id="push" name="push" value="1" checked />推荐
+					<input type="radio" id="push" name="push" value="2" />再次推荐
+				<!-- ENDIF forumArr.commend -->
+			</td>
+			</tr>
+			<tr>
+			<td align="right" valign="top">吧 主：</td>
+			<td>
+				<table>
+				<!-- BEGIN forumArr.moderator -->
+				<tr>
+					<td><a href="{rewrite_member:uid}" target="_blank">{name}</a></td>
+					<td><span class="del" title="删除" onclick="delModerator({id},{uid});"></span></td>
+				</tr>
+				<!-- END BEGIN forumArr.moderator -->
+				</table>
+			</td>
+			</tr>
+			<tr>
+			<td align="right" valign="top">同 盟 吧：</td>
+			<td>
+				<table>
+				<!-- BEGIN forumArr.friend -->
+				<tr>
+					<td><a href="{rewrite_forum:fid}" target="_blank">{name}</a></td>
+					<td><span class="del" title="删除" onclick="delFriend({id},{fid});"></span></td>
+				</tr>
+				<!-- END BEGIN forumArr.friend -->
+				</table>
+			</td>
+			</tr>
+			<tr><td></td><td><input type="submit" value="修 改" class="sub"></td></tr>
+			<tr><td height="30" colspan="2"></td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>

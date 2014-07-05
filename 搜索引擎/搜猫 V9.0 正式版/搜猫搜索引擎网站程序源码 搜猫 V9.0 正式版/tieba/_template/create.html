@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="创建贴吧, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="创建贴吧, 分类目录, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<title>创建贴吧_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html --> 
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a> &gt; <b>创建<!-- IF searchWord --><span style="color:red">{searchWord}</span><!-- ENDIF searchWord -->吧</b></div>
+<div id="B">
+<div id="L">
+<div class="nameleft">吧目录</div>
+<div class="nameleftcont">
+<ul>
+<!-- BEGIN category -->
+	<li><a href="{rewrite_category:cid}">{name}</a></li>
+<!-- END category -->
+</ul>
+</div>
+<div class="k"></div>
+</div>
+<div id="R">
+<div class="nameset">创建<!-- IF searchWord --><span style="color:red">{searchWord}</span><!-- ENDIF searchWord -->吧</div>
+<div class="namecont">
+<form name="newForm" id="newForm" onsubmit="return false;">
+<table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding:20px 10px;">
+<tr>
+<td></td>
+<td height="30" valign="top">
+<!-- IF createAllow == "1" -->
+	<!-- IF searchWord -->
+		恭喜您发现了新大陆，您是第一个到达“<span style="color:red">{searchWord}</span>”吧的人！（创建新吧需审核）
+	<!-- ELSE -->
+		吧成功创建并审核通过后，希望您以后常来这里和其他网友交流，您还可以申请当吧主。
+	<!-- ENDIF searchWord -->
+<!-- ELSE -->
+	<!-- IF searchWord -->
+		“<span style="color:red">{searchWord}</span>”吧不存在，<u>系统当前禁止创建新吧！</u>
+	<!-- ELSE -->
+		<span style="color:red">系统当前禁止创建新吧！</span>
+	<!-- ENDIF searchWord -->
+<!-- ENDIF createAllow -->
+</td>
+</tr>
+<tr>
+<td align="right" width="13%">吧 名 称：</td>
+<td><input type="text" name="bar" id="bar" class="bar_inp" value="{searchWord}" maxlength="15"<!-- IF createAllow != "1" --> disabled<!-- ENDIF createAllow --> /></td>
+</tr>
+<tr>
+<td align="right" valign="top">吧 简 介：</td>
+<td>
+不超过90个字
+<br>
+<textarea name="intro" id="intro" class="bar_inp" rows="8" cols=""<!-- IF createAllow != "1" --> disabled<!-- ENDIF createAllow -->></textarea>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<input type="button" value="申请创建" <!-- IF createAllow == "1" -->onclick="create();"<!-- ELSE -->disabled<!-- ENDIF createAllow --> class="btn_login">
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

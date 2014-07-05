@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{memberArr.name}, 用户资料, {siteName}, 企业贴吧, 贴吧, 说吧" />
+<meta name="description" content="{memberArr.name}, 用户资料, {siteName}, PhpSay, 贴吧, 说吧" />
+<title>{memberArr.name}_用户资料_{siteName}</title>
+<link rel="stylesheet" type="text/css" href="./css/w3c.css" />
+<link rel="stylesheet" type="text/css" href="./css/bar.css" />
+<link rel="stylesheet" type="text/css" href="./css/thickbox.css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/thickbox.js"></script>
+<script type="text/javascript" src="./js/phpsay.js"></script>
+</head>
+<body>
+<!-- INCLUDE header.html -->
+<div id="main">
+<div class="guid"><a href="./">{siteName}</a> &gt; <a href="{rewrite_member:memberArr.uid}">{memberArr.name}</a></div>
+<div id="B">
+	<div id="L">
+		<div class="nameleft">用户信息</div>
+		<div class="nameleftcont">
+  			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr>
+			<td rowspan="2" width="45" align="right"><img src="{avatar:memberArr.uid}" alt="头像" title="{memberArr.name}" style="border:1px solid #b2d0ea;width:40px;height:40px" /></td>
+			<td height="25" align="left">&nbsp;&nbsp;{memberArr.name}</td>
+			</tr>
+			<tr><td height="25" align="left">&nbsp;&nbsp;{groupArr.name}</td></tr>
+			<tr><td colspan="2" height="25" align="left">&nbsp;&nbsp;&nbsp;&nbsp;用户积分：{memberArr.integral}</td></tr>
+			<tr><td colspan="2" height="25" align="left">&nbsp;&nbsp;&nbsp;&nbsp;注册时间：{memberArr.regdate}</td></tr>
+			<tr><td colspan="2" height="25" align="left">&nbsp;&nbsp;&nbsp;&nbsp;上次登录：{memberArr.lastdate}</td></tr>
+			</table>
+		</div>
+		<!-- IF userManage -->
+		<div class="nameleft2">管理的吧</div>
+		<div class="nameleft2cont">
+		<ul>
+		<!-- BEGIN userManage -->
+		<li><a href="{rewrite_forum:fid}" target="_blank">{fname}</a></li>
+		<!-- END userManage -->
+		</ul>
+		</div>
+		<!-- ENDIF userManage -->
+		<div class="k"></div>
+	</div>
+	<div id="R">
+		<div class="nameset">{memberArr.name}最近发表的主题</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" width="60%">主题</td>
+			<td width="15%">发表时间</td>
+			<td width="10%">回复 / 查看</td>
+			</tr>
+			<!-- BEGIN authorTopic -->
+			<tr>
+			<td class="td2"><a href="{rewrite_topic:tid}" target="_blank">{title}</a></td>
+			<td>{dateline}</td>
+			<td>{replies} / {views}</td>
+			</tr>
+			<tr class="td3"><td colspan="3"></td></tr>
+			<!-- END authorTopic -->
+			<tr>
+			<td colspan="3" class="td2" align="center">
+				<a href="{top.siteCatalog}search.php?wd={memberArr.name}&tb=4&id={memberArr.uid}">查看更多由{memberArr.name}发表的主题&gt;&gt;&gt;</a>
+			</td>
+			</tr>
+			</table>
+		</div>
+		<div class="nameset" style="margin-top:10px;">{memberArr.name}最近回复的帖子</div>
+		<div class="namecont">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" width="60%">回复主题</td>
+			<td width="15%">回复时间</td>
+			<td width="10%">顶 / 砸 / 飘过</td>
+			</tr>
+			<!-- BEGIN authorReply -->
+			<tr>
+			<td class="td2"><a href="{top.siteCatalog}redirect.php?pid={pid}" target="_blank">{subject}</a></td>
+			<td>{dateline}</td>
+			<td>{up} / {down} / {wave}</td>
+			</tr>
+			<tr class="td3"><td colspan="3"></td></tr>
+			<!-- END authorReply -->
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE footer.html -->
+</body>
+</html>

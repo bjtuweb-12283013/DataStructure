@@ -1,0 +1,33 @@
+BODY { border:none;SCROLLBAR-FACE-COLOR: #ECE9D8; SCROLLBAR-HIGHLIGHT-COLOR: #ECE9D8; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #ff9900; SCROLLBAR-TRACK-COLOR: #ECE9D8; SCROLLBAR-DARKSHADOW-COLOR: #ECE9D8
+; line-height: 22px
+; background-color: #ECE9D8
+; FONT-SIZE: 9pt; COLOR: #494949; 
+}
+INPUT { BEHAVIOR: url(inputxp.htc); }
+SELECT{font-family: Verdana, Arial, ËÎÌו;font-size: 9pt;color: #0560A6;border: #7F9DB9 1px solid;height: 20px;}
+A:link {
+	FONT-SIZE: 9pt; COLOR: #494949 ; TEXT-DECORATION: none;
+}
+A:visited {
+	FONT-SIZE: 9pt; COLOR: #494949; TEXT-DECORATION: none;
+}
+A:active {
+	FONT-SIZE: 9pt; COLOR: #494949; 
+}
+A:hover {
+	FONT-SIZE: 9pt; COLOR: #990000; 
+}
+tr {
+	FONT-SIZE: 9pt; COLOR: #494949; 
+}
+.bg_line {  border: solid; top: -10px; clip:  rect(   ); border-color: #CCCCCC #CCCCCC #FFFFFF; color: #999999; border-width: 0px 0px 1px; text-decoration: none}
+.button_a  {cursor: hand;FONT-SIZE: 9pt; border-color: #FFFFFF #999999 #999999 #FFFFFF; padding-top: 2px; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;; background-color: ECE9D8}
+.button_b {cursor: hand;FONT-SIZE: 9pt; padding-top: 2px; ; background-color: ECE9D8; border: ECE9D8; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.headtd1  {cursor: hand;FONT-SIZE: 9pt; border-color: #FFFFFF #999999 #999999 #FFFFFF; padding-top: 2px; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;; background-color: ECE9D8}
+.headtd2 {cursor: hand;FONT-SIZE: 9pt; padding-top: 2px; ; background-color: ECE9D8; border: ECE9D8; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+.bodytd  {  background: #d6d3ce; border: 0px outset; border-color: #d6d3ce #d6d3ce #d6d3ce #d6d3ce; font-size: 9pt}
+.input_a{  background-color: #E6E6E6; color: #000000; BORDER-BOTTOM: #888888 1px solid; BORDER-LEFT: #888888 1px solid; BORDER-RIGHT: #888888 1px solid; BORDER-TOP: #888888 1px solid; clip:    rect(   ); border: 1px #999999 solid; vertical-align: middle}
+.cursor {cursor: hand;}
+.about {  line-height: 21px}
+legend{color:#ffffff;background-color:#ABA161;padding:3 15 3 15;}
+.tbtitle{background:#E0DCC0;}

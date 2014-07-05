@@ -1,0 +1,177 @@
+#container {
+	MARGIN: 3px 0px; ZOOM: 1
+}
+#content {
+	FLOAT: left; WIDTH: 100%; MARGIN-RIGHT: -314px
+}
+#content_inner1 {
+	BACKGROUND: url(../images/left01.gif); MARGIN-RIGHT: 320px; POSITION: relative; HEIGHT: 175px
+}
+#content_inner1 INPUT {
+	LEFT: 41px; POSITION: absolute; TOP: 117px
+}
+#content_inner2 {
+	MARGIN-TOP: 20px; COLOR: #454545; MARGIN-RIGHT: 320px; POSITION: relative
+}
+#content_inner2 .title {
+	MARGIN-BOTTOM: 10px
+}
+#content_inner2 .ci {
+	MARGIN-BOTTOM: 10px; LINE-HEIGHT: 150%
+}
+#content_inner2 .ci2 {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px
+}
+#content_inner2 .ci2 A {
+	MARGIN-RIGHT: 8px
+}
+#content_inner2 .ci2 SPAN {
+	COLOR: #0055ba
+}
+#content_inner3 .ci3 {
+	FONT-SIZE: 12px; COLOR: #454545
+}
+#content_inner3 .ci3 SPAN {
+	COLOR: #df4e01
+}
+#content_inner3 {
+	MARGIN-TOP: 40px; MARGIN-BOTTOM: 30px; COLOR: #454545; LINE-HEIGHT: 150%; MARGIN-RIGHT: 320px; POSITION: relative
+}
+#content_inner3 .title {
+	MARGIN-BOTTOM: 10px
+}
+#content_inner4 {
+	MARGIN-TOP: 40px; MARGIN-BOTTOM: 30px; MARGIN-RIGHT: 320px; POSITION: relative
+}
+#content_inner4 .title {
+	MARGIN-BOTTOM: 10px
+}
+#content_inner4 .ci {
+	MARGIN-TOP: 10px; FONT-SIZE: 12px; BACKGROUND: url(../images/index03.gif) no-repeat 0px 0px; MARGIN-BOTTOM: 10px; LINE-HEIGHT: 150%; POSITION: relative; HEIGHT: 130px
+}
+#content_inner4 .ci .step1off {
+	LEFT: 49px; COLOR: #000; POSITION: absolute; TOP: 51px; TEXT-DECORATION: none
+}
+#content_inner4 .ci .step1on {
+	LEFT: 49px; COLOR: #dc4e01; POSITION: absolute; TOP: 51px; TEXT-DECORATION: underline
+}
+#content_inner4 .ci .step2off {
+	LEFT: 200px; COLOR: #000; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: none
+}
+#content_inner4 .ci .step2on {
+	LEFT: 200px; COLOR: #dc4e01; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: underline
+}
+#content_inner4 .ci .step3off {
+	LEFT: 355px; COLOR: #000; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: none
+}
+#content_inner4 .ci .step3on {
+	LEFT: 355px; COLOR: #dc4e01; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: underline
+}
+#content_inner4 .ci .step4off {
+	LEFT: 510px; COLOR: #000; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: none
+}
+#content_inner4 .ci .step4on {
+	LEFT: 510px; COLOR: #dc4e01; LINE-HEIGHT: 150%; POSITION: absolute; TOP: 51px; TEXT-DECORATION: underline
+}
+#content_inner4 .ci2 {
+	FONT-SIZE: 12px; COLOR: #666666; LINE-HEIGHT: 150%
+}
+#aside {
+	BACKGROUND: url(../images/right.gif); FLOAT: right; WIDTH: 314px; HEIGHT: 864px
+}
+#aside .aside_inner1 {
+	
+}
+#aside .aside_inner1 .main_title {
+	MARGIN-TOP: 25px; FONT-WEIGHT: bold; MARGIN-LEFT: 25px
+}
+#aside .aside_inner1 .submit1 .txt {
+	FONT-SIZE: 14px; WIDTH: 182px; HEIGHT: 24px
+}
+#aside .aside_inner1 .submit1 .yanzheng {
+	FONT-SIZE: 14px; WIDTH: 99px; HEIGHT: 24px
+}
+#aside .aside_inner1 .label1 {
+	LEFT: 25px; TOP: 64px
+}
+#aside .aside_inner1 .label2 {
+	LEFT: 25px; TOP: 103px
+}
+#aside .aside_inner1 .input1 {
+	FONT-SIZE: 14px; LEFT: 88px; WIDTH: 182px; TOP: 59px; HEIGHT: 24px
+}
+#aside .aside_inner1 .input2 {
+	FONT-SIZE: 14px; LEFT: 88px; WIDTH: 182px; TOP: 98px; HEIGHT: 24px
+}
+#aside .aside_inner1 .sub {
+	LEFT: 88px; TOP: 130px
+}
+#aside .aside_inner1 .title {
+	MARGIN-TOP: 10px; MARGIN-LEFT: 25px
+}
+#aside .aside_inner1 .submit1 {
+	MARGIN-TOP: 8px; MARGIN-LEFT: 27px
+}
+#aside .aside_inner1 .submit1 .errormsg {
+	FONT-SIZE: 12px; COLOR: red
+}
+#aside .aside_inner1 .reg {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 107px
+}
+#aside .aside_inner1 .submit1 TABLE {
+	FONT-SIZE: 14px; LINE-HEIGHT: 38px
+}
+#aside .aside_inner1 .submit1 .yanzheng_div {
+	FONT-SIZE: 14px
+}
+#aside .aside_inner1 .submit1 .yanzheng {
+	COLOR: rgb(0,85,188)
+}
+#aside .aside_inner1 .submit1 .yanzhengma {
+	WIDTH: 100%; COLOR: #0055bc; HEIGHT: 40px
+}
+#aside .aside_inner1 .submit1 .yanzhengma IMG {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 5px; VERTICAL-ALIGN: -15px
+}
+#aside .aside_inner2 {
+	MARGIN-TOP: 20px; MARGIN-BOTTOM: 20px
+}
+#aside .aside_inner2 SUP {
+	FONT-SIZE: 14px; COLOR: red; FONT-FAMILY: arial
+}
+#aside .aside_inner2 .t1 {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; MARGIN-LEFT: 25px
+}
+#aside .aside_inner2 .ci1 {
+	MARGIN-TOP: 10px; MARGIN-LEFT: 25px; LINE-HEIGHT: 180%
+}
+#aside .aside_inner2 .ci1 A {
+	COLOR: #0055ba
+}
+#aside .aside_inner2 .t2 {
+	MARGIN-TOP: 10px; FONT-WEIGHT: bold; MARGIN-LEFT: 25px
+}
+#aside .aside_inner2 .ci2 {
+	MARGIN-TOP: 10px; LEFT: 25px; COLOR: #0055ba; LINE-HEIGHT: 180%
+}
+#aside .aside_inner2 .ci2 A {
+	COLOR: #0055ba
+}
+#aside .login_button {
+	MARGIN-TOP: 10px; BACKGROUND: url(../images/index_login.gif) no-repeat; MARGIN-BOTTOM: 10px; MARGIN-LEFT: 0px; WIDTH: 65px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 27px; BORDER-BOTTOM-STYLE: none
+}
+#aside .register_button {
+	MARGIN-TOP: 10px; BACKGROUND: url(../images/reg.gif) no-repeat; MARGIN-BOTTOM: 20px; MARGIN-LEFT: 107px; WIDTH: 114px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 35px; BORDER-BOTTOM-STYLE: none
+}
+#aside .idx_go_btn {
+	BACKGROUND: url(../image/idx_go.gif) no-repeat; MARGIN: 0.5em 0px; WIDTH: 128px; CURSOR: pointer; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 25px; BORDER-BOTTOM-STYLE: none
+}
+#aside .pad {
+	MARGIN: 20px 0px 20px 45px
+}
+#aside .pad .username {
+	FONT-WEIGHT: bold; LINE-HEIGHT: 2em
+}
+#aside .pad .welcome {
+	LINE-HEIGHT: 2em
+}

@@ -1,0 +1,853 @@
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;line-height:25px;}
+table td{padding-left:5px;}
+fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+
+body{
+    font-size:12px;
+}
+
+/* css sprites  */
+.container h4,.acc-cont, .enter,.noenter,
+.t-l,.t-r,.b-l,.b-r,.status-nav li,.notice-enter
+{
+    background:transparent url('index.png') no-repeat -1000px -1000px;
+}
+.datePicker .dateInput,.datePicker .dateInputDis,
+.datePicker .datePickerTable .preMonth,.datePicker .datePickerTable .nextMonth,.datePicker .datePickerTable .preMonthDisabled,.datePicker .datePickerTable .nextMonthDisabled ,
+.datePickerDouble,.dateShortcutDiv,.dateShortcutDiv ul li a.selected ,.exp_fold, .exp_unfold,.exp_unfold,.addKwTop,
+.datePicker u,.date-picker-double u,.fc-panel .action,.status span
+{background:url(mnbg.png) no-repeat -1000px -1000px;}
+
+.breadStatusTip{
+    background:url(mnbg-repeat.png) repeat-x -1000px -1000px;
+}
+#BridgeService{z-index:10001;display:block;margin-top:5px}
+.wrapper{
+    position:relative;
+    width:986px;
+    margin:0 auto;
+    overflow:hidden;
+    padding-bottom:20px;
+    margin-bottom:10px;
+    margin-top:-10px;
+}
+
+.main-container{
+    position:relative;
+    left:986px;
+    *zoom:1;
+}
+
+.main-container:after{
+    content:'.';
+    clear:both;
+    display:block;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+}
+
+.col-l{
+    float:left;
+    width:316px;
+    margin-left:-100%;
+}
+
+.col-c{
+    float:left;
+    width:432px;
+    margin-left:-662px;
+}
+
+.col-r{
+    float:left;
+    width:222px;
+    margin-left:-222px;
+}
+
+.container{
+    margin-top:10px;
+    margin-right:2px;
+    position:relative;
+}
+
+.col-r{
+    margin-right:0;
+}
+
+.container h4{
+    height:29px;
+    font-weight:700;
+    font-size:15px;
+    line-height:29px;
+    padding-left:8px;
+    border-bottom:1px #ccc solid; 
+    background-color:#f8f8f8;
+    background-position:0 0;
+    background-repeat:repeat-x;
+    position:relative;
+    z-index:10;
+}
+
+.container h4 i{
+    font-weight:400;
+    font-style:normal;
+}
+
+.container h4 .overage{
+    font-weight:400;
+    font-style:normal;
+    padding-left:10px;
+    font-size:12px;
+}
+
+.sign{
+    width:218px;
+    height:43px;
+    margin-bottom:10px;
+    border:1px #ccc solid;
+    overflow:hidden;
+    display:none;
+}
+
+.sign a{
+    display:block;
+}
+
+.notice-baidu{
+    display:block;
+}
+
+u{
+    overflow:hidden;
+}
+
+em{
+    font-style:normal;
+}
+
+.mask-module{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#fff url('loading_2.gif') no-repeat center center;
+    filter:alpha(opacity=90);
+    -moz-opacity:0.9;
+    opacity:0.9;
+    z-index:1000;
+    top:0;
+    left:0;
+    display:none;
+}
+
+
+/**
+ * 细节开始
+ */
+.acc-back{
+    position:absolute;
+    top:2px;
+    left:2px;
+    _left:1px;
+    height:100%;
+    _height:0;
+    _overflow:hidden;
+    width:100%;
+    background:#e5e5e5;
+    z-index:1;
+    zoom:1;
+    display:none;
+}
+
+.inner{
+    position:relative;
+    border:1px #ccc solid;
+    background:#fff;
+    z-index:10;
+}
+
+/* 余额 */
+.overage{
+    display:none;
+    height:24px;
+    line-height:24px;
+    background:#eee;
+    padding-left:10px;
+    color:#666;
+}
+
+.overage span{
+    padding-right:10px;
+}
+
+
+
+/* 我的帐户 */
+.my-acct{
+    zoom:1;
+    _height:100px;
+    z-index:101;
+}
+
+.my-acct .acc-back{
+    top:2px;
+    left:2px;
+}
+
+.acc-inner{
+    z-index:101;
+}
+
+.acc-cont{
+    background-position:0 -358px;
+    background-repeat:repeat-x;
+}
+
+.acc-cont ul{
+    padding: 6px 0 6px 10px;
+    line-height:26px;
+}
+
+.acc-cont ul li{
+    overflow:hidden;
+    zoom:1;
+    height:26px;
+    position:relative;
+    
+}
+
+.acc-cont b {
+    float:left;
+    padding-right:5px;
+    font-weight:400;
+}
+
+#AccName{
+    padding-right:14px;
+}
+
+.status .status-ok{
+    background-position:right -473px;
+}
+
+.status .status-error{
+    background-position:right -493px;
+}
+
+.status .status-other{
+    background-position:right -510px;
+}
+
+.acc-cont em{
+    font-size:14px;
+    font-weight:700;
+}
+
+.acc-cont .pay-bill{
+    position:absolute;
+    right:20px;
+    text-decoration:none;
+    color:#00f;
+}
+
+.select-users{
+    position:relative;
+    padding-left:10px;
+    height:26px;
+    margin-bottom:6px;
+}
+
+.select-users *{
+    vertical-align:middle;
+}
+
+.select-users input{
+    height:16px;
+    padding:2px 1px;
+}
+
+.select-users button{
+    padding:1px 4px;
+    margin-left:4px;
+}
+
+#UserSuggest{
+    position:absolute;
+    top:24px;
+    left:64px;
+    width:131px;
+    max-height:130px;
+	overflow:hidden;
+    overflow-y:auto;
+    background:#fff;
+    border:1px #999 solid;
+    padding:0;
+    display:none;
+    z-index:1000;
+    zoom:1;
+}
+
+#UserSuggest li{
+    height:26px;
+    line-height:26px;
+    padding-left:5px;
+    width:auto;
+    display:block;
+	cursor:pointer;
+	white-space: nowrap;
+}
+
+#UserSuggest li.current{
+    background:#daeaf4;
+}
+
+/* 搜索推广 */
+
+.pop-entry{
+    z-index:100;
+}
+
+.pop-inner{
+    position:relative;
+    z-index:10;
+	zoom:1;
+}
+
+.pop-inner ul{
+    overflow:hidden;
+    padding: 0 10px 3px;
+    background:#fff;
+}
+
+.pop-inner li{
+    position:relative;
+    height:24px;
+    line-height:24px;
+    padding:7px 0;
+    border-top:1px #d1d1d1 dotted;
+    margin-top:-1px;
+}
+
+.pop-inner li.two-line{
+    line-height:19px;
+    height:38px;
+}
+
+.pop-inner li .enter,
+.pop-inner li .noenter{
+    position:absolute;
+    right:0;
+    top:50%;
+    width:51px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    margin-top:-12px;
+    background-position:-51px -250px;
+    color:#00f;
+    text-decoration:none;
+}
+
+.pop-inner li .noenter{
+    background-position:-51px -286px;
+    color:#999;
+}
+
+.pop-inner li.two-line .enter,
+.pop-inner li.two-line .noenter{
+    width:51px;
+    height:28px;
+    margin-top:-14px;
+    line-height:28px;
+    text-align:center;
+    background-position:0 -248px;
+}
+
+.pop-inner li.two-line .noenter{
+    background-position:0 -284px;
+}
+
+.pop-inner li dd{
+    color:#adadad;
+}
+
+/* 网盟，我的营销中心 */
+.unite-entry , 
+.mycenter-entry{
+    position:relative;
+}
+
+.unite-entry h4 , .mycenter-entry h4{
+    height:41px;
+    border-bottom:0;
+    line-height:41px;
+    position:relative;
+}
+
+.unite-entry .enter,
+.mycenter-entry .enter,
+.unite-entry .noenter,
+.mycenter-entry .noenter{
+    position:absolute;
+    right:10px;
+    top:50%;
+    _top:20px;
+    width:51px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    margin-top:-12px;
+    background-position:-51px -250px;
+    color:#00f;
+    text-decoration:none;
+    zoom:1;
+    z-index:15;
+    font-size:12px;
+    font-weight:400;
+}
+
+.unite-entry .noenter,
+.mycenter-entry .noenter{
+    background-position:-51px -286px;
+    color:#999;
+}
+
+.uniteen-inner{
+    position:relative;
+    z-index:10;
+}
+
+/* 入口 */
+.notice-enter{
+    position:absolute;
+    top:0;
+    right:60px;
+    width:100px;
+    height:28px;
+    line-height:28px;
+    text-align:center;
+    background-position:0 -196px;
+    display:none;
+    z-index:102;
+}
+
+.pop-inner li .notice-enter{
+    top:8px;
+}
+
+.pop-inner li.two-line .notice-enter{
+    top:15px;
+}
+
+.unite-entry .notice-enter,
+.mycenter-entry .notice-enter{
+    right:70px;
+    top:10px;
+}
+
+/* 我的消息 */
+
+.my-info .action{
+    position:absolute;
+    top:0;
+    right:9px;
+    height:28px;
+    line-height:28px;
+    color:#00f;
+    text-decoration:none;
+    z-index:12;
+}
+
+.info-inner{
+    padding:9px 5px 6px 5px;
+}
+
+.info-list li{
+    height:20px;
+    padding-left:4px;
+    line-height:20px;
+    overflow:hidden;
+}
+
+.info-list li a{
+    color:#00f;
+    text-decoration:none;
+}
+
+.info-list li a:hover{
+    text-decoration:underline;
+}
+
+.all-biz{
+    margin-top:5px;
+    height:26px;
+    line-height:26px;
+    position:relative;
+}
+
+.all-biz p{
+    position:relative;
+    height:24px;
+    padding-left:4px;
+    border:1px #eee495 solid;
+    background:#fff9c8;
+}
+
+.all-biz p em{
+    padding:0 5px;
+    color:#f63;
+    font-weight:700;
+}
+
+.all-biz a{
+    position:absolute;
+    top:0;
+    right:6px;
+    color:#00f;
+    text-decoration:none;
+}
+
+.all-biz u{
+    height:4px;
+    width:4px;
+    position:absolute;
+}
+
+.all-biz .t-l{
+    background-position:0 -173px;
+    top:0;
+    left:0;
+}
+
+.all-biz .t-r{
+    background-position:-4px -173px;
+    top:0;
+    right:0;
+}
+
+.all-biz .b-l{
+    background-position:0 -177px;
+    bottom:0;
+    left:0;
+}
+
+.all-biz .b-r{
+    background-position:-4px -177px;
+    bottom:0;
+    right:0;
+}
+
+#MyMesCountCont{
+    display:none;
+}
+
+/* 我的积分 */
+.score-inner{
+    padding:10px;
+    position:relative;
+    zoom:1;
+}
+
+.score-inner p{
+    height:20px;
+    line-height:20px;
+}
+
+.score-inner p em{
+    font-size:14px;
+    font-weight:700;
+}
+
+.score-inner .action{
+    height:20px;
+    line-height:20px;
+    position:absolute;
+    top:10px;
+    right:10px;
+    text-decoration:none;
+    color:#00f;
+}
+
+#ScoreSingle{
+    display:none;
+}
+
+#MyScoreCont{
+	display:none;
+}
+
+
+/* entry */
+.entry-cont{
+    position:relative;
+    border:0;
+    width:220px;
+    overflow:hidden;
+}
+
+/* 推广情况 */
+.status-inner{
+    padding:7px 5px;
+}
+
+.status-nav{
+    overflow:hidden;
+    position:relative;
+    *zoom:1;
+    height:24px;
+    padding-left:5px;
+    line-height:24px;
+    z-index:300;
+}
+
+.status-nav li{
+    float:left;
+    position:relative;
+    padding:0 12px;
+    border:1px #dbdbdb solid;
+    border-bottom:0;
+    background-color:#f8f8f8;
+    background-position:0 -68px;
+    background-repeat:repeat-x;
+    cursor:pointer;
+}
+
+.status-nav li u{
+    height:3px;
+    width:3px;
+    position:absolute;
+}
+
+.status-nav li .t-l{
+    background-position:-45px -161px;
+    top:-1px;
+    left:-1px;
+}
+
+.status-nav li .t-r{
+    background-position:-48px -161px;
+    top:-1px;
+    right:-1px;
+}
+
+.type-date{
+    position:relative;
+    border-top:1px #dbdbdb solid;
+    margin-top:-1px;
+    padding-top:7px;
+    z-index:199;
+    zoom:1;
+}
+
+.type-date:after{
+    content:'.';
+    display:block;
+    clear:both;
+    visibility:hidden;
+    overflow:hidden;
+    height:0;
+}
+
+.type-select{
+    float:left;
+    padding:3px 0 0 10px;
+}
+
+.type-select select{
+    width:107px;
+}
+
+.date-select{
+    float:right;
+    position:relative;
+    z-index:200;
+}
+
+.flash-area{
+    width:418px;
+    height:225px;
+    margin-top:10px;
+    background:#ccc;
+    margin-bottom:10px;
+    position:relative;
+    z-index:1;
+}
+
+.flash-area object{
+    position:relative;
+    z-index:2;
+}
+
+
+
+/* datepickerdouble */
+
+
+
+
+
+.datePicker{ position:relative;font-family: "宋体"; font-size: 12px; color: #000;border:0;z-index:20000} 
+.datePicker .dateInput {display:block;border:1px solid #7F9DB9;background-position:0 -280px; width: 105px; height:17px; padding-left: 5px;padding-top:4px; cursor: pointer;z-index:1;font-size:12px}
+.datePicker .dateInputDis {display:block;border:1px solid #7F9DB9;background-position:-192px -280px; width: 105px; height:17px; padding-left: 5px;padding-top:4px; cursor:default;z-index:1;font-size:12px;color:#999;}
+.datePicker .datePickerWrapper {display: none;position: absolute;margin-top:2px; background:#fff; border: 1px solid #aeaeae; z-index:1005; }
+.datePicker .datePickerInner  { border:1px #f2f2f2 solid; padding:7px 6px;}
+.datePicker .datePickerTable {display: block;position: relative; background:#F1F1F1; border: 1px solid #ccc; width: 210px;zoom:1;overflow:hidden;}
+.datePicker span {display: inline-block;*display:inline;*zoom:1; width: 20px; height:17px; padding-top:4px;margin:2px 0 0 10px;}
+.datePicker .datePickerTable .yearMonth {height: 25px; border-bottom: 1px solid #fff; background:#DCDCDC;}
+.datePicker .datePickerTable .yearMonth *{vertical-align:middle;}
+.datePicker .datePickerTable .yearMonth .YearSelect,
+.datePicker .datePickerTable .yearMonth .MonthSelect {display:inline-block;*display:inline;*zoom:1;width: 52px; height: 20px; margin: 0 5px 0 10px;font-size:12px;font-family:宋体}
+.datePicker .datePickerTable .yearMonth .MonthSelect{width:40px;}
+.datePicker .datePickerTable .preMonth {  background-position:-190px -220px; width: 18px; height: 18px; cursor: pointer}
+.datePicker .datePickerTable .nextMonth {  background-position:-210px -220px; width: 18px; height: 18px; cursor: pointer}
+.datePicker .datePickerTable .preMonthDisabled {  background-position:-150px -220px; width: 18px; height: 18px; cursor: default}
+.datePicker .datePickerTable .nextMonthDisabled {  background-position:-170px -220px; width: 18px; height: 18px; cursor: default}
+.datePicker .datePickerTable ul {margin:0; padding: 0;display: block;list-style: none;}
+.datePicker .datePickerTable ul li {float: left; display: inline; margin-left: 1px;margin-top:1px; width: 29px;padding-top:3px; height:18px;background: #fff; text-align: center}
+.datePicker .datePickerTable .weekCaption li {background: #F1F1F1; color: #666; font-weight: bold;}
+.datePicker .datePickerTable .dateList li {color: blue; cursor: pointer;font-family:Verdana}
+.datePicker .datePickerTable .dateList .hover {background:#D6EBFF}
+.datePicker .datePickerTable .dateList .noCurrentMonth {background: #EBEBEB; color: #9A9A9A; cursor: default}
+.datePicker .datePickerTable .dateList .currentDate {background: #0000EE; color: #FFF; cursor: pointer}
+.datePicker .datePickerTable .dateList .currentDateNoThisMonth {background: #EBEBEB; color: #0000DD; cursor: default}
+.datePicker u { width:4px; height:4px; position:absolute;}
+.datePicker u.t-l{ background-position:-203px -38px;top:-1px;left:-1px;overflow:hidden; }
+.datePicker u.t-r{ background-position:-207px -38px;top:-1px;right:-1px;overflow:hidden; }
+.datePicker u.b-l{ background-position:-203px -42px;bottom:-1px;left:-1px;overflow:hidden; }
+.datePicker u.b-r{ background-position:-207px -42px;bottom:-1px;right:-1px;overflow:hidden; }
+.venus-state-select{width:120px}
+
+.datePickerWrapper{position:relative;vertical-align:middle;z-index:200;}
+.datePickerDouble{background-position:0 -623px;line-height:18px;padding:7px 5px 7px 0;font-weight:normal;font-size:11px;} 
+.datePickerDouble .dateInput {padding:0 38px 0 7px;margin-top:6px;cursor:pointer;width:121px;line-height:12px;*line-height:16px;height:20px;overflow:hidden;vertical-align:middle;*vertical-align:baseline;font-family:Arial;
+	/*all items below is a solution for inline-block*/
+	display: -moz-inline-box;  /*Firefox only code*/
+    display: inline-block;       /*some standard browsers*/
+    zoom: 1;                     /*IE only trigger the hasLayout*/
+    *display: inline;            /*Only IE know this code (CSS Hack)*/
+	position:relative;
+}
+.datePickerDouble .dateShortcut {padding-right:12px;cursor:pointer;}
+.datePickerDouble .f12 {font-size:12px;}
+/*日期快捷方式*/
+.dateShortcutDiv {font-weight:normal;display:none;background-position:0 -692px;position:absolute;z-index:21002;width:184px;height:151px}
+.dateShortcutDiv ul {list-style:none;margin:0;padding:4px 0 0 0}
+.dateShortcutDiv ul li {margin:4px 0;}
+.dateShortcutDiv ul li a {padding-left:20px;color:#00f;text-decoration:none;}
+.dateShortcutDiv ul li a.selected {font-weight:bold;color:#000;background-position:-307px -323px;}
+
+
+/*double date picker*/
+.date-picker-double{position:absolute;zoom:1;margin-left:15px;_margin-left:5px;width:452px;height:257px;background:#fff;z-index:2001;cursor:default;display:none;border: 1px solid #aeaeae;}
+.date-picker-double-inner{width:430px;height:235px;padding:10px;border:1px solid #f2f2f2;z-index:201;zoom:1;position:relative;}
+.date-picker-double .date-double{width:460px;_width:440px;height:215px;zoom:1;overflow:hidden;}
+.date-picker-double .dd-left{float:left;width:220px;}
+.date-picker-double .dd-left .datePickerWrapper {display: none;position: absolute;margin-top:8px; background:none; border: 0; z-index:200; }
+.date-picker-double .dd-left .datePickerInner  { border:0; padding:0;}
+.date-picker-double .dd-left .datePickerWrapper u{ display:none; }
+.date-picker-double u { width:4px; height:4px; position:absolute;}
+.date-picker-double u.t-l{ background-position:-203px -38px;top:-2px;left:-2px;overflow:hidden; zoom:1;}
+.date-picker-double u.t-r{ background-position:-207px -38px;top:-2px;right:-2px;overflow:hidden;zoom:1; }
+.date-picker-double u.b-l{ background-position:-203px -42px;bottom:-2px;left:-2px;_bottom:-3px;overflow:hidden;zoom:1; }
+.date-picker-double u.b-r{ background-position:-207px -42px;bottom:-2px;right:-2px;_bottom:-3px;overflow:hidden; zoom:1;}
+.date-picker-double button{ margin-right:5px}
+.date-picker-double em{ font-style:normal;margin-left:5px; }
+
+.maskFrame {position:absolute; width:0px; height:0px; top:0px; left:0px; display:none;border:none;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)}
+
+.inputlong{width:500px}
+
+.maskDivNoColor{display:none;width:100%;position:absolute;left:0px;top:0px;background:#FFF;opacity:0.01;filter:alpha(opacity=1);-moz-opacity:0.01;z-index:101;}
+
+
+/**
+ * head
+ */
+.head{min-width:985px;margin-bottom:-10px}
+.head-wrapper{position:relative;width:985px;margin:0 auto;margin-top:12px;height:84px}
+.logo{position:absolute;left:0px;top:0px;border:none}
+.logo img{border:none}
+
+.right-top-nav{position:absolute;right:0px;top:0px;font-size:12px;z-index:10000;font-family:"Arial,宋体"}
+.right-top-nav a{color:#00e; text-decoration:none}
+.right-top-nav a:hover{text-decoration:underline}
+.right-top-nav .contact-mask{z-index:10000;position:absolute;display:none;border:none}
+
+#ContactMenuBtn{display:inline-block;height:13px;line-height:13px;padding:3px;_padding-bottom:0px;background:#fff;border:1px #fff solid;border-bottom:none}
+#ContactMenuBtn img{border:none}
+#ContactMenuBtn:hover{text-decoration:none}
+#ContactMenuBtn span{color:#c0c0c0;margin:0;*margin-left:4px}
+#ContactMenuBtn img{border:0;vertical-align:middle;position:relative;top:-2px;*top:-1px}
+#ContactMenu{z-index:10001;width:80px;border:1px #c0c0c0 solid;border-top:0;padding:0 8px;background:#fff url(bordertop.gif) no-repeat;position:absolute;top:20px;display:none;}
+#ContactMenu div span.block{display:block;height:21px;line-height:21px;margin:4px 0}
+#ContactMenu div span,#ContactMenu .bridge-service-menu{overflow:hidden;}
+.right-bottom-nav{position:absolute;right:0px;bottom:26px;z-index:9000}
+#BridgeServiceIcon iframe{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)}
+#HelpTip{width:231px;height:24px}
+.help-tip-words{float:left;padding:6px 0 0 22px;width:187px;height:18px;background:url(help-tip.gif) no-repeat 0 0;line-height:13px;font-size:13px;color:#333;}
+.help-tip-button{float:left;width:22px;height:24px;background:url(help-tip.gif) no-repeat right top;cursor:pointer}
+
+.mainnav{position:absolute;left:0px;bottom:0px}
+.mainnav span{float:left;height:29px;margin-right:4px;background:url(headbg.gif) repeat-x left -145px;position:relative}
+.mainnav .homepage{margin-right:9px}
+.mainnav span u{position:absolute;left:0px;top:0px;width:4px;height:29px;background:url(headbg.gif) no-repeat left -87px;}
+.mainnav span i{position:absolute;right:0px;top:0px;width:4px;height:29px;background:url(headbg.gif) no-repeat left -116px;}
+.mainnav span a{display:block;padding:9px 13px 0 13px;_padding-top:10px;line-height:14px;font-size:14px;font-family:"宋体";color:#666}
+.mainnav span a:link, .mainnav span a:hover, .mainnav span a:visited{text-decoration:none}
+.mainnav span a:hover{color:#00e}
+.mainnav .current{background-position:left -58px}
+.mainnav .current u{background-position:left top}
+.mainnav .current i{background-position:left -29px}
+.mainnav .current a{color:#fff;font-weight:bold}
+.mainnav .current a:hover{color:#fff}
+.subnav{background:#4D87CE;height:22px}
+.subnav-wrapper{width:985px;margin:0 auto;height:22px;}
+.subnav span{float:left;position:relative;margin-top:4px;font-size:12px;padding:2px 5px 2px 5px;*padding:3px 5px 1px 5px;color:#fff}
+.subnav span a{text-decoration:none;color:#fff}
+.subnav span a:hover{text-decoration:underline}
+.subnav .current{background:#D2E1F3}
+.subnav .current a{color:#000}
+.subnav .current a:hover{text-decoration:none}
+.subnav i,.subnav u,.subnav s,.subnav b{background:#4D87CE;font-size:1px;border:none;text-decoration:none;width:1px;height:1px;position:absolute;overflow:hidden}
+.subnav i{left:0px;top:0px}
+.subnav u{left:0px;bottom:0px}
+.subnav s{right:0px;top:0px}
+.subnav b{right:0px;bottom:0px}
+.subnav .split{padding:2px 0 2px 0;*padding:1px 0 0 0;width:15px;text-align:center;text-decoration:none;}
+.head-bottom{height:40px;background:url(headbg.gif) repeat-x left -174px}
+
+ 
+/*Help Tip*/
+.xjq-scroll{height:24px;width:210px;padding-left:22px;background:url(xjq-left.gif) no-repeat left;z-index:1000}
+.xjq-cover{width:234px;position:absolute;z-index:-1;border:0;-ms-filter:"progid:dximagetransform.microsoft.alpha(opacity=0)";filter:alpha(opacity=0);opacity:0}
+.xjq-scroll .xjq-right{padding:0;width:23px;height:24px;float:left;cursor:pointer;background:url(xjq-right.gif) no-repeat right}
+.xjq-scroll .xjq-body{background:url(xjq-body.gif) repeat-x;width:187px;padding:0;margin:0;float:left;height:24px;overflow:hidden;position:relative;top:0;left:0;text-align:left}
+.xjq-scroll .xjq-content{position:absolute;top:0;left:0}
+.xjq-content ul{list-style-type:none;font-size:12px;padding:0;margin:0;*margin-left:-20px;line-height:24px;text-indent:0px}
+.xjq-content ul a{color:#000;text-decoration:none;text-indent:20px}
+.xjq-expand ul li{background:url(xjq-li.gif) 13px center no-repeat;height:24px}
+.xjq-expand ul a{color:#0000ee;text-decoration:none}
+.xjq-expand ul a:hover{text-decoration:underline}
+.xjq-outter{margin-top:2px;width:234px;position:relative;top:2px;left:0px;right:0px;bottom:0px;background:#ededed}
+.xjq-expand ul{font-size:12px;line-height:24px;list-style-type:none;text-indent:20px;padding:0;margin:0}
+.xjq-expand{position:relative;top:-2px;left:0px;width:230px;border:1px solid #ccc;background:#fff;overflow:hidden;}
+.xjq-more{height:26px;font-size:12px;text-align:right;line-height:26px;padding-right:7px;zoom:1}
+.xjq-more a{color:#000;text-decoration:none;zoom:1}
+.xjq-more a:hover{text-decoration:underline}
+.xjq-l-c{position:absolute;width:5px;height:5px;font-size:0;left:0px;bottom:0px;background:url(xjq-left-corner.gif) no-repeat;z-index:100}
+.xjq-r-c{position:absolute;background:url(xjq-right-corner.gif) no-repeat;width:6px;height:6px;font-size:0;right:0px;bottom:0px;z-index:100}
+
+/* foot */
+.foot {clear:both;margin:0 auto;  width:100%;padding:14px 0 20px 0;background:#fafafa;border-top:1px #ccc solid;line-height:20px;text-align:center;color:#808080;}
+.foot a {color:#808080;text-decoration:none;}
+.foot a:hover{text-decoration:underline;}
+
+
+/**状态提示条**/
+.breadStatusTip{z-index:10000;position:absolute;height:16px;line-height:15px;padding:1px 8px 0 8px;color:#000;overflow:hidden;background-position:0 -100px;border:1px solid #767676}
+/*zeidu*/
+.tablebg{background:#CCCCCC;width:100%;line-height:25px;}
+.tablebg td{background:#F4F7F4;padding-left:3px;}
+.tablebg th{background:#F4F7F4;text-align:center;}
+ 

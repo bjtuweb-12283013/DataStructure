@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>数据管理_{siteName}</title>
+<link href="./_static/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- INCLUDE head.html -->
+<div id="main">
+<div id="guid"><a href="../" target="_blank">{siteName}</a> &gt; <a href="./">管理中心</a> &gt; <b>数据管理</b></div>
+<div id="B">
+	<!-- INCLUDE left.html -->
+	<div id="R">
+		<div class="nameset">数据管理</div>
+		<div class="namecont">
+			<form name="Form1" id="Form1" method="post" target="sypost">
+			<table width="100%" cellspacing="0" cellpadding="0">
+			<tr class="tr1">
+			<td class="td1" align="center" width="6%"><strong>&nbsp;</strong></td>
+			<td class="td1" align="left" width="23%"><strong>数据表</strong></td>
+			<td class="td1" align="left" width=""><strong>说明</strong></td>
+			<td class="td1" align="left" width="12%"><strong>记录数</strong></td>
+			<td class="td1" align="left" width="10%"><strong>索引尺寸</strong></td>
+			<td class="td1" align="left" width="12%"><strong>数据尺寸</strong></td>
+			</tr>
+			<!-- BEGIN dbTable -->
+			<tr>
+			<td class="td2" align="center"><input type="checkbox" name="dbTable[]" value="{Name}" checked /></td>
+			<td class="td2" align="left">{Name}</td>
+			<td class="td2" align="left">{Comment}</td>
+			<td class="td2" align="left">{Rows}</td>
+			<td class="td2" align="left">{Index_length}</td>
+			<td class="td2" align="left">{Data_length}</td>
+			</tr>
+			<tr class="td3"><td colspan="6"></td></tr>
+			<!-- END dbTable -->
+			<tr>
+			<td colspan="6" align="center">
+				<select id="ActionType" name="ActionType">
+				<option value="0">操作类型</option>
+				<option value="1">优化</option>
+				<option value="2">修复</option>
+				</select>
+				&nbsp;
+				<input type="submit" id="ActionDo" name="ActionDo" value="提 交" class="sub">
+			</td>
+			</tr>
+			<tr><td colspan="6" class="td2">&nbsp;</td></tr>
+			</table>
+			</form>
+			<iframe scrolling=no width=0 height=0 src="javascript:void(0);" name="sypost" id="sypost" style="display: none"></iframe>
+		</div>
+	</div>
+</div>
+</div>
+<!-- INCLUDE foot.html -->
+</body>
+</html>
